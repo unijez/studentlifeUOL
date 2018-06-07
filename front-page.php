@@ -1,0 +1,72 @@
+<?php
+/**
+ * The main Front page File
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage studentlifeUOL
+ * @author     Jez Thompson <jthompson@lincoln.ac.uk>
+ * @since 1.0
+ * @version 1.0
+ */
+
+get_header(); ?>
+	<?php get_template_part( 'template-parts/slider' ); ?>
+	<main id="main" class="site-main">
+
+				<div class="content-container">
+
+					<h1 class="content-heading">Latest</h1>
+					<div class="news-wrapper">
+
+						<!--More Details https://codex.wordpress.org/Class_Reference/WP_Query-->
+
+	 					<?php
+		 					$args = array(
+		 						'post_type' => 'post',
+		 						'posts_per_page' => 6,
+		 						'post__not_in' => get_option( 'sticky_posts' ),
+								'category_name' => 'post',
+		 					);
+
+		 					$home_featured_posts = new WP_Query( $args );
+
+		 					if ( $home_featured_posts->have_posts() ) :
+								$i = 1;
+	 					?>
+	 							<?php while ( $home_featured_posts->have_posts() ) : $home_featured_posts->the_post() ?>
+								<?php if($i == 1): ?>
+									<div class="row">
+								<?php endif; ?>
+											<?php get_template_part( 'template-parts/post-listing-front-page' ); ?>
+								<?php if($i == 3): ?>
+									</div>
+								<?php
+											$i = 0;
+											endif;
+											$i++;
+								 ?>
+	 							<?php endwhile ?>
+	 					<?php endif;  wp_reset_query(); ?>
+
+						<div class="more-button"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More posts</a></div>
+
+					</div><!-- news-wrapper -->
+
+
+
+
+				</div><!-- font-page_container -->
+
+
+
+	</main><!-- #main -->
+
+
+<?php get_footer(); ?>
