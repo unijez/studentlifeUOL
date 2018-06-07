@@ -59,7 +59,32 @@ get_header(); ?>
 
 					</div><!-- news-wrapper -->
 
+					<h1 class="content-heading">Videos</h1>
+					<div class="video-wrapper"><!-- video-wrapper -->
 
+						<div class="row">
+
+							<?php
+			 					$args = array(
+			 						'post_type' => 'post',
+			 						'posts_per_page' => 3,
+			 						'post__not_in' => get_option( 'sticky_posts' ),
+									'category_name' => 'video',
+			 					);
+
+			 					$home_featured_videos = new WP_Query( $args );
+
+			 					if ( $home_featured_videos->have_posts() ) {
+		 							while ( $home_featured_videos->have_posts() ) : $home_featured_videos->the_post() ?>
+									<?php	get_template_part( 'template-parts/video-listing-front-page' ); ?>
+						 			<?php endwhile;
+				 				}
+								wp_reset_query(); ?>
+
+						</div>
+
+
+					</div><!-- video-wrapper -->
 
 
 				</div><!-- font-page_container -->

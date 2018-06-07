@@ -22,7 +22,7 @@ get_header(); ?>
 
  				<?php while ( have_posts() ) : the_post(); ?>
 
-          <div class="content-container">
+          <div class="content-container thisisapost">
 
 								<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
