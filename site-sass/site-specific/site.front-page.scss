@@ -1,0 +1,155 @@
+//Remove content-container padding
+div.no-pad {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+//Content-container padding for all pages
+.content-container {
+  width: 1160px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 100px; // QUERY THIS!
+  @include mq($until:tablet) {
+    padding-bottom: 50px;
+  }
+}
+
+//Title container padding / styling
+.title-container {
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 50px;
+  @include mq($until:tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+// Headings
+
+.content-heading {
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-right: 15px;
+  @include mq($until:tablet) {
+    padding-left: 30px;
+  }
+}
+
+
+// Latest
+
+.row {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  justify-content: space-between;
+  width: 100%;
+
+  .latest-post {
+    width: 345px;
+    height: 345px;
+    text-align: left;
+
+    h3 { margin: 0;}
+    h4 {
+      margin-bottom: 10px;
+    }
+    .post-auth {
+      margin-top: 15px;
+    }
+    p { margin-top: 10px; }
+  }
+
+  .latest-post:first-child {
+    margin-right: 60px;
+  }
+
+  .latest-post:last-child {
+    margin-left: 60px;
+  }
+
+  h4 a {
+    font-family: Helvetica;
+    color: $grey-dark;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  h3 a {
+    font-family: Helvetica;
+    font-weight: 300;
+    color: $uni-blue;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
+
+.row:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.news-wrapper {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.item-text .post-img {
+  margin-bottom: 10px;
+}
+
+.item-text .post-img img {
+  width: 345px;
+  height: 210px;
+}
+
+.item-text p {
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 17px;
+  color: $grey-light;
+  font-family: Helvetica;
+
+  @include mq($until:tablet) {
+    padding: 0 30px;
+  }
+}
+
+.more-button {
+  margin: 0 auto;
+  display: inline-block;
+  background-color: $uni-blue;
+
+  a {
+    margin: 25px;
+    padding: 25px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// Media Queries
+
+.content-container {
+
+	@include mq($until: desktop) {
+		width: 100vw;
+	}
+
+}
+
+.news-wrapper {
+
+	@include mq($until: tablet) {
+		flex-direction: column;
+	}
+}

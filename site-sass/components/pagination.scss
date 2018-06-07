@@ -1,0 +1,78 @@
+
+//
+
+// default pagination
+
+//
+
+/* Container */
+
+.pagination {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-family: Helvetica;
+  @include mq ($until:tablet) {
+    margin-top: 30px;
+  }
+}
+
+/* Objects */
+
+.nav-links .current {
+  color: $uni-blue;
+  border: 2px solid $uni-blue;
+  width: 40px;
+  height: 25px;
+  font-size: 13px;
+}
+
+.nav-links span {
+  padding: 13px 17px;
+  align-self: center;
+  transition: ease-in .1s;
+}
+
+.nav-links a {
+  padding: 13px 17px;
+  text-decoration: none;
+  color: $grey-dark;
+  font-size: 13px;
+}
+
+.nav-links .dots {
+  color: $grey-dark;
+}
+
+
+//
+
+// single pagination
+
+//
+
+.single-pagination {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 50px;
+  margin: 30px 0;
+  @include mq ($until:tablet) {
+    padding: 0 30px;
+  }
+}
+
+.single-pagination__link a {
+  font-family: Helvetica;
+  color: $grey-dark;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.single-pagination__link a:hover {
+  opacity: .8;
+}

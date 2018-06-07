@@ -1,0 +1,32 @@
+
+//SEARCH BAR STYLING
+
+.header-search, .site-module {
+  padding: 25px;
+  background-color: $uni-blue;
+
+  .module-inner-wrap form {
+
+    display: block;
+    text-align: center;
+
+    input {
+    max-width: 900px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto;
+    font-family: Helvetica;
+    font-weight: 200;
+    @include mq(tablet) {
+      width: 900px;
+    }
+    }
+
+    input::placeholder {
+      color: white;
+      opacity: 1;
+    }
+  }
+}

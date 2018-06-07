@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+# Button Control
+--------------------------------------------------------------*/
+.search-toggle-menu {
+  align-self: center;
+}
+
+
+//Main button for the toggle search area
+.main-btn {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  align-self: center;
+  font: inherit;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  @include vendor(transition, $global-transition);
+
+
+  	@include hocus() {
+  	  text-decoration: none;
+  	}
+
+
+}
+
+.mobile-button{
+	/*@include flex-center;*/
+	width: 40px;
+	height: 40px;
+	background: red;
+}
+
+
+.search-toggle {
+	@include mq(tablet){
+	}
+
+
+}
+
+
+/* Mobile Navigation Button
+   ===========================================================*/
+
+//Hide mobile nav button when it's not in mobile view
+.site-header .mobile-menu-button {
+
+
+	@include mq(tablet){
+		display: none;
+	}
+
+}
+
+.menu-active .mobile-menu-button{
+	display: none;
+}

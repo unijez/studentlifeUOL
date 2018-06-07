@@ -1,0 +1,142 @@
+/*--------------------------------------------------------------
+# Site Footer
+--------------------------------------------------------------*/
+
+// Footer Top
+
+.footer-top .contact_map {
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  @include mq($until:tablet) {
+    height: 300px;
+  }
+}
+
+//Removing all of the content from footer top
+.footer-top:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+
+//Map styling
+.footer-top .iframe {
+  width: 100%;
+  height: 500px;
+}
+
+// Footer Middle
+
+.footer-middle {
+  width: 100vw;
+  padding: 50px 0;
+
+  @include mq($until:tablet) {
+    padding: 10px 30px;
+  }
+
+  .row {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;
+
+    @include mq($until:tablet) {
+      flex-direction: column;
+    }
+
+    .column {
+      max-width: 270px;
+      padding: 20px;
+      display: inline-block;
+      min-height: 240px;
+      align-self: auto;
+      @include mq ($until:tablet) {
+        padding: 20px 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .social__item a {
+        color: $grey-dark;
+      }
+    }
+  }
+}
+
+.widget-container{
+  margin: 0 auto;
+  *:not(h2), a  {
+   font-family: Helvetica !important;
+   line-height: 1.5;
+   color: $grey-light;
+  }
+}
+
+.widget-title {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-right: 15px;
+  font-family: Georgia;
+  font-weight: 300;
+}
+
+// Footer Bottom
+
+.footer-bottom {
+  width: 100%;
+  height: auto;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include mq ($until:tablet) {
+    flex-direction: column;
+  }
+}
+
+.logo_container {
+  display: flex;
+  width: 70%;
+  @include mq ($until:tablet) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.logo_container a {
+  @include mq ($until:tablet) {
+    margin: 0 auto;
+  }
+}
+
+.credit {
+  margin: 32px 0 0 30px;
+  display: inline;
+  font-family: Helvetica;
+  font-size: 12px;
+  @include mq ($until:tablet) {
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+  }
+}
+
+.coppyright {
+  margin-top: 47px;
+  float: left;
+  font-family: Helvetica;
+  font-size: 12px;
+  @include mq ($until:tablet) {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+}
