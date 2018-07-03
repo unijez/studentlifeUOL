@@ -15,6 +15,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
+		<?php the_field('youtube_video'); ?>
+
 		<?php
 			the_content(); get_the_title() ;
 
@@ -24,5 +26,4 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
 </article><!-- #post-<?php the_ID(); ?> -->

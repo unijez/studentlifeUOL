@@ -45,6 +45,7 @@ if ( ! function_exists( 'studentlifeUOL_setup' ) ) :
 		/* image resizing */
 		add_image_size( 'post-intro-image', 450, 300, true );
 		add_image_size( 'hero-header', 1915, 630, array( 'left', 'top' )  ); // Hard Crop Mode
+		add_theme_support( 'post-formats', array( 'video', 'gallery', 'image' ) );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(

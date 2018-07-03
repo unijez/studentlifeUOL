@@ -32,9 +32,15 @@ get_header(); ?>
 		 						'post_type' => 'post',
 		 						'posts_per_page' => 6,
 		 						'post__not_in' => get_option( 'sticky_posts' ),
-								'category_name' => 'post',
-		 					);
-
+								'tax_query' => array(
+					        array(
+				            'taxonomy' => 'post_format',
+				            'field' => 'slug',
+				            'terms' => array( 'post-format-video' ),
+				            'operator' => 'NOT IN'
+					        )
+						    ),
+							);
 		 					$home_featured_posts = new WP_Query( $args );
 
 		 					if ( $home_featured_posts->have_posts() ) :
@@ -67,9 +73,16 @@ get_header(); ?>
 							<?php
 			 					$args = array(
 			 						'post_type' => 'post',
-			 						'posts_per_page' => 3,
+			 						'posts_per_page' => 2,
 			 						'post__not_in' => get_option( 'sticky_posts' ),
-									'category_name' => 'video',
+									'tax_query' => array(
+						        array(
+					            'taxonomy' => 'post_format',
+					            'field' => 'slug',
+					            'terms' => array( 'post-format', 'post-format-gallery', 'post-format-image' ),
+					            'operator' => 'NOT IN'
+						        )
+							    ),
 			 					);
 
 			 					$home_featured_videos = new WP_Query( $args );
