@@ -10,13 +10,14 @@
  * @since 1.0
  * @version 1.0
  */
-
+ if(has_post_format('video')) {
+   download_thumbnail();
+ }
  get_header(); ?>
 
     <?php get_template_part( 'template-parts/featured-image' ); ?>
 
  		<main id="main" class="site-main">
-
  			<?php if ( have_posts() ) : ?>
 
 
