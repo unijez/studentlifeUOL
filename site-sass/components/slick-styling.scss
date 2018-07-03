@@ -75,6 +75,10 @@
   }
 }
 
+.header-text-area:first-child {
+    padding-top: 30px;
+}
+
 h2.header-text-area {
   margin: 0;
   overflow-wrap: break-word;
@@ -93,12 +97,7 @@ a.header-text-area:hover {
   opacity: .9;
 }
 
-h5.header-text-area:first-child {
-  margin-top: 30px;
-}
-
 h5.header-text-area {
-  margin-top: 15px;
   margin-bottom: 15px;
 }
 

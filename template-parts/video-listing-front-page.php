@@ -10,16 +10,18 @@
 
 ?>
 
-<div class="latest-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="latest-video-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="item-text">
+		<h4 class="post-category"> <?php list_categories(); ?></h4>
 		<div class="post-img">
-	    <a href="<?php the_permalink();?>">
-	    	<!-- Get ACF video -->
-	    </a>
+			<a href="<?php the_permalink(); ?>">
+				<?php default_image('large'); ?>
+			</a>
 		</div>
-		<!-- Get Author Bio and Image -->
 		<h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-		<p><?php excerpt(40);?></p>
-	</div> <!-- item-text -->
-</div> <!-- post -->
+		<p><?php excerpt(20);
+		?></p>
+		<p><i class="post-auth"><?php the_author(); ?></i></p>
+	</div>
+</div>

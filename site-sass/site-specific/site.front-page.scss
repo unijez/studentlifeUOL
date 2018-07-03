@@ -51,7 +51,7 @@ div.no-pad {
   justify-content: space-between;
   width: 100%;
 
-  .latest-post {
+  .latest-post, .latest-video-post {
     width: 345px;
     height: 345px;
     text-align: left;
@@ -95,11 +95,28 @@ div.no-pad {
   margin-bottom: 60px;
 }
 
+.row:not(.latest-video-post:last-child) {
+  margin-bottom: 60px;
+}
+
 .news-wrapper {
   width: 100%;
   height: auto;
   margin-bottom: 60px;
   text-align: center;
+}
+
+.latest-video-post {
+  flex-grow: 1;
+
+  .item-text .post-img img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.latest-video-post:first-child {
+  margin-right: 60px;
 }
 
 .item-text .post-img {
