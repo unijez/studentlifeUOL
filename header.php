@@ -79,6 +79,7 @@
 					wp_nav_menu( $nav_args );
 
 			?>
+				<a id="open-button">&#9776;</a>
 			</ul>
 
 		</nav><!-- #site-navigation -->
@@ -117,6 +118,43 @@
 		</ul><!-- .main-menu -->
 
 	</nav><!-- .mobile-navigation -->
+
+	<nav class="overlay-navigation overlay-off">
+		<a id="close-button second-button">
+			<div class="nav-items items-off">
+				<a id="close-button">&times;</a>
+				<h1>Student Life</h1>
+				<ul class="overlay-menu">
+					<?php
+
+						if ( has_nav_menu( 'primary-menu' ) ) {
+
+								wp_nav_menu( $nav_args );
+
+						} else {
+
+								wp_list_pages( $list_pages_args );
+
+						}
+
+					?>
+				</ul>
+				<h1>Search</h1>
+				<div class="ov-nav-search">
+					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="s" id="s" />
+					</form>
+				</div>
+
+				<?php if( function_exists('acf_add_local_field_group') )	:?>
+				<h1>Social</h1>
+						<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
+
+				</div>	 <!--column-->
+			</div>
+		<?php endif; ?>
+		<a>
+	</nav>
 
 <?php studentlifeUOL_head_after(); ?>
 
