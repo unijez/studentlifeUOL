@@ -7,11 +7,11 @@
 
 .social__item {
 	float: left;
-	@include font-size(20px);
+	@include font-size(40px);
 }
 
 .social__item:not(:last-child) {
-	margin-right: 20px;
+	margin-right: 60px;
 }
 
 .social__item a{
