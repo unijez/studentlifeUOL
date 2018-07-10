@@ -95,10 +95,34 @@ get_header(); ?>
 								wp_reset_query(); ?>
 
 						</div>
-
+						<div class="more-button"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More videos</a></div>
 
 					</div><!-- video-wrapper -->
 
+					<h1 class="content-heading">Featured Posts</h1>
+					<div class="featured-wrapper"><!-- video-wrapper -->
+
+							<?php
+			 					$args = array(
+			 						'post_type' => 'post',
+			 						'posts_per_page' => 3,
+			 						'post__not_in' => get_option( 'sticky_posts' ),
+									'meta_key' => 'feature_post',
+									'meta_value' => true,
+			 					);
+
+			 					$home_featured_select = new WP_Query( $args );
+
+			 					if ( $home_featured_select->have_posts() ) {
+		 							while ( $home_featured_select->have_posts() ) : $home_featured_select->the_post() ?>
+									<div class="large-row">
+										<?php	get_template_part( 'template-parts/featured-listing-front-page' ); ?>
+									</div>
+						 			<?php endwhile;
+				 				}
+								wp_reset_query(); ?>
+
+					</div><!-- selected-post-wrapper -->
 
 				</div><!-- font-page_container -->
 
