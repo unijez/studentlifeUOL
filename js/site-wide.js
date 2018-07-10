@@ -38,21 +38,35 @@ $('ul.comment-tabs li').click(function(){
 
 	 /************Mobile Menu************/
 
-	 	var menuButton = $('.mobile-menu-button');
-	 	var globalNav = $('.mobile-navigation');
+	 	var openButton = $('#open-button');
+		var closeButton = $('#close-button');
+	 	var globalNav = $('.overlay-navigation');
+		var itemNav = $('.nav-items');
 		var body = $('body');
 
 
-		menuButton.on("click", function(){
-			$(this).toggleClass("menu-active");
-			globalNav.toggleClass("menu-active");
-			body.toggleClass("stop-scroll");
-			globalNav.slideToggle();
+		globalNav.click(function(e) {
+			if(e.target == this) {
+				body.removeClass("stop-scroll");
+				itemNav.addClass("items-off");
+				globalNav.addClass("overlay-fade");
+				setTimeout(function() { globalNav.addClass("overlay-off") }, 750);
+			}
 		});
 
+		openButton.on("click", function(){
+			body.addClass("stop-scroll");
+			itemNav.removeClass("items-off");
+			globalNav.removeClass("overlay-off");
+			globalNav.removeClass("overlay-fade");
+		});
 
-
-
+		closeButton.on("click", function(){
+			body.removeClass("stop-scroll");
+			itemNav.addClass("items-off");
+			globalNav.addClass("overlay-fade");
+			setTimeout(function() { globalNav.addClass("overlay-off") }, 750);
+		});
 
 
 });
