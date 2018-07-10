@@ -1,5 +1,5 @@
 <?php if(has_post_thumbnail()): ?>
-<div class="hero-header">
+<div class="copy-header">
   <div class="slick-slide heading-image" style="background-image: url(<?php echo header_post_image() ?>)">
 
   <?php
