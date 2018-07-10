@@ -24,7 +24,7 @@
 .primary-menu > li:last-child { margin-right: 10px; }
 
 .primary-menu a {
-	display: block;
+	display: inline-block;
 	padding: 11px 15px;
 	text-decoration: none;
   font-family: Helvetica;
@@ -37,6 +37,11 @@
     display: inline-block;
     padding: 11px 0 !important;
   }
+}
+
+.primary-menu > a {
+    font-size: 30px;
+    padding: 0 5px;
 }
 
 .primary-menu > .menu-item-has-children > a { padding-right: 33px; position: relative; }
@@ -215,13 +220,6 @@
     top: 154px;
   }
 
-  .stop-scroll {
-    overflow: hidden;
-    .sitebody-content, .site-footer {
-      display: none !important;
-    }
-  }
-
 
 
 	.mobile-navigation .primary-menu a {
@@ -292,3 +290,88 @@
 	.search-toggle-menu {
 
 	}
+
+  .overlay-navigation {
+    background-color: rgba(103, 102, 102, 0.8);
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow-x: hidden;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.75s ease;
+  }
+
+   #close-button {
+    position: absolute;
+    top: 67px;
+    right: 46px;
+    font-size: 30px;
+    text-align: center;
+    padding: 0 5px;
+    font-weight: bolder;
+  }
+
+  .ov-nav-search {
+    input {
+      border: 2px solid $grey-dark;
+      padding: 10px;
+      margin-bottom: 27px;
+    }
+  }
+
+  .svg-inline--fa {
+      color: $grey-dark;
+  }
+
+  .nav-items {
+    float: right;
+    display: inline-block;
+    background-color: #fff;
+    height: 100%;
+    width: 65%;
+    padding: 144px 144px 0 144px;
+    transform: translateX(0%);
+    transition: transform 0.75s ease;
+    z-index: 2;
+
+    h1 {
+      color: $grey-dark;
+    }
+  }
+
+  .items-off {
+    transition: transform 0.75s ease;
+    transform: translateX(100%);
+
+  }
+
+  .overlay-menu {
+    li {
+      width: 30%;
+      padding-bottom: 15px;
+      a {
+        text-decoration: none;
+        color: $grey-dark;
+      }
+    }
+  }
+
+  .overlay-fade {
+    opacity: 0;
+    transition: opacity 0.75s ease;
+  }
+
+  .overlay-off {
+    visibility: hidden;
+  }
+
+
+  .stop-scroll {
+    height: 100vh;
+    overflow-y: hidden;
+  }
