@@ -1,0 +1,13 @@
+.format-standard {
+  .entry-content {
+    display: inline-block;
+    width: 750px;
+    margin-top: 60px;
+
+    h4, h5, h6 {
+      font-size: 30px;
+      color: $uni-blue;
+    }
+
+  }
+}
