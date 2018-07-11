@@ -67,6 +67,16 @@
       .social__item a {
         color: $grey-dark;
       }
+
+      .footer-subscribe {
+        input {
+          background-color: white;
+          color: $grey-dark;
+          border: 2px solid $grey-dark;
+          width: 100%;
+          padding: 5px;
+        }
+      }
     }
   }
 }

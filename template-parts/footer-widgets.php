@@ -46,7 +46,11 @@
         <h2 class="widget-title">Subscribe</h2>
 
         <div class="textwidget">
-          
+          <div class="footer-subscribe">
+  					<form method="get">
+  						<input type="search" placeholder="<?php _e( 'Enter your email', 'ServicesUOL' ); ?>" name="s" id="s" />
+  					</form>
+  				</div>
         </div>
 
     </div>	 <!--column-->
