@@ -13,7 +13,8 @@
  if(has_post_format('video')) {
    download_thumbnail();
  }
- get_header(); ?>
+ get_header();
+ ?>
 
     <?php get_template_part( 'template-parts/featured-image' ); ?>
 
@@ -27,7 +28,10 @@
           <div class="content-container">
 
 								<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-
+                <?php if(!has_post_format()):
+                      get_template_part( 'template-parts/sidebar-standard');
+                      endif;
+                  ?>
                 <?php
                 //Is there a next or previous post?
                 $prev_link = get_previous_post_link();
