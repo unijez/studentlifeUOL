@@ -182,9 +182,13 @@ function mytheme_comment($comment, $args, $depth) {
 }
 
 
-function list_categories() {
+function list_categories($altID = null) {
+  if($altID == null) {
   global $post;
   $cats = get_the_category($post->ID);
+  } else {
+  $cats = get_the_category($altID);
+  }
   $j = 1;
   $catsSize = count($cats);
   foreach($cats as $cat) {
