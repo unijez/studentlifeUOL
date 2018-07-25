@@ -17,8 +17,9 @@ $(".search-toggle").on("click", function(){
 		slidesToShow: 1,
 	  slidesToScroll: 1,
 		vertical: true,
-	  autoplay: true,
-	  autoplaySpeed: 2500
+	  autoplay: false,
+	  autoplaySpeed: 2500,
+	  rows: 0
 	});
 
 //	Comment Tabs
@@ -38,8 +39,8 @@ $('ul.comment-tabs li').click(function(){
 
 	 /************Mobile Menu************/
 
-	 	var openButton = $('#open-button');
-		var closeButton = $('#close-button');
+	 	var openButton = $('.open-button');
+		var closeButton = $('.close-button');
 	 	var globalNav = $('.overlay-navigation');
 		var itemNav = $('.nav-items');
 		var body = $('body');

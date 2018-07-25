@@ -33,13 +33,13 @@ get_header(); ?>
 		 						'posts_per_page' => 6,
 		 						'post__not_in' => get_option( 'sticky_posts' ),
 								'tax_query' => array(
-					        array(
-				            'taxonomy' => 'post_format',
-				            'field' => 'slug',
-				            'terms' => array( 'post-format-video' ),
-				            'operator' => 'NOT IN'
-					        )
-						    ),
+								        array(
+							            'taxonomy' => 'post_format',
+							            'field' => 'slug',
+							            'terms' => array( 'post-format-video' ),
+							            'operator' => 'NOT IN'
+								        )
+						    	),
 							);
 		 					$home_featured_posts = new WP_Query( $args );
 

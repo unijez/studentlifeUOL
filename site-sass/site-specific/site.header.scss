@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# Site Header
+# Site .site-header
 --------------------------------------------------------------*/
 
 
@@ -19,11 +19,10 @@
 	# Styles added by Tom
 	--------------------------------------------------------------*/
 
-header {
+.site-header {
 	border-top: 5px solid $uni-blue;
 	border-bottom: 2px solid $uni-blue;
-	padding: 0 40px;
-	@include mq($until:tablet) {
+	/*@include mq($until:tablet) {
 		padding: 0 0;
 	}
 	display: flex;
@@ -34,13 +33,17 @@ header {
 		flex-wrap: wrap;
 		position: relative;
 
-	}
+	}*/
 
 }
 
-.site-branding {
+.site-header.site-module {
+	padding-top: $mobile-side-pad;
+	padding-bottom: $mobile-side-pad;
+}
+
+/*.site-branding {
 	max-width: 500px;
-	height: 100px;
 	display: flex;
 	float: left;
 	@include mq($until:tablet) {
@@ -91,4 +94,108 @@ header {
 	color: $uni-blue;
 	font-size: 20px;
 	font-weight: 300;
+}*/
+
+
+
+
+
+//
+// Site Branding
+//
+
+
+
+
+
+.site-branding {
+
+   @include flex-direction(column);
+   width: 100%;
+  margin-bottom: $mobile-side-pad;
+   
+   
+   @include mq(tablet) {
+   margin-bottom: 0;
+   	float: left;
+    margin-bottom: 0;
+   	 @include flex-direction(row);
+   	
+   }
+   
+   	.site-title { 
+     @include font-family(serif);
+     @include font-size(20px);
+   	line-height: 27px;
+	 margin: 0;
+	 
+	 @include mq(tablet) {
+		  @include font-size(25px);
+	 }
+
+  }
+  
+
+  .site-title a {
+  	color: $uni-blue;
+  	text-decoration: none;
+  }
+  
 }
+
+
+
+
+
+.site-branding__hero-wording {
+	@include flexbox;
+	
+	@include flex-direction(row);
+
+
+	
+	
+	
+	
+	@include mq(tablet) {
+		 margin-top: 0;
+		 padding-left: $mobile-side-pad;
+		 margin-left: $desktop-side-pad;
+		 max-width: 340px;
+		 @include align-items(center);
+		 @include justify-content(center);
+		 /*@include justify-content(flex-start);*/
+	}
+	
+	
+	
+}
+
+
+
+.site-branding__hero-logo {
+	color: $uni-blue;
+	display: block;
+	margin-bottom: $mobile-side-pad;
+	@include flexbox;
+	@include align-items(center);
+
+	@include mq(mobileLandscape) {
+		margin-bottom: $mobile-side-pad;
+	 width: 50vw;
+	
+	}
+	
+	@include mq(tablet) {
+		margin-bottom: 0;
+	 width: 18vw;
+	
+	}
+	
+	@include hocus() {
+		color: $uni-grey;
+	}
+	
+}
+
+

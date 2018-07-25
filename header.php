@@ -39,35 +39,37 @@
 	</div> <!--header-search-->
 
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header site-module">
 
 		<?php studentlifeUOL_header_top(); ?>
 
+		<div class="module-inner-wrap">
+		
+		<div class="level-elements">
+		
+		<div class="site-branding flex-controlled">
 
-		<div class="site-branding">
+			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" title="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer">
+				
+				
+				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
+				
+			</a>
 
-			<div class="logo_container">
-				<a href="http://www.lincoln.ac.uk/home/" rel="<?php bloginfo( 'name' ); ?>">
-					<img class="logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/uol_landscape.svg" alt="<?php bloginfo( 'name' ); ?> University Of Lincoln Logo">
-				</a>
-			</div>
-
-			<div class="site-title_container">
+			<div class="site-branding__hero-wording">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				
+				<button type="button" class="main-btn open-button d-hide"><i class="fal fa-bars fa-lg"></i></button>
+				
 			</div>
-
+			
+			
+			
+			
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-		<?php /*
-			wp_nav_menu( array(
-				'theme_location' => 'primary-menu',
-				'menu'            => '',
-				'container'       => '',
-				'container_class' => '',
-				'menu_class'      => 'primary-menu'
-			) );
-		*/?>
+		<nav id="site-navigation" class="main-navigation level-right flex-controlled">
+
 			<ul class="primary-menu">
 			<?php
 					$nav_args = array(
@@ -79,9 +81,13 @@
 					wp_nav_menu( $nav_args );
 
 			?>
-				<a id="open-button">&#9776;</a>
+			
 			</ul>
-
+			
+			
+			<button type="button" class="main-btn open-button m-t-hide"><i class="fal fa-bars fa-lg"></i></button>
+			
+			
 		</nav><!-- #site-navigation -->
 
 
@@ -89,41 +95,29 @@
 
 		<?php studentlifeUOL_header_bottom(); ?>
 
-
+			
+		</div> <!--level-elements-->
+			
+		</div> <!--module-inner-wrap-->
+		
 	</header><!-- #masthead -->
-<!--	<ul class="mobile-header-control level-elements">
 
-		<li class="search-toggle-menu-item"><button class="mobile-menu-button main-btn" aria-controls="primary-menu" aria-expanded="false"><i class="fal fa-align-left"></i></button></li>
-		<li class="search-toggle-menu"><button href="#" class="search-toggle main-btn" title="<?php _e( 'Show the search field', 'schoolsUOL' ); ?>"><i class="fas fa-search"></i></button></li>
-
-	</ul>
-		<nav class="mobile-navigation hide">
-
-		<ul class="primary-menu clear">
-
-			<?php
-
-				if ( has_nav_menu( 'primary-menu' ) ) {
-
-						wp_nav_menu( $nav_args );
-
-				} else {
-
-						wp_list_pages( $list_pages_args );
-
-				}
-
-			?>
-
-		</ul><!-- .main-menu -->
-
-	</nav><!-- .mobile-navigation -->
 
 	<nav class="overlay-navigation overlay-off">
-		<a id="close-button second-button">
+			
+			
+			
 			<div class="nav-items items-off">
-				<a id="close-button">&times;</a>
-				<h1>Student Life</h1>
+								
+				<div class="overlay-navigation-header site-module">
+				
+					<button type="button" class="main-btn close-button"><i class="fal fa-times fa-lg"></i></button>
+					
+				</div> <!--overlay-navigation-header-->
+								
+								
+								
+								<h1>Student Life</h1>
 				<ul class="overlay-menu">
 					<?php
 
@@ -147,13 +141,13 @@
 				</div>
 
 				<?php if( function_exists('acf_add_local_field_group') )	:?>
-				<h1>Social</h1>
+						<h1>Social</h1>
 						<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
 
 				</div>	 <!--column-->
 			</div>
 		<?php endif; ?>
-		<a>
+		
 	</nav>
 
 <?php studentlifeUOL_head_after(); ?>

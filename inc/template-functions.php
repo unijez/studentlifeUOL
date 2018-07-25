@@ -83,6 +83,12 @@ function header_post_image() {
 
 
   $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->post->ID ), 'hero-header' );
+  
+  
+	echo '<pre>';
+	var_dump( $imgdata );
+	echo '</pre>';
+
   if (( $imgdata[1] >= 1280 ) || ( $imgdata[2] >= 600)) {
   return $imgdata[0];
   } else {

@@ -1,0 +1,64 @@
+.site-module {
+	
+	padding: $mobile-side-pad;
+	
+	@include mq(tablet) {
+		padding: $desktop-side-pad ;
+	}
+
+}
+
+
+.site-module.xl-t {
+	padding-top: $mobile-side-pad * 2;
+	
+	@include mq(tablet) {
+		padding-top: $desktop-side-pad  * 2;
+	}
+}
+
+
+.site-module.xl-b {
+	padding-bottom: $mobile-side-pad * 2;
+	
+	@include mq(tablet) {
+		padding-bottom: $desktop-side-pad  * 2;
+	}
+}
+
+
+
+
+.blog-body.site-module {
+	padding: 0;
+	
+	@include mq(tablet) {
+		
+	}
+	
+}
+
+
+.site-header.site-module {
+	
+	@include mq($until:tablet) {
+		padding-bottom: 0;
+	}
+}
+
+
+
+	@include mq(desktop) {
+	
+	}
+
+	@include mq(wide) {
+		
+	}
+
+	@include mq(extraWide) {
+		
+	}
+	
+	
+	

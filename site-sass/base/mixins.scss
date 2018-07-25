@@ -109,9 +109,85 @@
 }
 
 
+/* Flexbox Center 
+   ========================================================================== */
+   
+@mixin flex-center{
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+	
+}
+
+
+
+/* -- Hide Elements.--*/
+
+.m-hide {
+	
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+	
+	@include mq(tablet){
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	}
+	
+}
+
+
+.m-t-hide {
+	
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+	
+	@include mq(desktop){
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	}
+	
+}
+
+
+
+
+.t-hide {
+		
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	
+	@include mq(tablet){
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+
+.d-hide {
+		
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	
+	@include mq(desktop){
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+
+
+
 .hide {
 	display: none;
-}
+	}
 
 
 @mixin background-colour($rgb,$opacity) {
