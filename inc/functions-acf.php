@@ -67,24 +67,24 @@
 if( function_exists('acf_add_local_field_group') ):
 
 	//Social Media Links
+//	require get_template_directory() . '/inc/acfs/social-media-acf.php';
+//
+//	//Social Media Front Page Text
 	require get_template_directory() . '/inc/acfs/social-media-acf.php';
-
-	//Social Media Front Page Text
-	require get_template_directory() . '/inc/acfs/social-media-text-acf.php';
-
-	//Releated Link Boxes
-	require get_template_directory() . '/inc/acfs/releated-posts-acf.php';
-
-	//Post/Page Description
-	require get_template_directory() . '/inc/acfs/postpage-description-acf.php';
-
-	//Extended Navigation
-	require get_template_directory() . '/inc/acfs/extended-navigation-acf.php';
-
-	require get_template_directory() . '/inc/acfs/interactive-maps-acf.php';
-
-	require get_template_directory() . '/inc/acfs/contact-us-acf.php';
-
-	require get_template_directory() . '/inc/acfs/maximum-title-length-acf.php';
+//
+//	//Releated Link Boxes
+//	require get_template_directory() . '/inc/acfs/releated-posts-acf.php';
+//
+//	//Post/Page Description
+//	require get_template_directory() . '/inc/acfs/postpage-description-acf.php';
+//
+//	//Extended Navigation
+//	require get_template_directory() . '/inc/acfs/extended-navigation-acf.php';
+//
+//	require get_template_directory() . '/inc/acfs/interactive-maps-acf.php';
+//
+//	require get_template_directory() . '/inc/acfs/contact-us-acf.php';
+//
+//	require get_template_directory() . '/inc/acfs/maximum-title-length-acf.php';
 
 endif;

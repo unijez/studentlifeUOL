@@ -35,3 +35,15 @@ img {
 
 
 
+.gallery {
+	@include flexbox;
+
+	@include flex-wrap(wrap);
+	
+	margin-left: -$desktop-side-pad;
+	
+}
+
+.gallery figure {
+	margin: $desktop-side-pad;
+}

@@ -97,7 +97,15 @@
 }*/
 
 
-
+.slick-slide,
+.main-slider,
+.hero-header {
+	height: 300px;
+	
+	 @include mq(tablet) {
+	 	height: 500px;
+	 	}
+}
 
 
 //
@@ -172,7 +180,7 @@
 }
 
 
-
+.site-footer__logo,
 .site-branding__hero-logo {
 	color: $uni-blue;
 	display: block;

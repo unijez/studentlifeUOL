@@ -214,13 +214,27 @@ $toast-pulls: true !default;
 		
 		@include mq(tablet) {
 		
-			margin-left: -$desktop-side-pad / 2;
-			margin-right: -$desktop-side-pad / 2;
-			margin-bottom: -$desktop-side-pad;
+			margin-left: -$desktop-side-pad;
+			margin-right: -$desktop-side-pad;
+			/*margin-bottom: -$desktop-side-pad;*/
 		}
 		
 
 }
+
+
+
+.columns-wrap.flex-controlled.left-side {
+	
+	@include mq(tablet) {
+	
+
+		@include justify-content(flex-start);
+		
+	}
+	
+}
+
 
 
 .columns-wrap.xl-h-inside {
@@ -245,14 +259,14 @@ $toast-pulls: true !default;
 .page-relationship .column-spacings,
 .column-spacings {
 		
-		padding-bottom: $desktop-side-pad /2;
+		padding-bottom: $desktop-side-pad;
 	/*	padding-left: $desktop-side-pad;
 		padding-right: $desktop-side-pad;*/
 		
 	@include mq(tablet) {
-		
-		padding-left: $desktop-side-pad /2;
-		padding-right: $desktop-side-pad /2;
+		padding-bottom: $desktop-side-pad *2;
+		padding-left: $desktop-side-pad;
+		padding-right: $desktop-side-pad;
 		
 		
 	}
@@ -402,6 +416,16 @@ $toast-pulls: true !default;
 	
 
 }
+
+
+.page-nav .has-text-centered {
+	
+	@include mq ($until:tablet) {
+	  display: none;
+	}
+	
+}
+
 
 .full-width-column {
 	width: 100%;

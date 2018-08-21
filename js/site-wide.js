@@ -17,8 +17,8 @@ $(".search-toggle").on("click", function(){
 		slidesToShow: 1,
 	  slidesToScroll: 1,
 		vertical: true,
-	  autoplay: false,
-	  autoplaySpeed: 2500,
+	  autoplay: true,
+	  autoplaySpeed: 5500,
 	  rows: 0
 	});
 

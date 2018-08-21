@@ -304,7 +304,7 @@
     right: 0;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
     overflow-x: hidden;
     visibility: visible;
     opacity: 1;
@@ -344,14 +344,16 @@
     transition: transform 0.75s ease;
     z-index: 2;
 
-    h1 {
+    h3 {
       color: $grey-dark;
+	  margin-bottom: 20px;
+	  @include font-size(25px);
     }
 	
 	
 	@include mq(tablet){
-		 padding: $mobile-side-pad;
-		  width: 65%;
+		 padding: $desktop-side-pad * 2;
+		  width: 500px;
 	
 	}
 	
@@ -369,6 +371,7 @@
       a {
         text-decoration: none;
         color: $grey-dark;
+		@include font-size(19px);
       }
     }
   }

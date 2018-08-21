@@ -25,24 +25,34 @@
 
 <footer class="site-footer">
 
-  <div class="footer-middle">
 
-    <?php get_template_part( 'template-parts/footer-widgets' ); ?>
+	    <?php get_template_part( 'template-parts/footer-widgets' ); ?>
+	  		
+	
 
-  </div>  <!-- footer-middle -->
-
-
-  <div class="footer-bottom">
-
-    <div class="logo_container">
-      <a href="http://www.lincoln.ac.uk/home/" rel="<?php bloginfo( 'name' ); ?>">
-        <img class="logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/uol_landscape.svg" alt="<?php bloginfo( 'name' ); ?> University Of Lincoln Logo">
-      </a>
-      <p class="credit">Designed by <b>Thomas Moore</b> (2nd year Interactive Design). Developed by <b>Brennan Pena</b> (1st year Computer Science).</p>
-    </div>
-
-    <p class="coppyright">	&#169; <b>University of Lincoln.</b> All rights reserved</p>
-
+  <div class="footer-bottom site-module xl-b xl-t">
+		
+		<div class="module-inner-wrap flex-controlled">
+		
+		    
+		      <a class="site-footer__logo" href="http://www.lincoln.ac.uk/home/" rel="<?php bloginfo( 'name' ); ?>">
+		        <?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
+		      </a>
+			  
+			  
+			  	<div class="footer-meta">
+			  		<p class="credit">Designed by <b>Thomas Moore</b> (2nd year Interactive Design). <br>Developed by <b>Brennan Pena</b> (1st year Computer Science).</p>
+			  		<?php university_links(); ?>
+			  		
+			  		 <p class="copyright">	&#169; <b>University of Lincoln.</b> All rights reserved</p>
+			  		
+			  </div> <!--footer-meta-->	
+			  
+			 
+			  
+			  
+		</div> <!--module-inner-wrap	-->
+		
   </div> <!-- footer-bottom -->
 
 

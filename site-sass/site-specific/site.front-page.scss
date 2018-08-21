@@ -31,11 +31,12 @@ div.no-pad {
 // Headings
 
 .content-heading {
-  display: inline-block;
-  margin-bottom: 30px;
-  margin-right: 15px;
-  @include mq($until:tablet) {
-    padding-left: 30px;
+@include font-size(25px);
+padding-bottom: $desktop-side-pad;
+
+  @include mq(tablet) {
+	@include font-size(30px);
+    padding-bottom: $desktop-side-pad *2;
   }
 }
 
@@ -51,15 +52,18 @@ div.no-pad {
     display: inline-flex;
 
     .post-img a img {
-      width: 550px;
-      height: 310px;
+      width: 100%;
+      height: auto;
     }
+	
+.post-title {
+	line-height: 25px;
+}
 
     .item-text {
-      width: 550px;
-      margin-right: 60px;
 
-      h3 { margin: 0;
+
+      h3 { 
         a {
           font-family: Helvetica;
           font-weight: 300;
@@ -154,68 +158,97 @@ div.no-pad {
   }
 }
 
+
+.post-auth {
+	font-style: italic;
+	 color: $grey-dark;
+	 padding-top: 20px;
+}
+
+.post-auth a {
+	color: $grey-dark;
+	text-decoration: none;
+}
 .row:not(:last-child) {
   margin-bottom: 60px;
 }
 
-.row:not(.latest-video-post:last-child) {
+/*.row:not(.latest-video-post:last-child) {
   margin-bottom: 60px;
-}
+}*/
 
 .news-wrapper, .video-wrapper {
   width: 100%;
   height: auto;
   margin-bottom: 60px;
-  text-align: center;
 }
 
 .latest-video-post {
   flex-grow: 1;
 
   .item-text .post-img img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: auto;
   }
 }
 
-.latest-video-post:first-child {
+/*.latest-video-post:first-child {
   margin-right: 60px;
-}
+}*/
 
 .item-text .post-img {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.item-text .post-img img {
+/*.item-text .post-img img {
   width: 345px;
   height: 210px;
-}
+}*/
 
 .item-text p {
   margin-bottom: 0;
-  font-size: 13px;
-  font-weight: 300;
+ @include font-size(13px);
   line-height: 17px;
   color: $grey-dark;
-  font-family: Helvetica;
 
-  @include mq($until:tablet) {
-    padding: 0 30px;
+  @include mq(tablet) {
+    @include font-size(15px);
+	line-height: 20px;
   }
 }
 
+
+.more-button__wrap {
+	text-align: center;
+	
+}
+
 .more-button {
-  display: inline-block;
+color: white;
+text-decoration: none;
   margin: 0 auto;
   background-color: $uni-blue;
+	display: inline-block;
+	padding: 20px 25px;
+	
+	@include hocus() {
+		  background-color: $grey1;
+	}
+}
 
-  a {
-    display: block;
-    margin: 10px;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-  }
+.more-button.block-button.main-btn {
+	margin: 0;
+}
+
+.more-button.block-button.main-btn a,
+.more-button.block-button.main-btn svg{
+	color: white;
+	margin: 0;
+	text-decoration: none;
+	
+	@include hocus() {
+		  background-color: $grey1;
+	}
 }
 
 // Media Queries
@@ -232,5 +265,16 @@ div.no-pad {
 
 	@include mq($until: tablet) {
 		flex-direction: column;
+	}
+}
+
+
+.post-img {
+	margin-left: -$mobile-side-pad;
+	margin-right: - $mobile-side-pad;
+	
+	@include mq(tablet) {
+	  margin-left: 0;
+	  margin-right: 0;
 	}
 }

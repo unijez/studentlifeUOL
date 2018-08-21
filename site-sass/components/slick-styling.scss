@@ -1,22 +1,43 @@
 .heading-image {
-  display: block !important;
+  display: inline-block;
+  float: none;
 
   .overlay-slide {
-    background-color: white !important;
   }
 }
 
+
+.slide-overlay .columns-wrap.flex-controlled,
+.slide-overlay .module-inner-wrap {
+	position: relative;
+	height: 100%;
+}
+
+.slide-overlay .columns-wrap.flex-controlled {
+	@include align-items(flex-end);
+	
+	@include mq(tablet) {
+	   @include justify-content(flex-start);
+	}
+	
+}
+
+
+
 .slick-slide {
   position: relative;
-  height: 475px !important;
   width: 100%;
-  border: none !important;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+background-position: center center;
 
+	
+	
+	@include mq(tablet) {
+	}
+	
+	
   > a {
-    content: ' ';
+    content: '';
     display: none;
   }
 
@@ -37,16 +58,22 @@
     background-size: cover;
     background-position: center center;
   }
-
+	
+.slide-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}	
+	
+	
   .overlay-slide {
     z-index: 1;
-    position: absolute;
-    width: 810px;
-    height: 50%;
-    margin: auto;
-    bottom: 0; left: 110px;
+    height: auto;
     background-color: rgba(#ffffff, 0.8);
-
+	padding: $desktop-side-pad;
 
     * > a {
         text-decoration: none;
@@ -54,6 +81,15 @@
   }
 
 }
+
+.overlay-slide.full-colour {
+	 
+	 background-color: rgba(#ffffff, 0.8);
+	 @include mq(tablet) {
+	 background-color: #ffffff;
+	 }
+}
+
 
 .slick-dots{
 
@@ -72,7 +108,59 @@
 
 }
 
-.header-text-area {
+
+.slide-category,
+.slide-date  {
+	font-weight: normal;
+}
+
+.news-wrapper, .video-wrapper {
+	.slide-category {
+		font-weight: lighter;
+		margin-bottom: 10px;
+	}
+}
+
+.slide-category {
+	text-transform: uppercase;
+	@include font-size(12px);
+	margin-bottom: 15px;
+	
+	@include mq(tablet) {
+	  @include font-size(15px);
+	}
+}
+
+
+.post-title a,
+.slide-category a,.slide-title a {
+	color: $uni-blue;
+	text-decoration: none;
+}
+
+.slide-title {
+	@include font-size(25px);
+	 margin-bottom: 10px;
+	 
+	@include mq(tablet) {
+	  @include font-size(40px);
+	  line-height: 50px;
+	  
+	  margin-bottom: 20px;
+	}
+}
+
+
+.slide-date {
+	color: $base-black;
+	@include font-size(12px);
+	
+	@include mq(tablet) {
+	  @include font-size(15px);
+	}
+}
+
+/*.header-text-area {
   padding-left: 30px;
   display: inline-block;
   clear: both;
@@ -106,7 +194,7 @@ a.header-text-area:hover {
 
 h5.header-text-area {
   margin-bottom: 15px;
-}
+}*/
 
 .header-text-area .calendar-icon {
   font-size: 16px;
@@ -115,7 +203,7 @@ h5.header-text-area {
   color: $grey-dark;
 }
 
-.copy-header {
+/*.copy-header {
   width: 100%;
   height: 100%;
-}
+}*/

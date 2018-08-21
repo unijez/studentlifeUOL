@@ -1,0 +1,46 @@
+{
+    "key": "group_5b5ec46653b1a",
+    "title": "Featured Post",
+    "fields": [
+        {
+            "key": "field_5b5ec472be3ae",
+            "label": "Featured Post",
+            "name": "home_featured_post",
+            "type": "button_group",
+            "instructions": "To choose whether this post is featured within the home page 'Featured' section, limited to the two most recent choices.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "allow_null": 0,
+            "default_value": "no",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1532950212
+}

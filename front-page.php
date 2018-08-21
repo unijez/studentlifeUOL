@@ -18,111 +18,198 @@
 
 get_header(); ?>
 	<?php get_template_part( 'template-parts/slider' ); ?>
-	<main id="main" class="site-main">
+	<main id="main" class="site-main site-module">
 
-				<div class="content-container">
+				<div class="module-inner-wrap">
 
-					<h1 class="content-heading">Latest</h1>
-					<div class="news-wrapper">
+					<h2 class="home-section-title content-heading">Latest</h2>
 
-						<!--More Details https://codex.wordpress.org/Class_Reference/WP_Query-->
-
+						
+						
+						<div class="news-wrapper module-inner-wrap">
+										
+				
+						
 	 					<?php
 		 					$args = array(
 		 						'post_type' => 'post',
 		 						'posts_per_page' => 6,
-		 						'post__not_in' => get_option( 'sticky_posts' ),
-								'tax_query' => array(
-								        array(
-							            'taxonomy' => 'post_format',
-							            'field' => 'slug',
-							            'terms' => array( 'post-format-video' ),
-							            'operator' => 'NOT IN'
-								        )
-						    	),
+		 						'post__not_in' => get_option( 'sticky_posts' )
+								
 							);
 		 					$home_featured_posts = new WP_Query( $args );
 
 		 					if ( $home_featured_posts->have_posts() ) :
 								$i = 1;
 	 					?>
+	 					
+	 					<div class="columns-wrap flex-controlled featured-boxes">	
 	 							<?php while ( $home_featured_posts->have_posts() ) : $home_featured_posts->the_post() ?>
-								<?php if($i == 1): ?>
-									<div class="row">
-								<?php endif; ?>
+								
+								<div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
+								
+								
 											<?php get_template_part( 'template-parts/post-listing-front-page' ); ?>
-								<?php if($i == 3): ?>
-									</div>
-								<?php
-											$i = 0;
-											endif;
-											$i++;
-								 ?>
+											
+											
+											
+								</div> <!--column-->
+								
+								
 	 							<?php endwhile ?>
+	 							
+	 					</div> <!--columns-wrap	-->		
+	 							
 	 					<?php endif;  wp_reset_query(); ?>
-
-						<div class="more-button"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More posts</a></div>
-
+						
+						
+						<?php 
+							$post_page = get_post_type_archive_link( 'post' );
+						 ?>
+						
+						
+						<?php if( $post_page ): ?>
+							
+							<div class="more-button__wrap">
+								
+								<a class="more-button animated" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More posts</a>
+						
+							</div> <!--more-button__wrap-->
+						
+						<?php endif; ?>
+						
 					</div><!-- news-wrapper -->
 
-					<h1 class="content-heading">Videos</h1>
-					<div class="video-wrapper"><!-- video-wrapper -->
 
-						<div class="row">
+
+
+
+
+					
+
+					
 
 							<?php
 			 					$args = array(
 			 						'post_type' => 'post',
 			 						'posts_per_page' => 2,
 			 						'post__not_in' => get_option( 'sticky_posts' ),
-									'tax_query' => array(
-						        array(
-					            'taxonomy' => 'post_format',
-					            'field' => 'slug',
-					            'terms' => array( 'post-format', 'post-format-gallery', 'post-format-image' ),
-					            'operator' => 'NOT IN'
-						        )
-							    ),
+									'meta_query' => array( 
+										   
+										    array(
+										      // Key = ACF Field Name (True/False field)
+										      'key' => 'home_featured_video_post',
+										      'value' => 'yes',
+										      'compare' => '==' // not really needed, this is the default
+										    )
+										  )
 			 					);
 
 			 					$home_featured_videos = new WP_Query( $args );
 
-			 					if ( $home_featured_videos->have_posts() ) {
-		 							while ( $home_featured_videos->have_posts() ) : $home_featured_videos->the_post() ?>
-									<?php	get_template_part( 'template-parts/video-listing-front-page' ); ?>
-						 			<?php endwhile;
-				 				}
-								wp_reset_query(); ?>
-
-						</div>
-						<div class="more-button"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More videos</a></div>
-
-					</div><!-- video-wrapper -->
-
-					<h1 class="content-heading">Featured Posts</h1>
-					<div class="featured-wrapper"><!-- video-wrapper -->
-
+			 					if ( $home_featured_videos->have_posts() ) :?>
+			 					
+			 					
+			 					<h2 class="home-section-title content-heading">Featured Videos</h2>
+			 					<div class="video-wrapper  module-inner-wrap"><!-- video-wrapper -->
+			 					
+			 						
+			 					<div class="columns-wrap flex-controlled featured-boxes">		
+			 						
+		 							<?php while  ( $home_featured_videos->have_posts() ) : $home_featured_videos->the_post() ?>
+			 						
+			 						<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
+			 							
+									<?php get_template_part( 'template-parts/video-listing-front-page' ); ?>
+									
+									
+						 			</div> <!--column-->
+						 					
+						 					
+						 				<?php endwhile ?>
+						 						
+						 		</div> <!--columns-wrap	-->		
+						 			
+			 			
+			 
+	
 							<?php
+									    // Get the ID of a given category
+									    $category_id = get_cat_ID( 'Videos' );
+										
+									    // Get the URL of this category
+									    $category_video_link = get_category_link( $category_id );
+
+									?>
+									
+									
+									
+									<?php if( $category_video_link ): ?>
+									
+									<div class="more-button__wrap">
+								
+												<a class="more-button animated" href="<?php echo  $category_video_link; ?>">More videos</a>
+										
+									</div> <!--more-button__wrap-->
+									
+										<?php endif; ?>
+									
+									
+									
+							</div><!-- video-wrapper -->
+							
+
+						 		<?php endif;  wp_reset_query(); ?>
+
+							
+							
+				
+
+						<?php
 			 					$args = array(
-			 						'post_type' => 'post',
-			 						'posts_per_page' => 3,
-			 						'post__not_in' => get_option( 'sticky_posts' ),
-									'meta_key' => 'feature_post',
-									'meta_value' => true,
+			 					
+			 						'post_type' => array('post','page'),
+			 						'posts_per_page' => 2,
+			 						'post__not_in' => get_option( 'sticky_posts' ), 
+			 						'meta_query' => array( 
+			 						   
+			 						    array(
+			 						      // Key = ACF Field Name (True/False field)
+			 						      'key' => 'home_featured_post',
+			 						      'value' => 'yes',
+			 						      'compare' => '==' // not really needed, this is the default
+			 						    )
+			 						  )
 			 					);
 
 			 					$home_featured_select = new WP_Query( $args );
 
-			 					if ( $home_featured_select->have_posts() ) {
-		 							while ( $home_featured_select->have_posts() ) : $home_featured_select->the_post() ?>
+			 					if ( $home_featured_select->have_posts() ) :?>
+			 			
+							 	<h1 class="content-heading">Featured Posts</h1>
+							 	<div class="featured-wrapper">
+			
+						
+			 					
+		 							<?php while ( $home_featured_select->have_posts() ) : $home_featured_select->the_post() ?>
 									<div class="large-row">
 										<?php	get_template_part( 'template-parts/featured-listing-front-page' ); ?>
 									</div>
-						 			<?php endwhile;
-				 				}
-								wp_reset_query(); ?>
+									
+									
+										<?php endwhile ?>
+									
+									
+							 		</div><!-- selected-post-wrapper -->				
+									
+									
+						 	<?php endif;  wp_reset_query(); ?>
 
-					</div><!-- selected-post-wrapper -->
+				
+					
+					
+					
+					
 
 				</div><!-- font-page_container -->
 

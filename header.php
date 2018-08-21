@@ -19,8 +19,8 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -117,7 +117,7 @@
 								
 								
 								
-								<h1>Student Life</h1>
+								<h3>Student Life</h3>
 				<ul class="overlay-menu">
 					<?php
 
@@ -133,7 +133,7 @@
 
 					?>
 				</ul>
-				<h1>Search</h1>
+				<h3>Search</h3>
 				<div class="ov-nav-search">
 					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="s" id="s" />
@@ -141,11 +141,10 @@
 				</div>
 
 				<?php if( function_exists('acf_add_local_field_group') )	:?>
-						<h1>Social</h1>
+						<h3>Social</h3>
 						<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
 
 				</div>	 <!--column-->
-			</div>
 		<?php endif; ?>
 		
 	</nav>

@@ -28,6 +28,23 @@
 
 
 
+.site-module.no-upper {
+	padding-top: 0;
+}
+
+.site-module.no-lower {
+	padding-bottom: 0;
+}
+
+
+.site-module.no-left {
+	padding-left: 0;
+}
+
+.site-module.no-right {
+	padding-right: 0;
+}
+
 
 .blog-body.site-module {
 	padding: 0;
@@ -61,4 +78,13 @@
 	}
 	
 	
+
+.featured-boxes {
+
+	@include justify-content(center);
+	@include flex-wrap(wrap);
+	
+	
+}
+
 	
