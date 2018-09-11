@@ -45,7 +45,7 @@
 		  						
 		  						<?php
 		  						if(get_the_tag_list()) {
-		  						    echo get_the_tag_list('<dl class="tags" ><dt>Taged:</dt><dd>',', </dd><dd>','</dd></dl>');
+		  						    echo get_the_tag_list('<dl class="tags" ><dt>Tagged:</dt><dd>',', </dd><dd>','</dd></dl>');
 		  						}
 		  						?>
 		  						
