@@ -1,6 +1,10 @@
-<?php if(has_post_thumbnail()): ?>
+<?php if(has_post_thumbnail() || has_post_format('video')): ?>
 <div class="copy-header">
-  <div class="slick-slide heading-image" style="background-image: url(<?php echo header_post_image() ?>)">
+  <?php if(has_post_format('video')): ?>
+    <div class="slick-slide heading-image" style="background-image: url(<?php echo display_thumbnail() ?>)">
+  <?php else: ?>
+    <div class="slick-slide heading-image" style="background-image: url(<?php echo header_post_image() ?>)">
+  <?php endif; ?>
 
   <?php
   global $post;
