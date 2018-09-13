@@ -1,0 +1,17 @@
+.post-title {
+	@include font-size(19px);
+	 margin-bottom: 10px;
+	 
+	@include mq(tablet) {
+	  @include font-size(25px);
+	  line-height: 35px;
+	  
+	  margin-bottom: 20px;
+	}
+}
+
+
+
+.news-post-date {
+	padding-left: 10px;
+}

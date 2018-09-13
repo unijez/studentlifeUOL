@@ -6,22 +6,15 @@
     #{$property}:$value;
 }
 
-@mixin clearfix($important: false) {
-
-  // Determine whether or not to make declarations important.
-  @if ($important == false) {
-    $important: null;
-  } @else {
-    $important: !important;
+// Mixin itself
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
   }
-
-  &:after {
-    content: "" $important;
-    display: table $important;
-    clear: both $important;
-  }
-
 }
+
 
 @mixin module-inner-wrap {
   	@include clearfix();
@@ -45,10 +38,12 @@
    
 @mixin font-weight($weight) {
 
-  @if ($weight == normal) {
-    font-weight: 400;
+  @if ($weight == light) {
+    font-weight: 300;
   }
-
+@elseif ($weight == normal) {
+  font-weight: 400;
+}
   @elseif ($weight == bold) {
     font-weight: 500;
   }
@@ -109,12 +104,97 @@
 }
 
 
+/* Flexbox Center 
+   ========================================================================== */
+   
+@mixin flex-center{
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+	
+}
+
+
+
+/* -- Hide Elements.--*/
+
+.m-hide {
+	
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+	
+	@include mq(tablet){
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	}
+	
+}
+
+
+.m-t-hide {
+	
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+	
+	@include mq(desktop){
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	}
+	
+}
+
+
+
+
+.t-hide {
+		
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	
+	@include mq(tablet){
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+
+.d-hide {
+		
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	
+	@include mq(desktop){
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+
+
+
 .hide {
 	display: none;
-}
+	}
 
 
 @mixin background-colour($rgb,$opacity) {
   background-color: rgba($rgb, $opacity);
 }
 
+
+.has-text-centered,
+.wp-caption-text {
+    text-align: center;
+	@include inline-flex;
+	@include align-items(center);
+	@include justify-content(center);
+	
+}

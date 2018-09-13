@@ -15,48 +15,75 @@
 
 ?>
 
-<div class="row">
 
-  <?php if( is_active_sidebar('footer-1') ):?>
+<?php if ( is_active_sidebar( 'footer-left' ) || is_active_sidebar( 'footer-middle') ) : ?>
+	
+	<div class="footer-middle site-module xl-b xl-t">
+	
+	
+	  	<div class="module-inner-wrap">
+	  	
+		  	<div class="columns-wrap flex-controlled">
+		  			
+		  		
+		  			<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
+		  			
+		  				<div class="column-spacings column column--1-of-4  column--small-1-of-2">
+		  				
+		  					<div class="widgets">
+		  			
+		  						<?php dynamic_sidebar( 'footer-left' ); ?>
+		  											
+		  					</div>
+		  					
+		  				</div>
+		  				
+		  			<?php endif; ?><!-- .footer-left -->
+		  				
+		  			<?php if ( is_active_sidebar( 'footer-middle' ) ) : ?>
+		  			
+		  				<div class="column-spacings column column--1-of-4  column--small-1-of-2">
+		  				
+		  					<div class="widgets">
+		  			
+		  						<?php dynamic_sidebar( 'footer-middle' ); ?>
+		  											
+		  					</div><!-- .widgets -->
+		  					
+		  				</div>
+		  				
+		  			<?php endif; ?><!-- .footer-middle -->
+		  								
+		  		
+		  			
+		  			<?php if ( have_rows( 'social_media_repeater', 'option' ) ) : ?>
+		  					
+		  					<div class="column-spacings column column--1-of-4  column--small-1-of-2">
+		  						
+		  						<div class="widgets">
+		  							
+		  							<h3 class="widget-title"> Follow us</h3>
+		  							
+		  							<!--Display Social Media List-->
+		  							<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
+		  						
+		  						</div><!-- .widgets -->
+		  						
+		  					</div>	 <!-- .footer-right -->
+		  					
+		  				<?php endif; ?>
+		  			
+		  			
+		  	</div><!-- .footer -->
+		
+	  	</div> <!--module-inner-wrap-->
+	
+	
+	</div> <!--footer-top-->
+	
+<?php endif; ?>
 
-    <div class="column">
 
 
-        <?php dynamic_sidebar('footer-1');?>
 
 
-    </div>	 <!--column-->
-
-  <?php endif; ?>
-
-  <?php if( function_exists('acf_add_local_field_group') )	:?>
-
-  <div class="column socials">
-      <!--Display Social Media List-->
-      <h2 class="widget-title">Follow Us</h2><?php endif; ?>
-      <?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
-
-  </div>	 <!--column-->
-
-  <div class="column">
-
-    <?php if( function_exists('acf_add_local_field_group') )	:?>
-
-    <div class="widget-container widget_text">
-        <h2 class="widget-title">Subscribe</h2>
-
-        <div class="textwidget">
-          <div class="footer-subscribe">
-  					<form method="get">
-  						<input type="search" placeholder="<?php _e( 'Enter your email', 'ServicesUOL' ); ?>" name="s" id="s" />
-  					</form>
-  				</div>
-        </div>
-
-    </div>	 <!--column-->
-
-
-  </div>	 <!--column-->
-
-  <?php endif; ?>
-</div>

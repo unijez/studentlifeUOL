@@ -3,16 +3,21 @@
    ========================================================================== */
 
 .main-navigation {
-  padding-left: 50px;
+/*  padding-left: 50px;
   width: 1000px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-end;*/
 }
 
 .primary-menu {
   align-self: center;
   margin: 0;
+  display: none;
+  
+  @include mq(wide) {
+    display: block;
+  }
 }
 
 .primary-menu li {
@@ -299,21 +304,21 @@
     right: 0;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
     overflow-x: hidden;
     visibility: visible;
     opacity: 1;
     transition: opacity 0.75s ease;
   }
 
-   #close-button {
-    position: absolute;
+   .close-button {
+ /*   position: absolute;
     top: 67px;
     right: 46px;
     font-size: 30px;
     text-align: center;
     padding: 0 5px;
-    font-weight: bolder;
+    font-weight: bolder;*/
   }
 
   .ov-nav-search {
@@ -333,15 +338,25 @@
     display: inline-block;
     background-color: #fff;
     height: 100%;
-    width: 65%;
-    padding: 144px 144px 0 144px;
+    width: 95vw;
+    padding: $mobile-side-pad;
     transform: translateX(0%);
     transition: transform 0.75s ease;
     z-index: 2;
 
-    h1 {
+    h3 {
       color: $grey-dark;
+	  margin-bottom: 20px;
+	  @include font-size(25px);
     }
+	
+	
+	@include mq(tablet){
+		 padding: $desktop-side-pad * 2;
+		  width: 500px;
+	
+	}
+	
   }
 
   .items-off {
@@ -352,11 +367,11 @@
 
   .overlay-menu {
     li {
-      width: 30%;
       padding-bottom: 15px;
       a {
         text-decoration: none;
         color: $grey-dark;
+		@include font-size(19px);
       }
     }
   }
@@ -374,4 +389,50 @@
   .stop-scroll {
     height: 100vh;
     overflow-y: hidden;
+  }
+  
+  
+  
+  .overlay-navigation-header {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	@include flexbox;
+  	@include justify-content(flex-end);
+
+  	
+  }
+  
+  
+  
+  @include mq(tablet) {
+  
+  	
+  	
+  
+  	.main-navigation {
+  		position: relative;
+  		/*left: -10px;*/
+  		float: left;
+  		@include align-items(center);
+
+  		
+  		/*padding-top: $nav-button-spacing;*/
+  	}
+  	
+  
+  
+  
+  }
+  
+  @include mq(wide) {
+  	
+  	.main-navigation {
+  		float: right;
+  		left: auto;
+  		padding: 0;
+  	}
+  	
+  	
   }

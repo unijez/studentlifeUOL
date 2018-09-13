@@ -17,7 +17,7 @@
 	<div class="entry-content">
 		<?php
 
-		the_field('youtube_video'); ?>
+		the_field('youtube_link'); ?>
 
 		<?php
 			the_content(); get_the_title() ;

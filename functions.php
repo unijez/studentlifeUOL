@@ -43,9 +43,11 @@ if ( ! function_exists( 'studentlifeUOL_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		/* image resizing */
-		add_image_size( 'post-intro-image', 450, 300, true );
-		add_image_size( 'hero-header', 1915, 630, array( 'left', 'top' )  ); // Hard Crop Mode
-		add_theme_support( 'post-formats', array( 'video', 'gallery', 'image' ) );
+		add_image_size( 'post-intro-image', 722, 408, array( 'left', 'top' )  ); // Hard Crop Mode
+		add_image_size( 'post-intro-image-video', 640, 430, array( 'left', 'top' )  ); // Hard Crop Mode
+		
+		add_image_size( 'hero-header', 1915, 630, array( 'center', 'center' )  ); // Hard Crop Mode
+		add_theme_support( 'post-formats', array( 'video','image' ) );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -110,23 +112,28 @@ add_action( 'after_setup_theme', 'studentlifeUOL_content_width', 0 );
  */
 function studentlifeUOL_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'studentlifeUOL' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'studentlifeUOL' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'First Widget Area', 'studentlifeUOL' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'studentlifeUOL' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget'  => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
+				'name' 			=> __( 'Footer Left', 'learning_lincoln' ),
+				'id' 			=> 'footer-left',
+				'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'learning_lincoln' ),
+				'before_title' 	=> '<h3 class="widget-title">',
+				'after_title' 	=> '</h3>',
+				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+				'after_widget' 	=> '</div></div>'
+			) );
+	
+			register_sidebar( array(
+				'name' 			=> __( 'Footer Middle', 'learning_lincoln' ),
+				'id' 			=> 'footer-middle',
+				'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'learning_lincoln' ),
+				'before_title' 	=> '<h3 class="widget-title">',
+				'after_title' 	=> '</h3>',
+				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+				'after_widget' 	=> '</div></div>'
+			) );
+			
+			
+	
+			
 }
 add_action( 'widgets_init', 'studentlifeUOL_widgets_init' );
 
@@ -134,7 +141,7 @@ add_action( 'widgets_init', 'studentlifeUOL_widgets_init' );
  * Custom excerpt length test
  */
 
- function excerpt($limit) {
+ function custom_excerpt($limit) {
    $excerpt = explode(' ', get_the_excerpt(), $limit);
    if (count($excerpt)>=$limit) {
      array_pop($excerpt);

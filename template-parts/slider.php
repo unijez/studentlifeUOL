@@ -1,8 +1,17 @@
-<div class="main-slider" style="background-image: url(<?php echo header_post_image(); ?>)">
+<div class="main-slider">
   <?php
   $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 3
+    'posts_per_page' => 3,
+    'post__not_in' => get_option( 'sticky_posts' ),
+    'tax_query' => array(
+            array(
+            'taxonomy' => 'post_format',
+            'field' => 'slug',
+            'terms' => array( 'post-format-video' ),
+            'operator' => 'NOT IN'
+            )
+    ),
 //			'meta_query' => array(
 //											array(
 //			'compare' => 'EXISTS'
@@ -17,32 +26,58 @@
 
       <?php while ($recent_posts->have_posts() ) : $recent_posts->the_post() ?>
 
-      <div class="slick-slide heading-image">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title() ?></a>
-
-        <?php
+  <?php
         if(has_post_thumbnail()):
 
-          $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'hero-header', false);
+          $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false);
           $imgwidth = $imgdata[1];
           $wanted_width = 1600;
-        endif
-        ?>
+     	?>
+			
+		
+			
+		<?php endif;?>	
+		
 
-        <div class="overlay-slide">
-          <div>
-            <h5 class="header-text-area">
-              <?php list_categories();?>
-            </h5>
-            <a href="<?php the_permalink() ?>">
-              <?php $maxLen = get_field("maximum_length", "option"); ?>
-              <h2 class="header-text-area"><?php the_title(); ?></h2>
-            </a>
-            <h5 class="header-text-area">
-              <i class="calendar-icon fal fa-calendar-alt"></i><?php echo get_the_date(); ?>
-            </h5>
-          </div>
-        </div>
+
+      <div class="slick-slide heading-image" style="background-image: url('<?php echo $imgdata[0]; ?>');">
+
+      
+		<div class="slide-overlay site-module no-upper no-lower">
+			
+			<div class="module-inner-wrap ">
+			
+						
+					<div class="columns-wrap site-module flex-controlled no-upper no-lower">	
+						
+						
+						<div class="overlay-slide column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
+						    <h5 class="slide-category">
+						      <?php list_categories();?>
+						    </h5>
+						      <h2 class="slide-title">
+							  	 <a href="<?php the_permalink() ?>">
+							  <?php the_title(); ?>
+							  	 </a>
+							  </h2>
+						 
+						    <h5 class="slide-date">
+								<i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php echo get_the_date(); ?></time>
+						    </h5>
+						</div> <!--overlay-slide-->
+			
+					
+					</div> <!--columns-wrap--> 
+			
+			
+			</div> <!--module-inner-wrap-->
+		
+		
+		
+		</div> <!--slide-overlay-->
+		
+		
+        
 
       </div>
       <?php

@@ -1,0 +1,90 @@
+.site-module {
+	
+	padding: $mobile-side-pad;
+	
+	@include mq(tablet) {
+		padding: $desktop-side-pad ;
+	}
+
+}
+
+
+.site-module.xl-t {
+	padding-top: $mobile-side-pad * 2;
+	
+	@include mq(tablet) {
+		padding-top: $desktop-side-pad  * 2;
+	}
+}
+
+
+.site-module.xl-b {
+	padding-bottom: $mobile-side-pad * 2;
+	
+	@include mq(tablet) {
+		padding-bottom: $desktop-side-pad  * 2;
+	}
+}
+
+
+
+.site-module.no-upper {
+	padding-top: 0;
+}
+
+.site-module.no-lower {
+	padding-bottom: 0;
+}
+
+
+.site-module.no-left {
+	padding-left: 0;
+}
+
+.site-module.no-right {
+	padding-right: 0;
+}
+
+
+.blog-body.site-module {
+	padding: 0;
+	
+	@include mq(tablet) {
+		
+	}
+	
+}
+
+
+.site-header.site-module {
+	
+	@include mq($until:tablet) {
+		padding-bottom: 0;
+	}
+}
+
+
+
+	@include mq(desktop) {
+	
+	}
+
+	@include mq(wide) {
+		
+	}
+
+	@include mq(extraWide) {
+		
+	}
+	
+	
+
+.featured-boxes {
+
+	@include justify-content(center);
+	@include flex-wrap(wrap);
+	
+	
+}
+
+	

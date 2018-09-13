@@ -1,0 +1,164 @@
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+
+
+
+/*Widget Defaults.*/
+.widgets ul,
+.widgets li,
+.widgets ol,
+.widgets li{
+	
+	
+	&:not(:last-child) {
+		margin-bottom: 10px;
+		padding: 0;
+	}
+}
+
+
+
+.widget-content ul,
+.widget-content li,
+.widget-content ol,
+.widget-content li{
+	
+	margin-left: 10px;
+	
+}
+
+
+.widget,
+.widgets,
+.widget h2,
+.widget-title {
+	@include font-weight(normal);
+	@include font-size(20px);
+	text-align: left;
+	color: $grey1;
+
+	
+	@include mq(tablet) {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+	
+	
+}
+
+
+
+.widgets ul:not(.social) li{
+	list-style: disc;
+}
+
+.widgets li,
+.widgets p,
+.widgets a {
+	color: $grey2;
+	text-decoration: none;
+	@include font-size(15px);
+	@include font-weight(normal);
+	line-height: 22px;
+}
+
+
+.widgets .social a {
+	@include font-size(20px);
+}
+
+.widget-content a {
+	color: $grey2;
+	@include hocus() {
+		  text-decoration: underline;
+		}
+}
+
+
+.widget:not(:last-child) {
+	padding-bottom: $widget-spacing;
+}
+
+
+.widget-title {
+	display: inline-block;
+	/*@include pretty-underline($page-nav-grey,$grey1,white,98%);*/
+	color: $grey1;
+	@include font-size(18px);
+	min-height: 2em;
+}
+
+
+
+.search-form input[type="search"] {
+	border: 2px solid $grey-dark;
+	padding: 10px;
+	width: 100%;
+}
+
+
+.search-form input[type="submit"] {
+	border: 1px solid $grey-dark;
+	padding: 10px;cursor: pointer;
+	color: white;
+	float: right;
+	@include font-size(14px);
+	background-color: $grey1;
+	text-decoration: none;
+	  @include menu-animation;
+		display: inline-block;
+		
+		@include hocus() {
+			  background-color: $uni-blue;
+			  color: white;
+		}
+
+}
+
+//
+// Widget Categories
+//
+
+
+/*
+
+.widget_categories li {
+/*  @include fa-icon;
+  @extend .fas;*!/
+	vertical-align: middle;
+	
+  &:before {
+    /*content: fa-content($fa-var-archive);*!/
+	margin-right: 10px;
+  }
+}
+
+
+
+
+.widget_archive li {
+/*  @include fa-icon;
+  @extend .fas;*!/
+	vertical-align: middle;
+	
+  &:before {
+    /*content: fa-content($fa-var-folder);*!/
+	margin-right: 10px;
+	
+  }
+}
+
+
+.widget li a{
+@include font-family(helvetica);
+@include font-weight(normal);
+}
+
+
+
+.widget li:before {
+top: -2px;
+position: relative;
+}*/
