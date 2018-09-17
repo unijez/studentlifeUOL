@@ -451,3 +451,14 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
    return str_replace($attrs, $replacewith, $html);
  }
  add_filter( 'oembed_result', 'remove_attrs', 10, 3 );
+
+ function background_video() {
+   $video = get_field('background_video', 'option');
+   ?>
+   <div class="hide-extra">
+   <video autoplay muted loop class="background_video">
+     <source src="<?php echo $video['url']; ?>" type="video/mp4">
+   </video>
+  </div>
+   <?php
+ }
