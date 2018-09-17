@@ -239,7 +239,7 @@ function download_thumbnail() {
   if(!file_exists($save_as)) { //Check if file exists
    $ch = curl_init($download_url); //Initialize the PHP cURL to the youtube page
 
-   $fp = fopen($save_as, 'wb'); //Start the path link
+   $fp = fopen($save_as, 'w'); //Start the path link
 
    curl_setopt($ch, CURLOPT_FILE, $fp); //Download the image to the path link
    curl_setopt($ch, CURLOPT_HEADER, 0);
