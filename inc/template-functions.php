@@ -261,8 +261,8 @@ function download_thumbnail() {
    require_once( ABSPATH . 'wp-admin/includes/image.php' ); //Make sure that the image gets registered as an image
 
 
-   $attach_data = wp_generate_attachment_metadata( $attach_id, $save_as ); //Generate more meta data
-   wp_update_attachment_metadata( $attach_id, $attach_data ); //Attatch the meta data
+   // $attach_data = wp_generate_attachment_metadata( $attach_id, $save_as ); //Generate more meta data
+   // wp_update_attachment_metadata( $attach_id, $attach_data ); //Attatch the meta data
 
    set_post_thumbnail( get_the_ID(), $attach_id ); //Set image as the featured image
   }
