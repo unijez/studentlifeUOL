@@ -102,25 +102,25 @@ function title_trim($title, $limit, $isset) {
 
 // Default Image Function: adds default image when no preset thumbnail is found
 function default_image($thumbnail) {
-	if ( has_post_thumbnail() ) { 
-	    
+	if ( has_post_thumbnail() ) {
+
 	        global $post;
 	      	$post_url = get_permalink($post->ID);
 	      	$page_title = get_the_title();
-	
-	        
-	      	$article_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $thumbnail );    
-	 		
-	 		
-	 		printf( 
+
+
+	      	$article_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $thumbnail );
+
+
+	 		printf(
 	 				'<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
 	 		    esc_url( $article_image_url[0] ),
 	 		    $article_image_url[1],
 	 		    $article_image_url[2],
 	 		   $page_title
 	 		);
-	 		
-	        
+
+
 	    } else {
 		?><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/default-image.jpg" alt="<?php the_title(); ?>" /><?php
 	}
@@ -229,6 +229,7 @@ function download_thumbnail() {
   $download_url = "https://img.youtube.com/vi/".$vid_id[1]."/maxresdefault.jpg"; //Use the standard youtube link to get the max res thumbnail
 
   $uploads = wp_upload_dir(); //Find the upload folder
+  $uploads = wp_upload_dir();
   $path = $uploads['path']."/"; //Get the upload path
 
   $filename = $vid_id[1].'.jpg'; //Set the filename as the ID of the video
@@ -269,6 +270,38 @@ function download_thumbnail() {
 }
 
 function remove_attrs($html, $url, $args) {
+   $ch = curl_init($download_url); //Initialize the PHP cURL to the youtube page
+
+   $fp = fopen($save_as, 'w'); //Start the path link
+
+   curl_setopt($ch, CURLOPT_FILE, $fp); //Download the image to the path link
+   curl_setopt($ch, CURLOPT_HEADER, 0);
+   curl_exec($ch);
+   curl_close($ch);
+   fclose($fp);
+
+   $filetype = wp_check_filetype( basename( $save_as ), null ); //Check the file type
+
+   $attachment = array( //Create neccessary wordpress data to the image
+   'guid'           => $uploads['url'] . '/' . basename( $save_as ),
+   'post_mime_type' => $filetype['type'],
+   'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $save_as ) ),
+   'post_content'   => '',
+   'post_status'    => 'inherit'
+   );
+
+   $attach_id = wp_insert_attachment( $attachment, $save_as, get_the_ID() ); //Add neccessary wordpress data to the image
+   require_once( ABSPATH . 'wp-admin/includes/image.php' ); //Make sure that the image gets registered as an image
+
+
+   // $attach_data = wp_generate_attachment_metadata( $attach_id, $save_as ); //Generate more meta data
+   // wp_update_attachment_metadata( $attach_id, $attach_data ); //Attatch the meta data
+
+   set_post_thumbnail( get_the_ID(), $attach_id ); //Set image as the featured image
+  }
+  }
+
+  function remove_attrs($html, $url, $args) {
   $attrs = ['allow="autoplay; encrypted-media"', 'frameborder="0"'];
   $replacewith = ['',''];
 
@@ -287,21 +320,21 @@ add_filter( 'oembed_result', 'remove_attrs', 10, 3 );
  * @access public
  * @return void
  */
- 
+
 add_action('template_include', 'load_single_template');
 function load_single_template($template) {
   $new_template = '';
- 
+
   // single post template
   if( is_single() ) {
     global $post;
- 
+
     // template for post with video format
     if ( has_post_format( 'video' )) {
       // use template file single-video.php for video format
       $new_template = locate_template(array('single-video.php' ));
     }
- 
+
   }
   return ('' != $new_template) ? $new_template : $template;
 }
@@ -347,12 +380,12 @@ function current_paged( $var = '' ) {
  * @access public
  * @return void
  */
- 
- 
+
+
 
 function blog_home_offest( $query ) {
     if( !is_admin() && $query->is_main_query() && $query->is_home() ) {
-   
+
      // tax_query takes a double array
         $args = array ( array (
         	  'taxonomy' => 'post_format',
@@ -360,43 +393,43 @@ function blog_home_offest( $query ) {
         	  'terms' => 'post-format-video',
         	  'operator' => 'NOT IN'
            ));
-        
+
         //First, define your desired offset...
             $offset = 6;
-            
+
             //Next, determine how many posts per page you want (we'll use WordPress's settings)
             $ppp = get_option('posts_per_page');
-            
-                
-        
+
+
+
             //Next, detect and handle pagination...
             if ( $query->is_paged ) {
-        
+
                 //Manually determine page query offset (offset + current page (minus one) x posts per page)
                 $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
-        
+
                 //Apply adjust page offset
                 $query->set('offset', $page_offset );
-                
+
                 $query->set( 'tax_query', $args );
-        
+
             }
             else {
-        
+
                 //This is the first page. Just use the offset...
                 $query->set('offset',$offset);
-                
+
                 $query->set( 'tax_query', $args );
-                
-                
-        
+
+
+
             }
-        
-        
+
+
     }
 
-	   
-	    
+
+
 
 }
 add_action( 'pre_get_posts', 'blog_home_offest' );
@@ -410,29 +443,26 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
  * @access public
  * @return void
  */
- 
- 
+
+
  function university_links() {
- 
+
  	$sccessibility = esc_url('lincoln.ac.uk/home/abouttheuniversity/accessibility/' );
  	$contacting = esc_url('lincoln.ac.uk/home/contactus/' );
  	$legal = esc_url('lincoln.ac.uk/home/abouttheuniversity/governance/universitypolicies/' );
  	$privacy = esc_url('lincoln.ac.uk/home/abouttheuniversity/governance/universitypolicies/websiteandpublicationsinformationliability/' );
  	$disclaimer = esc_url('lincoln.ac.uk/home/abouttheuniversity/governance/universitypolicies/websiteandpublicationsinformationliability/' );
  	$freedom = esc_url('secretariat.blogs.lincoln.ac.uk/information-compliance/freedom-of-information/' );
- 	
+
 	echo('<ul class="university-links">');
- 	
+
 	 	echo('<li><a href="' . $sccessibility. '" title="Accessibility">' . 'Accessibility'. '</a></li>');
 	 	echo('<li><a href="' . $contacting. '" title="Contacting the University">' . 'Contacting the University'. '</a></li>');
 	 	echo('<li><a href="' . $legal. '" title="Legal">' . 'Legal'. '</a></li>');
 	 	echo('<li><a href="' . $privacy. '" title="Privacy">' . 'Privacy'. '</a></li>');
 	 	echo('<li><a href="' . $disclaimer. '" title="Disclaimer">' . 'Disclaimer'. '</a></li>');
 	 	echo('<li><a href="' . $freedom. '" title="Freedom of Information">' . 'Freedom of Information'. '</a></li>');
- 	
-	echo('</ul>');
-	
- };
- 
-	
 
+	echo('</ul>');
+
+ };
