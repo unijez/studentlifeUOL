@@ -1,3 +1,12 @@
+.hide-extra video {
+  width: 100%;
+  position: absolute;
+}
+
+.main-slider, .slick-slider, .slick-list, .slick-slide {
+  height: 542px !important;
+}
+
 .heading-image {
   display: inline-block;
   float: none;
@@ -15,11 +24,11 @@
 
 .slide-overlay .columns-wrap.flex-controlled {
 	@include align-items(flex-end);
-	
+
 	@include mq(tablet) {
 	   @include justify-content(flex-start);
 	}
-	
+
 }
 
 
@@ -30,12 +39,12 @@
   background-size: cover;
 background-position: center center;
 
-	
-	
+
+
 	@include mq(tablet) {
 	}
-	
-	
+
+
   > a {
     content: '';
     display: none;
@@ -58,7 +67,7 @@ background-position: center center;
     background-size: cover;
     background-position: center center;
   }
-	
+
 .slide-overlay {
 	position: absolute;
 	top: 0;
@@ -66,9 +75,9 @@ background-position: center center;
 	right: 0;
 	width: 100%;
 	height: 100%;
-}	
-	
-	
+}
+
+
   .overlay-slide {
     z-index: 1;
     height: auto;
@@ -83,7 +92,7 @@ background-position: center center;
 }
 
 .overlay-slide.full-colour {
-	 
+
 	 background-color: rgba(#ffffff, 0.8);
 	 @include mq(tablet) {
 	 background-color: #ffffff;
@@ -125,7 +134,7 @@ background-position: center center;
 	text-transform: uppercase;
 	@include font-size(12px);
 	margin-bottom: 15px;
-	
+
 	@include mq(tablet) {
 	  @include font-size(15px);
 	}
@@ -141,11 +150,11 @@ background-position: center center;
 .slide-title {
 	@include font-size(25px);
 	 margin-bottom: 10px;
-	 
+
 	@include mq(tablet) {
 	  @include font-size(40px);
 	  line-height: 50px;
-	  
+
 	  margin-bottom: 20px;
 	}
 }
@@ -154,7 +163,7 @@ background-position: center center;
 .slide-date {
 	color: $base-black;
 	@include font-size(12px);
-	
+
 	@include mq(tablet) {
 	  @include font-size(15px);
 	}

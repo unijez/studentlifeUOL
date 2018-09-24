@@ -433,3 +433,14 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
 	echo('</ul>');
 
  };
+
+ function background_video() {
+   $video = get_field('background_video', 'option');
+   ?>
+   <div class="hide-extra">
+   <video autoplay muted loop class="background_video">
+     <source src="<?php echo $video['url']; ?>" type="video/mp4">
+   </video>
+  </div>
+   <?php
+ }

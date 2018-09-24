@@ -22,35 +22,25 @@
 
   if( $recent_posts->have_posts() ): ?>
 
+    <?php background_video(); ?>
+
     <div class="hero-header">
 
       <?php while ($recent_posts->have_posts() ) : $recent_posts->the_post() ?>
 
-  <?php
-        if(has_post_thumbnail()):
-
-          $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false);
-          $imgwidth = $imgdata[1];
-          $wanted_width = 1600;
-     	?>
-			
-		
-			
-		<?php endif;?>	
-		
 
 
-      <div class="slick-slide heading-image" style="background-image: url('<?php echo $imgdata[0]; ?>');">
+      <div class="slick-slide heading-image">
 
-      
+
 		<div class="slide-overlay site-module no-upper no-lower">
-			
+
 			<div class="module-inner-wrap ">
-			
-						
-					<div class="columns-wrap site-module flex-controlled no-upper no-lower">	
-						
-						
+
+
+					<div class="columns-wrap site-module flex-controlled no-upper no-lower">
+
+
 						<div class="overlay-slide column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
 						    <h5 class="slide-category">
 						      <?php list_categories();?>
@@ -60,24 +50,24 @@
 							  <?php the_title(); ?>
 							  	 </a>
 							  </h2>
-						 
+
 						    <h5 class="slide-date">
 								<i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php echo get_the_date(); ?></time>
 						    </h5>
 						</div> <!--overlay-slide-->
-			
-					
-					</div> <!--columns-wrap--> 
-			
-			
+
+
+					</div> <!--columns-wrap-->
+
+
 			</div> <!--module-inner-wrap-->
-		
-		
-		
+
+
+
 		</div> <!--slide-overlay-->
-		
-		
-        
+
+
+
 
       </div>
       <?php
