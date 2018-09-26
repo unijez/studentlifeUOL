@@ -11,7 +11,7 @@
  * @version 1.0
  */
  if(has_post_format('video')) {
-   download_thumbnail();
+  download_thumbnail();
  }
  get_header();
 
