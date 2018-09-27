@@ -21,7 +21,7 @@
 
 .site-header {
 	border-top: 5px solid $uni-blue;
-	border-bottom: 2px solid $uni-blue;
+	// border-bottom: 2px solid $uni-blue;
 	/*@include mq($until:tablet) {
 		padding: 0 0;
 	}
@@ -101,7 +101,7 @@
 .main-slider,
 .hero-header {
 	height: 300px;
-	
+
 	 @include mq(tablet) {
 	 	height: 500px;
 	 	}
@@ -121,34 +121,34 @@
    @include flex-direction(column);
    width: 100%;
   margin-bottom: $mobile-side-pad;
-   
-   
+
+
    @include mq(tablet) {
    margin-bottom: 0;
    	float: left;
     margin-bottom: 0;
    	 @include flex-direction(row);
-   	
+
    }
-   
-   	.site-title { 
+
+   	.site-title {
      @include font-family(serif);
      @include font-size(20px);
    	line-height: 27px;
 	 margin: 0;
-	 
+
 	 @include mq(tablet) {
 		  @include font-size(25px);
 	 }
 
   }
-  
+
 
   .site-title a {
   	color: $uni-blue;
   	text-decoration: none;
   }
-  
+
 }
 
 
@@ -157,14 +157,14 @@
 
 .site-branding__hero-wording {
 	@include flexbox;
-	
+
 	@include flex-direction(row);
 
 
-	
-	
-	
-	
+
+
+
+
 	@include mq(tablet) {
 		 margin-top: 0;
 		 padding-left: $mobile-side-pad;
@@ -174,9 +174,9 @@
 		 @include justify-content(center);
 		 /*@include justify-content(flex-start);*/
 	}
-	
-	
-	
+
+
+
 }
 
 
@@ -191,19 +191,17 @@
 	@include mq(mobileLandscape) {
 		margin-bottom: $mobile-side-pad;
 	 width: 50vw;
-	
+
 	}
-	
+
 	@include mq(tablet) {
 		margin-bottom: 0;
 	 width: 18vw;
-	
+
 	}
-	
+
 	@include hocus() {
 		color: $uni-grey;
 	}
-	
+
 }
-
-

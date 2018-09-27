@@ -20,7 +20,7 @@
 	color: $base-black;
 	 @include font-size(20px);
 	 line-height: 28px;
-	 
+
 	 @include mq(tablet) {
 	 	 @include font-size(26px);
 	 	 line-height: 34px;
@@ -32,7 +32,7 @@
 .entry-content li {
 	@include font-size(15px);
 	line-height: 22px;
-	
+
 	@include mq(tablet) {
 		 @include font-size(18px);
 		 line-height: 27px;
@@ -45,7 +45,7 @@
 .entry-content li a {
 	color: $turqoise;
 	text-decoration: underline;
-	
+
 	@include hocus() {
 		  text-decoration: none;
 	}
@@ -64,14 +64,11 @@
 .entry-content h3 strong,
 .entry-content h4 strong,
 .entry-content h5 strong {
-	@include font-size(20px);
+	@include font-size(26px);
 	@include font-weight(light);
-	margin-bottom: $desktop-side-pad - 5px;
-	line-height: 20px;
-	@include mq(tablet) {
-		 @include font-size(21px);
-		 line-height: 25px;
-	}
+	margin-bottom: $desktop-side-pad;
+	line-height: 34px;
+  color: $uni-blue;
 }
 
 .entry-content img:not(:last-child),
@@ -86,8 +83,8 @@
 .entry-content h3:not(img),
 .entry-content h4:not(img),
 .entry-content h25:not(img) {
-	
-	
+
+
 	@include mq(tablet) {
 		padding-right: $desktop-side-pad*2;
 	}
@@ -149,14 +146,14 @@
 
 
 .fs-sidebar .side-box:last-child {
-	
+
 	@include mq(tablet) {
 		margin-top: $desktop-side-pad;
 		padding-top: $desktop-side-pad;
 		border-top: 1px solid $grey3;
 	}
-	
-	
+
+
 }
 
 .tags {
@@ -181,20 +178,20 @@
 
 
 .author-bio {
-	padding-bottom: $desktop-side-pad;
+	margin: 80px 0;
 }
 
 .author-bio__name {
 	@include flexbox;
 
 	@include flex-direction(column);
-	
-	
+
+
 	@include mq(tablet) {
 		@include justify-content(flex-start);
 		@include flex-direction(row);
 	}
-	
+
 }
 
 
@@ -205,13 +202,13 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: $desktop-side-pad;
-	
+
 	@include mq(tablet) {
 		margin-top: $desktop-side-pad;
 		/*padding-top: $desktop-side-pad;*/
 		/*border-top: 1px solid $grey3;*/
 	}
-	
+
 }
 
 
@@ -227,43 +224,34 @@
 		/*padding-top: $desktop-side-pad;*/
 		/*border-top: 1px solid $grey3;*/
 	}
-	
+
 }
 
 
 
 .author-title {
-	color: $grey-dark;
-	@include font-size(18px);
-	
+	color: $uni-blue;
+	@include font-size(20px);
 	margin-bottom: 20px;
-	@include mq(tablet) {
-	@include font-size(26px);
-	}
-	
-	
 }
 
 
 .author-bio__content {
 	@include font-size(15px);
-	
-	@include mq(tablet) {
-		padding-left: 30px;
-		@include flex(1);
-		@include font-size(20px);
-	}
+  line-height: 23px;
+  padding-left: 30px;
+
 }
 
 
 .teams-page .author-bio__content p{
 	@include font-size(13px);
-	
+
 	@include mq(tablet) {
 		@include font-size(18px);
 		line-height: 23px;
 	}
-	
+
 }
 
 
@@ -271,7 +259,7 @@
 	color: $turqoise;
 	text-decoration: none;
 	margin-top: 20px;
-	
+
 	display: block;
 	@include hocus() {
 		  text-decoration: underline;
@@ -280,7 +268,5 @@
 
 
 
-.posts-video_embed{ position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } 
+.posts-video_embed{ position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
 .posts-video_embed iframe, .posts-video_embed object, .posts-video_embed embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-
