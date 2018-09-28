@@ -299,14 +299,9 @@ function remove_attrs($html, $url, $args) {
 
    set_post_thumbnail( get_the_ID(), $attach_id ); //Set image as the featured image
   }
-  }
 
-  function remove_attrs($html, $url, $args) {
-  $attrs = ['allow="autoplay; encrypted-media"', 'frameborder="0"'];
-  $replacewith = ['',''];
 
-  return str_replace($attrs, $replacewith, $html);
-}
+
 add_filter( 'oembed_result', 'remove_attrs', 10, 3 );
 
 
