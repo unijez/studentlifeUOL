@@ -8,6 +8,8 @@ video {
 
 .main-slider, .slick-slider, .slick-list, .slick-slide {
   height: 542px !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .heading-image {
