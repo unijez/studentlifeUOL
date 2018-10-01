@@ -83,13 +83,7 @@ function header_post_image() {
 
 
   $imgdata = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->post->ID ), 'hero-header' );
-
-
-//  if (( $imgdata[1] >= 1280 ) || ( $imgdata[2] >= 600)) {
   return $imgdata[0];
-//  } else {
-//    return false;
-//  }
 }
 
 function title_trim($title, $limit, $isset) {
@@ -270,38 +264,6 @@ function download_thumbnail() {
 }
 
 function remove_attrs($html, $url, $args) {
-   $ch = curl_init($download_url); //Initialize the PHP cURL to the youtube page
-
-   $fp = fopen($save_as, 'w'); //Start the path link
-
-   curl_setopt($ch, CURLOPT_FILE, $fp); //Download the image to the path link
-   curl_setopt($ch, CURLOPT_HEADER, 0);
-   curl_exec($ch);
-   curl_close($ch);
-   fclose($fp);
-
-   $filetype = wp_check_filetype( basename( $save_as ), null ); //Check the file type
-
-   $attachment = array( //Create neccessary wordpress data to the image
-   'guid'           => $uploads['url'] . '/' . basename( $save_as ),
-   'post_mime_type' => $filetype['type'],
-   'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $save_as ) ),
-   'post_content'   => '',
-   'post_status'    => 'inherit'
-   );
-
-   $attach_id = wp_insert_attachment( $attachment, $save_as, get_the_ID() ); //Add neccessary wordpress data to the image
-   require_once( ABSPATH . 'wp-admin/includes/image.php' ); //Make sure that the image gets registered as an image
-
-
-   // $attach_data = wp_generate_attachment_metadata( $attach_id, $save_as ); //Generate more meta data
-   // wp_update_attachment_metadata( $attach_id, $attach_data ); //Attatch the meta data
-
-   set_post_thumbnail( get_the_ID(), $attach_id ); //Set image as the featured image
-  }
-  }
-
-  function remove_attrs($html, $url, $args) {
   $attrs = ['allow="autoplay; encrypted-media"', 'frameborder="0"'];
   $replacewith = ['',''];
 
@@ -465,7 +427,7 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
 
 	echo('</ul>');
 
- };
+ }
 
  function background_video() {
    $video = get_field('background_video', 'option');
