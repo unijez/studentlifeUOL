@@ -16,7 +16,7 @@
 		<h4 class="slide-category"><?php
 		list_categories(null, 2);
 		?></h4>
-		<div class="post-img">
+		<div class="post-img thumbnail-aligner">
 	    <a href="<?php the_permalink();?>">
 	    		<?php default_image('post-intro-image'); ?>
 	    </a>

@@ -278,3 +278,19 @@ text-decoration: none;
 	  margin-right: 0;
 	}
 }
+
+.thumbnail-aligner {
+  a {
+    width: 366.667px;
+    height: 206.25px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
