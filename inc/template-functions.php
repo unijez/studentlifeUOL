@@ -198,21 +198,22 @@ function mytheme_comment($comment, $args, $depth) {
 }
 
 
-function list_categories($altID = null) {
+function list_categories($altID = null, $limit = null) {
   if($altID == null) {
   global $post;
   $cats = get_the_category($post->ID);
   } else {
   $cats = get_the_category($altID);
   }
-  $j = 1;
   $catsSize = count($cats);
-  foreach($cats as $cat) {
-     echo '<a href="' . get_category_link($cat->term_id) . '">' . strtoupper($cat->name) . '</a>';
-     if($j != $catsSize) {
-       echo ", ";
-     }
-     $j++;
+  for($i = 0; $i < $catsSize; $i++) {
+    echo '<a href="' . get_category_link($cats[$i]->term_id) . '">' . strtoupper($cats[$i]->name) . '</a>';
+    if($limit != null) {
+      if($i == $limit-1) { break; }
+    }
+    if($i != $catsSize-1) {
+     echo ", ";
+    }
   }
 }
 

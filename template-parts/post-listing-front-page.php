@@ -14,7 +14,7 @@
 
 	<div class="item-text">
 		<h4 class="slide-category"><?php
-		list_categories();
+		list_categories(null, 2);
 		?></h4>
 		<div class="post-img">
 	    <a href="<?php the_permalink();?>">

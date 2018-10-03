@@ -43,7 +43,7 @@
 
 						<div class="overlay-slide column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
 						    <h5 class="slide-category">
-						      <?php list_categories();?>
+						      <?php list_categories(null, 2);?>
 						    </h5>
 						      <h2 class="slide-title">
 							  	 <a href="<?php the_permalink() ?>">
