@@ -132,7 +132,6 @@
    }
 
    	.site-title {
-     @include font-family(serif);
      @include font-size(20px);
    	line-height: 27px;
 	 margin: 0;
@@ -182,7 +181,7 @@
 
 .site-footer__logo,
 .site-branding__hero-logo {
-	color: $uni-blue;
+	color: $grey-dark;
 	display: block;
 	margin-bottom: $mobile-side-pad;
 	@include flexbox;
@@ -198,10 +197,6 @@
 		margin-bottom: 0;
 	 width: 18vw;
 
-	}
-
-	@include hocus() {
-		color: $uni-grey;
 	}
 
 }

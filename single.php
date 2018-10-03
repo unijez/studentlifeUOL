@@ -26,9 +26,7 @@
           <div class="site-module">
 
 
-            <?php echo "Potato"; ?>
-
-		  			<div class="module-inner-wrap site-module">
+		  			<div class="module-inner-wrap single-module">
 
 
 		  					<div class="columns-wrap flex-controlled">

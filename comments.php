@@ -37,13 +37,13 @@ if ( post_password_required() ) {
 			if ( '1' === $studentlifeUOL_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'Comments(%1$s)', 'studentlifeUOL' ),
+					esc_html__( 'Comments (%1$s)', 'studentlifeUOL' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( 'Comments(%1$s)', 'Comments(%1$s)', $studentlifeUOL_comment_count, 'comments title', 'studentlifeUOL' ) ),
+					esc_html( _nx( 'Comments (%1$s)', 'Comments (%1$s)', $studentlifeUOL_comment_count, 'comments title', 'studentlifeUOL' ) ),
 					number_format_i18n( $studentlifeUOL_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);

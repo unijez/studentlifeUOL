@@ -29,7 +29,7 @@
 
           <div class="site-module">
 
-		  				<div class="module-inner-wrap site-module">
+		  				<div class="module-inner-wrap single-module">
 
 
 		  			<?php if( $youtube_link ): ?>

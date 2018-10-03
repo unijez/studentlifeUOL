@@ -14,7 +14,7 @@
   align-self: center;
   margin: 0;
   display: none;
-  
+
   @include mq(wide) {
     display: block;
   }
@@ -22,11 +22,11 @@
 
 .primary-menu li {
 	float: left;
-	margin: 0 10px 0 0;
+	margin: 0 20px 0 0;
 	position: relative;
 }
 
-.primary-menu > li:last-child { margin-right: 10px; }
+.primary-menu > li:last-child { margin-right: 20px; }
 
 .primary-menu a {
 	display: inline-block;
@@ -36,7 +36,8 @@
   font-size: 13px;
   color: $grey-dark;
   font-weight: 400;
-  letter-spacing: .03em;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 
   @include mq($until:tablet) {
     display: inline-block;
@@ -349,14 +350,14 @@
 	  margin-bottom: 20px;
 	  @include font-size(25px);
     }
-	
-	
+
+
 	@include mq(tablet){
 		 padding: $desktop-side-pad * 2;
 		  width: 500px;
-	
+
 	}
-	
+
   }
 
   .items-off {
@@ -390,9 +391,9 @@
     height: 100vh;
     overflow-y: hidden;
   }
-  
-  
-  
+
+
+
   .overlay-navigation-header {
   	position: absolute;
   	top: 0;
@@ -401,38 +402,38 @@
   	@include flexbox;
   	@include justify-content(flex-end);
 
-  	
+
   }
-  
-  
-  
+
+
+
   @include mq(tablet) {
-  
-  	
-  	
-  
+
+
+
+
   	.main-navigation {
   		position: relative;
   		/*left: -10px;*/
   		float: left;
   		@include align-items(center);
 
-  		
+
   		/*padding-top: $nav-button-spacing;*/
   	}
-  	
-  
-  
-  
+
+
+
+
   }
-  
+
   @include mq(wide) {
-  	
+
   	.main-navigation {
   		float: right;
   		left: auto;
   		padding: 0;
   	}
-  	
-  	
+
+
   }

@@ -17,8 +17,6 @@
   .comment-form-comment textarea::placeholder,
   input::placeholder, .wpcf7-form textarea::placeholder {
     font-family: Helvetica;
-    color: $grey-dark;
-    opacity: 1;
   }
 
   p {
@@ -35,9 +33,14 @@
   		  width: 100%;
   		  border: none;
   		  padding: 20px;
+        background: $almost-white;
   		}
 
 
+  }
+
+  .comment-notes {
+    font-size: 15px;
   }
 
 #itsec-recaptcha-opt-in,
@@ -72,6 +75,7 @@
     padding: 20px;
     color: white;
     margin:  0 auto;
+    font-weight: 300;
 
     @include mq($until:tablet) {
       width: auto;
@@ -109,6 +113,7 @@
 
   //Commenter icon
   .comment-author {
+
     img {
       height: 70px;
       width: 70px;
@@ -127,11 +132,13 @@
       li .comment-meta {
         a {
           float: left;
+          color: $grey-dark;
+          font-size: 18px;
         }
 
         .comments-bullet {
           float: left;
-          padding: 0 10px;
+          padding: 0 15px;
         }
 
         .reply {
@@ -150,7 +157,7 @@
 .comment-author ul li cite {
   font-style: normal;
   font-size: 25px;
-  color: $grey-dark;
+  color: $uni-blue;
 }
 
 //Comment stylings
@@ -186,7 +193,6 @@
   .comment-form-comment textarea::placeholder,
   .comment-list {
     font-family: Helvetica;
-    color: $grey-light;
     font-weight: 300;
     .comment-metadata a {
       text-decoration: none;
@@ -195,16 +201,6 @@
     a {
     }
   }
-}
-
-
-
-.comment-form-author input::placeholder,
-.comment-form-email input::placeholder,
-.comment-form-comment textarea::placeholder,
-.comment-list {
-
-	background-color: $almost-white;
 }
 
 
