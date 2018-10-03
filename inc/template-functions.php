@@ -266,7 +266,7 @@ function download_thumbnail() {
 function remove_attrs($html, $url, $args) {
   $attrs = ['allow="autoplay; encrypted-media"', 'frameborder="0"'];
   $replacewith = ['',''];
-
+}
 
 add_filter( 'oembed_result', 'remove_attrs', 10, 3 );
 
