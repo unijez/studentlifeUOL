@@ -1,10 +1,15 @@
-.hide-extra video {
+.hide-extra {
+overflow: hidden;
+video {
   width: 100%;
   position: absolute;
+}
 }
 
 .main-slider, .slick-slider, .slick-list, .slick-slide {
   height: 542px !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .heading-image {
