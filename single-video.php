@@ -68,15 +68,13 @@
 
 		  						<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
+                    <?php
+                      if(get_the_tag_list()) {
+                          echo get_the_tag_list('<dl class="tags" ><dt>Tagged:</dt><dd>',', </dd><dd>','</dd></dl>');
+                      }
+                      ?>
 
 		  									<?php get_template_part( 'template-parts/meet-author' ); ?>
-
-
-		  									<?php
-		  										if(get_the_tag_list()) {
-		  										    echo get_the_tag_list('<dl class="tags" ><dt>Tagged:</dt><dd>',', </dd><dd>','</dd></dl>');
-		  										}
-		  										?>
 
 
 		  						</div> <!--column-->
@@ -96,6 +94,7 @@
 
 		  							<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
+                      <h3>Here are your next posts</h3>
 
 		  							<?php
 		  									  $prevPost = get_previous_post(true);
