@@ -1,13 +1,13 @@
 {
-    "key": "group_5b5ec46653b1a",
-    "title": "Featured Post",
+    "key": "group_16871hfa9871hf",
+    "title": "Featured Video Post",
     "fields": [
         {
-            "key": "field_5b5ec472be3ae",
-            "label": "Featured Post",
-            "name": "home_featured_post",
+            "key": "field_16871hfa9871hf",
+            "label": "Featured Video Post",
+            "name": "home_featured_video_post",
             "type": "button_group",
-            "instructions": "To choose whether this post is featured within the home page 'Featured' section, limited to the two most recent choices.",
+            "instructions": "To choose whether this video post is featured within the home page 'Featured' section, limited to the two most recent choices.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -30,7 +30,7 @@
             {
                 "param": "post_format",
                 "operator": "==",
-                "value": "standard"
+                "value": "video"
             }
         ]
     ],
