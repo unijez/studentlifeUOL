@@ -292,5 +292,13 @@ text-decoration: none;
       left: 50%;
       transform: translate(-50%, -50%);
     }
+    span {
+      position: absolute;
+      background-color: $uni-blue;
+      color: white;
+      padding: 5px;
+      bottom: 0;
+      right: 1px;
+    }
   }
 }
