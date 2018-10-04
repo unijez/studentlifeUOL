@@ -1,0 +1,50 @@
+{
+    "key": "group_5bb622da2d997",
+    "title": "YouTube Video ID",
+    "fields": [
+        {
+            "key": "field_5bb622f40ffda",
+            "label": "YouTube Video ID",
+            "name": "yt_video_id",
+            "type": "text",
+            "instructions": "DO NOT SET OR CHANGE THIS VALUE. THIS VALUE WILL BE AUTOMATICALLY POPULATED AS SOON AS YOU SET A FEATURED VIDEO. PLEASE DO NOT INTERACT WITH THIS VALUE",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "video"
+            }
+        ],
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1538663272
+}

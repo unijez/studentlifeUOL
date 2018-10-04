@@ -45,7 +45,7 @@ if ( ! function_exists( 'studentlifeUOL_setup' ) ) :
 		/* image resizing */
 		add_image_size( 'post-intro-image', 722, 408, array( 'left', 'top' )  ); // Hard Crop Mode
 		add_image_size( 'post-intro-image-video', 640, 430, array( 'left', 'top' )  ); // Hard Crop Mode
-		
+
 		add_image_size( 'hero-header', 1915, 630, array( 'center', 'center' )  ); // Hard Crop Mode
 		add_theme_support( 'post-formats', array( 'video','image' ) );
 
@@ -120,7 +120,7 @@ function studentlifeUOL_widgets_init() {
 				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
 				'after_widget' 	=> '</div></div>'
 			) );
-	
+
 			register_sidebar( array(
 				'name' 			=> __( 'Footer Middle', 'learning_lincoln' ),
 				'id' 			=> 'footer-middle',
@@ -130,10 +130,10 @@ function studentlifeUOL_widgets_init() {
 				'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
 				'after_widget' 	=> '</div></div>'
 			) );
-			
-			
-	
-			
+
+
+
+
 }
 add_action( 'widgets_init', 'studentlifeUOL_widgets_init' );
 
@@ -152,6 +152,14 @@ add_action( 'widgets_init', 'studentlifeUOL_widgets_init' );
    $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
    echo $excerpt;
  }
+
+ function prefix_category_title( $title ) {
+     if ( is_category() ) {
+         $title = single_cat_title( '', false );
+     }
+     return $title;
+ }
+ add_filter( 'get_the_archive_title', 'prefix_category_title' );
 
  // Remove P Tags Around Images
  function filter_ptags_on_images($content){
