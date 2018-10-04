@@ -69,7 +69,8 @@ padding-bottom: $desktop-side-pad;
           font-weight: 300;
           color: $uni-blue;
           text-decoration: none;
-          font-size: 20px;
+          font-size: 28px;
+          margin-bottom: 20px;
         }
       }
       h4 {
@@ -84,13 +85,7 @@ padding-bottom: $desktop-side-pad;
         }
       }
     }
-    .post-auth {
-      margin-top: 15px;
-    }
-    p { margin-top: 10px; }
-
   }
-
 }
 
 .row {
@@ -111,7 +106,7 @@ padding-bottom: $desktop-side-pad;
       a {
         font-family: Helvetica;
         font-weight: 300;
-        color: $uni-blue;
+        color: red;
         text-decoration: none;
         font-size: 20px;
       }
