@@ -444,27 +444,24 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
  }
 
  function video_length($vid_id) {
-   //$youtube_api_key = get_field('yt_api_key', 'option');
-   $youtube_api_key = "AIzaSyD8MqWwaeejtsCqnj_x9wK-xWIOhomyVB0";
-   $dur = file_get_contents("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=$vid_id&key=$youtube_api_key");
-   $vid_duration =json_decode($dur, true);
-   foreach ($vid_duration['items'] as $vid_time)
-   {
-       $vid_duration= $vid_time['contentDetails']['duration'];
-   }
-   preg_match_all('/(\d+)/',$vid_duration, $parts);
+   $youtube_api_key = get_field('yt_api_key', 'option');
+   if ($youtube_api_key) {
+     $dur = file_get_contents("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=$vid_id&key=$youtube_api_key");
+     $vid_duration =json_decode($dur, true);
+     foreach ($vid_duration['items'] as $vid_time)
+     {
+         $vid_duration= $vid_time['contentDetails']['duration'];
+     }
+     preg_match_all('/(\d+)/',$vid_duration, $parts);
 
-   if(count($parts[0]) == 3) {
-     $duration = ($parts[0][1]+60).":".($parts[0][2]);
+     if(count($parts[0]) == 3) {
+       $duration = ($parts[0][1]+60).":".($parts[0][2]);
+     } else {
+       $duration = ($parts[0][0]).":".($parts[0][1]);
+     }
+
+     return $duration;
    } else {
-     $duration = ($parts[0][0]).":".($parts[0][1]);
+     return null;
    }
-
-   return $duration;
-
-
-
-/*   return $parts[0][0] . ":" .
-          $parts[0][1] . ":".
-          $parts[0][2]; // Return 1:11:46 (i.e.) HH:MM:SS */
  }
