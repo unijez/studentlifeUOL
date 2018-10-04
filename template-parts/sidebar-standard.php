@@ -20,12 +20,12 @@
 		  $prevPost = get_previous_post(true);
 		  if($prevPost):
 
-		  
+
 		 ?>
 		  <div class="side-box previous-box">
-		    <h4 class="post-category"><?php list_categories($prevPost->ID); ?></h4>
+
 		    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'medium');?>
-			
+
 			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
 			<?php echo($prevthumbnail) ?>
 			</a>
@@ -34,21 +34,21 @@
 		           <?php echo apply_filters( 'the_title', $prevPost->post_title ); ?>
 		       </a>
 			</h3>
-			   
-				<p><i class="post-auth"><?php echo get_the_author_meta('display_name', $prevPost->post_author) ?></i></p>
+
+
 		  </div>
 		<?php endif; ?>
-		
+
 		<?php
 		  $nextPost = get_next_post(true);
 		  if($nextPost):
-		  
-		  
+
+
 		 ?>
 		  <div class="side-box next-box">
-		    <h4 class="post-category"><?php list_categories($nextPost->ID); ?></h4>
+
 		    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'medium');?>
-			
+
 			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
 			<?php echo($nextthumbnail) ?>
 			</a>
@@ -57,8 +57,8 @@
 		           <?php echo apply_filters( 'the_title', $nextPost->post_title ); ?>
 		       </a>
 			</h3>
-			   
-				<p><i class="post-auth"><?php get_the_author_meta('display_name', $nextPost->post_author) ?></i></p>
+
+			
 		  </div>
 		<?php endif; ?>
 
