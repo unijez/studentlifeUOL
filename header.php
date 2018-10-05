@@ -44,28 +44,28 @@
 		<?php studentlifeUOL_header_top(); ?>
 
 		<div class="module-inner-wrap">
-		
+
 		<div class="level-elements">
-		
+
 		<div class="site-branding flex-controlled">
 
 			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" title="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer">
-				
-				
+
+
 				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
-				
+
 			</a>
 
 			<div class="site-branding__hero-wording">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				
+
 				<button type="button" class="main-btn open-button d-hide"><i class="fal fa-bars fa-lg"></i></button>
-				
+
 			</div>
-			
-			
-			
-			
+
+
+
+
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation level-right flex-controlled">
@@ -81,13 +81,13 @@
 					wp_nav_menu( $nav_args );
 
 			?>
-			
+
 			</ul>
-			
-			
+
+
 			<button type="button" class="main-btn open-button m-t-hide"><i class="fal fa-bars fa-lg"></i></button>
-			
-			
+
+
 		</nav><!-- #site-navigation -->
 
 
@@ -95,28 +95,28 @@
 
 		<?php studentlifeUOL_header_bottom(); ?>
 
-			
+
 		</div> <!--level-elements-->
-			
+
 		</div> <!--module-inner-wrap-->
-		
+
 	</header><!-- #masthead -->
 
 
 	<nav class="overlay-navigation overlay-off">
-			
-			
-			
+
+
+
 			<div class="nav-items items-off">
-								
-				<div class="overlay-navigation-header site-module">
-				
+
+				<div class="overlay-navigation-header">
+
 					<button type="button" class="main-btn close-button"><i class="fal fa-times fa-lg"></i></button>
-					
+
 				</div> <!--overlay-navigation-header-->
-								
-								
-								
+
+
+
 								<h3>Student Life</h3>
 				<ul class="overlay-menu">
 					<?php
@@ -146,7 +146,7 @@
 
 				</div>	 <!--column-->
 		<?php endif; ?>
-		
+
 	</nav>
 
 <?php studentlifeUOL_head_after(); ?>
