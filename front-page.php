@@ -91,22 +91,21 @@ get_header(); ?>
 
 							<?php
 			 					$args = array(
-			 						'post_type' => 'post',
+									'post_type' => array('post','page'),
 			 						'posts_per_page' => 2,
 			 						'post__not_in' => get_option( 'sticky_posts' ),
-									'meta_query' => array(
+			 						'meta_query' => array(
 
-										    array(
-										      // Key = ACF Field Name (True/False field)
-										      'key' => 'home_featured_video_post',
-										      'value' => 'yes',
-										      'compare' => '==' // not really needed, this is the default
-										    )
-										  )
+			 						    array(
+			 						      // Key = ACF Field Name (True/False field)
+			 						      'key' => 'home_featured_video_post',
+			 						      'value' => 'yes',
+			 						      'compare' => '==' // not really needed, this is the default
+			 						    )
+			 						  )
 			 					);
 
 			 					$home_featured_videos = new WP_Query( $args );
-
 			 					if ( $home_featured_videos->have_posts() ) :?>
 
 

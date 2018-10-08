@@ -374,14 +374,40 @@
 
   }
 
-  .overlay-menu {
+  .overlay-second-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    li {
+      padding-bottom: 15px;
+      width: 33.3333%;
+      a {
+        text-decoration: none;
+        color: $grey-dark;
+		    @include font-size(19px);
+      }
+      a:hover {
+        border-bottom: 2px solid $grey-dark;
+      }
+    }
+  }
+
+  .overlay-first-menu {
+    margin-bottom: 0;
+
     li {
       padding-bottom: 15px;
       a {
         text-decoration: none;
         color: $grey-dark;
-		@include font-size(19px);
+        @include font-size(19px);
       }
+      a:hover {
+        border-bottom: 2px solid $grey-dark;
+      } 
     }
   }
 

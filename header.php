@@ -117,20 +117,30 @@
 
 
 
-								<h3>Student Life</h3>
-				<ul class="overlay-menu">
+				<h3>Student Life</h3>
+				<ul class="overlay-first-menu">
 					<?php
 
-						if ( has_nav_menu( 'primary-menu' ) ) {
+						$nav_args = array(
+							'container' 		=> '',
+							'theme_location' => 'bm-first-menu',
+							'items_wrap' 		=> '%3$s'
+						);
 
-								wp_nav_menu( $nav_args );
+						wp_nav_menu( $nav_args );
+					?>
+				</ul>
+				<h3>Topics</h3>
+				<ul class="overlay-second-menu">
+					<?php
 
-						} else {
+						$nav_args = array(
+							'container' 		=> '',
+							'theme_location' => 'bm-second-menu',
+							'items_wrap' 		=> '%3$s'
+						);
 
-								wp_list_pages( $list_pages_args );
-
-						}
-
+						wp_nav_menu( $nav_args );
 					?>
 				</ul>
 				<h3>Search</h3>
