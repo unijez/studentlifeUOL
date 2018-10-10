@@ -22,8 +22,6 @@
  ?>
 
 <?php if( $user_nicename ): ?>
-<?php share_buttons("twitter"); ?>
-<?php share_buttons("facebook"); ?>
 <div class="author-bio">
 
 

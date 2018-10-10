@@ -78,6 +78,11 @@
 
 		  						<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
+                    <div class="social-buttons-container_single-video">
+                      <?php share_buttons("facebook"); ?>
+                      <?php share_buttons("twitter"); ?>
+                    </div>
+
                     <?php
                       if(get_the_tag_list()) {
                           echo get_the_tag_list('<dl class="tags" ><dt>Tagged:</dt><dd>',', </dd><dd>','</dd></dl>');

@@ -41,6 +41,47 @@
 
 }
 
+// Social Buttons
+
+.social-buttons-container_single {
+  display: flex;
+  margin: 40px 0 40px 0;
+}
+
+.social-buttons-container_single-video {
+  display: flex;
+  margin: 0px 0 20px 0;
+
+}
+
+.social-button {
+  padding: 10px 18px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  svg {
+    color: white;
+  }
+
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 0.18px;
+  }
+}
+
+.twitter {
+  background: #55ACEE;
+}
+
+.facebook {
+  background: #3B5998;
+  margin-right: 40px;
+}
 
 /* Mobile Navigation Button
    ===========================================================*/

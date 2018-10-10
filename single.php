@@ -38,14 +38,16 @@
 
 		  						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
+                  <div class="social-buttons-container_single">
+                    <?php share_buttons("facebook"); ?>
+                    <?php share_buttons("twitter"); ?>
+                  </div>
 
 		  						<?php
 		  						if(get_the_tag_list()) {
 		  						    echo get_the_tag_list('<dl class="tags" ><dt>Tagged:</dt><dd>',', </dd><dd>','</dd></dl>');
 		  						}
 		  						?>
-
-
 
 
 		  						                <?php
