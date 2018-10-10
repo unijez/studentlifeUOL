@@ -13,7 +13,7 @@
 
 ?>
 
-<div class="fs-sidebar">
+<div class="fs-sidebar sticky-box">
 <h3>Here are your next posts</h3>
 
 		<?php
@@ -24,7 +24,7 @@
 		 ?>
 		  <div class="side-box previous-box">
 
-		    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'medium');?>
+		    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-sidebar');?>
 
 			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
 			<?php echo($prevthumbnail) ?>
@@ -47,7 +47,7 @@
 		 ?>
 		  <div class="side-box next-box">
 
-		    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'medium');?>
+		    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-sidebar');?>
 
 			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
 			<?php echo($nextthumbnail) ?>
@@ -58,7 +58,7 @@
 		       </a>
 			</h3>
 
-			
+
 		  </div>
 		<?php endif; ?>
 
