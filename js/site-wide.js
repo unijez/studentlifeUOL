@@ -69,5 +69,13 @@ $('ul.comment-tabs li').click(function(){
 			setTimeout(function() { globalNav.addClass("overlay-off") }, 750);
 		});
 
-
+		var top = $('.sticky-box').offset().top;
+		  $(window).scroll(function (event) {
+		    var y = $(this).scrollTop() + 120;
+		    if (y >= top)
+		      $('.sticky-box').addClass('stuck');
+		    else
+		      $('.sticky-box').removeClass('stuck');
+		    $('.sticky-box').width($('.sticky-box').parent().width());
+		  });
 });
