@@ -1,0 +1,18 @@
+.error404 {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container-404 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  height: 407px;
+
+  * {
+    text-align: center;
+  }
+}
