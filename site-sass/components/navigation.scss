@@ -351,15 +351,28 @@
     transition: transform 0.75s ease;
     z-index: 2;
 
+    @include mq($until:tablet) {
+      padding: 0 20px;
+      height: auto;
+      width: 100%;
+    }
+
   h3 {
     color: $grey-dark;
 	  margin-bottom: 20px;
     margin-top: 20px;
 	  @include font-size(25px);
+
+    @include mq($until:desktop) {
+      margin-top: 40px;
+    }
   }
 
+  @include mq(tablet) {
+    padding: 0 100px;
+  }
 
-	@include mq(tablet){
+	@include mq(desktop){
    padding: 0 200px;
    width: 60%;
    display: flex;
@@ -382,10 +395,19 @@
     flex-wrap: wrap;
     margin-bottom: 0;
 
+    @include mq($until:tablet) {
+      flex-direction: column;
+    }
+
     li {
       padding-bottom: 15px;
       padding-right: 30px;
       width: 33.3333%;
+
+      @include mq($until:tablet) {
+        width: auto;
+      }
+
       a {
         text-decoration: none;
         color: $grey-dark;
@@ -439,7 +461,13 @@
   	@include flexbox;
   	@include justify-content(flex-end);
 
+    @include mq($until:tablet) {
+      padding: 40px 20px !important;
+    }
 
+    @include mq($until:desktop) {
+      padding: 40px 100px;
+    }
   }
 
 
