@@ -34,8 +34,9 @@
 
 		  						<div class="column-spacings column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
 
-
-
+					
+								
+								
 		  						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
 
