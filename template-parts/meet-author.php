@@ -49,7 +49,7 @@
 
 
 							<div class="author-bio__content">
-									<h4 class="author-title"><?php echo $display_name; ?></h4>
+									<a class="author-title-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><h4 class="author-title"><?php the_author(); ?></h4></a>
 									<?php if( $user_description ): ?>
 									<?php echo $user_description; ?>
 									<?php endif; ?>
