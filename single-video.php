@@ -106,7 +106,7 @@
 
 		  					<div class="columns-wrap flex-controlled fs-sidebar">
 
-                    <h3>Here are your next posts</h3>
+                    <h3 class="sticky-box-aligner">Here are your next posts</h3>
 		  							<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
 
