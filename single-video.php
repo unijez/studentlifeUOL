@@ -101,10 +101,9 @@
 
 		  					<div class="columns-wrap flex-controlled fs-sidebar">
 
-
+                    <h3>Here are your next posts</h3>
 		  							<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
-                      <h3>Here are your next posts</h3>
 
 		  							           <?php
 		  									  $prevPost = get_previous_post(true);

@@ -168,6 +168,10 @@
 .fs-sidebar h3:not(.post-title) {
 	@include font-size(25px);
 	margin-bottom: 20px;
+  height: 25px;
+  width: 100%;
+  padding: 0 30px;
+
 }
 
 .fs-sidebar .side-box a {
