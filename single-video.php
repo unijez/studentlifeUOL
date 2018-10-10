@@ -18,7 +18,7 @@
  $youtube_link = get_field( 'youtube_link' );
  ?>
 
-    <?php get_template_part( 'template-parts/featured-image' ); ?>
+
 
  		<main id="main" class="site-main">
  			<?php if ( have_posts() ) : ?>
@@ -56,6 +56,16 @@
 
 				  						<div class="entry-content video-post">
 
+                        <h5 class="slide-category">
+                          <?php list_categories();?>
+                        </h5>
+                          <h2 class="slide-title">
+                           <?php the_title(); ?>
+                        </h2>
+
+                        <h5 class="slide-date">
+                          <i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
+                        </h5>
 
 				  						<?php the_content(); ?>
 
@@ -96,7 +106,7 @@
 
                       <h3>Here are your next posts</h3>
 
-		  							<?php
+		  							           <?php
 		  									  $prevPost = get_previous_post(true);
 		  									  if($prevPost):
 

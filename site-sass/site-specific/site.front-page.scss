@@ -290,10 +290,17 @@ text-decoration: none;
     span {
       position: absolute;
       background-color: $uni-blue;
-      color: white;
-      padding: 5px;
+      padding: 10px 20px;
       bottom: 0;
-      right: 1px;
+      left: 0;
     }
   }
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 12px solid #fff;
+  border-bottom: 8px solid transparent;
 }

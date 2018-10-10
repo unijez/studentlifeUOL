@@ -327,6 +327,7 @@
       border: 2px solid $grey-dark;
       padding: 18px 20px;
       margin-bottom: 27px;
+      width: 330px;
     }
 
     input::placeholder {
@@ -383,6 +384,7 @@
 
     li {
       padding-bottom: 15px;
+      padding-right: 30px;
       width: 33.3333%;
       a {
         text-decoration: none;
@@ -407,7 +409,7 @@
       }
       a:hover {
         border-bottom: 2px solid $grey-dark;
-      } 
+      }
     }
   }
 

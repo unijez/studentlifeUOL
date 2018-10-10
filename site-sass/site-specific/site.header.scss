@@ -35,6 +35,8 @@
 
 	}*/
 
+	background: white;
+
 }
 
 .site-header.site-module {
@@ -44,7 +46,7 @@
 
 /*.site-branding {
 	max-width: 500px;
-	display: flex;
+	display: flexr;
 	float: left;
 	@include mq($until:tablet) {
 		flex-direction: column;
