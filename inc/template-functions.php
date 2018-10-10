@@ -314,9 +314,9 @@ function use_post_format_templates_27425( $template ) {
             $template = $post_format_template;
         }
     }
- 
+
     return $template;
-}   
+}
 add_filter( 'template_include', 'use_post_format_templates_27425' );
 
 /**
@@ -484,10 +484,10 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
    $page_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
    //echo $page_link;
    if($button == "twitter"): ?>
-   <div class="social-button twitter"><a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title())?>&url=<?php echo urlencode($page_link)?>">Tweet</a><i class="fab fa-twitter"></i></div>
+   <a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title())?>&url=<?php echo urlencode($page_link)?>"><div class="social-button twitter-colour"><h5>Tweet</h5><i class="fab fa-twitter"></i></div></a>
    <?php
    elseif ($button == "facebook"):?>
-   <div class="social-button facebook" data-href="<?php echo urlencode($page_link); ?>" data-size="small" data-mobile-iframe="true"><a class="facebook-share-button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($page_link); ?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a><i class="fab fa-facebook-f"></i></div>
+   <a class="facebook-share-button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($page_link); ?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><div class="social-button facebook-colour" data-href="<?php echo urlencode($page_link); ?>" data-size="small" data-mobile-iframe="true"><h5>Share</h5><i class="fab fa-facebook-f"></i></div></a>
    <?php
    endif;
  }
