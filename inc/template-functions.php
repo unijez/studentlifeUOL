@@ -466,3 +466,16 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
  //     return null;
  //   }
  // }
+
+ function share_buttons($button) {
+   $page_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+   //echo $page_link;
+   if($button == "twitter"): ?>
+   <div><a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title())?>&url=<?php echo urlencode($page_link)?>">Tweet</a></div>
+   <?php
+   elseif ($button == "facebook"):?>
+   <?php echo "working"; ?>
+   <div data-href="<?php echo urlencode($page_link); ?>" data-size="small" data-mobile-iframe="true"><a class="facebook-share-button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($page_link); ?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+   <?php
+   endif;
+ }
