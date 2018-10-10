@@ -37,6 +37,12 @@
 
 	background: white;
 
+	@include mq(desktop) {
+		position: fixed;
+		z-index: 1;
+		width: 100%;
+	}
+
 }
 
 .site-header.site-module {
