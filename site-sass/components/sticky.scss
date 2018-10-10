@@ -3,3 +3,11 @@
   top: 112px;
   z-index: 2;
 }
+
+#masthead {
+  transition: all 0.5s linear;
+}
+
+#masthead.active {
+  box-shadow: 0 0 10px rgba(0,0,0,0.4); 
+}

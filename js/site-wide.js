@@ -79,3 +79,15 @@ $('ul.comment-tabs li').click(function(){
 		    $('.sticky-box').width($('.sticky-box').parent().width());
 		  });
 });
+
+(function ($) {
+	$(document).ready(function () {
+		$(window).scroll(function() {
+			if ($(document).scrollTop() > 150) {
+				$('header').addClass('active');
+			} else {
+				$('header').removeClass('active');
+			}
+		});
+	});
+})(jQuery);
