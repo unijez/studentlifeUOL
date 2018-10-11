@@ -107,7 +107,7 @@
 		  					<div class="columns-wrap flex-controlled fs-sidebar">
 
                     <h3 class="sticky-box-aligner">Here are your next posts</h3>
-		  							<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
+		  							<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear">
 
 
 		  							           <?php
@@ -116,7 +116,7 @@
 
 
 		  									 ?>
-		  									  <div class="side-box previous-box">
+		  									  <div class="side-box previous-box video-box">
 		  									    <h4 class="post-category"><?php list_categories($prevPost->ID); ?></h4>
 		  									    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-intro-image-video');?>
 
@@ -145,7 +145,7 @@
 
 
 		  						 ?>
-		  						  <div class="side-box next-box">
+		  						  <div class="side-box next-box video-box">
 		  						    <h4 class="post-category"><?php list_categories($nextPost->ID); ?></h4>
 		  						    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-intro-image-video');?>
 
