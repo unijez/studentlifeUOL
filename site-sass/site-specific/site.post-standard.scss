@@ -230,6 +230,8 @@
 		@include justify-content(flex-start);
 		@include flex-direction(row);
 	}
+
+
 }
 
 
@@ -263,6 +265,14 @@
 		/*border-top: 1px solid $grey3;*/
 	}
 
+}
+
+.author-title-link {
+  width: 100%;
+}
+
+.author-avatar-container {
+  width: 96px!important;
 }
 
 .author-title {

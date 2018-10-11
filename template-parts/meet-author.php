@@ -31,8 +31,10 @@
 				<div class="author-bio__name">
 
 						<?php if( $avatar ): ?>
+							
+											<?php echo $avatar; ?>
 
-								<?php echo $avatar; ?>
+
 
 						<?php else: ?>
 
@@ -49,7 +51,7 @@
 
 
 							<div class="author-bio__content">
-									<a class="author-title-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><h4 class="author-title"><?php the_author(); ?></h4></a>
+									<a class="" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><h4 class="author-title"><?php the_author(); ?></h4></a>
 									<?php if( $user_description ): ?>
 									<?php echo $user_description; ?>
 									<?php endif; ?>
