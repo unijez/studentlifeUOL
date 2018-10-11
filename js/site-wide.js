@@ -83,7 +83,7 @@ $('ul.comment-tabs li').click(function(){
 
 		var top = $('.sticky-box').offset().top;
 		  $(window).scroll(function (event) {
-		    var y = $(this).scrollTop() + 120;
+		    var y = $(this).scrollTop() + 92;
 		    if (y >= top)
 		      $('.sticky-box').addClass('stuck');
 		    else
