@@ -17,25 +17,25 @@ $toast-pulls: true !default;
 
 
 
-	
-	
-	
+
+
+
 	%span-all       { width: percentage(1/1); }
-	
+
 	%one-half       { width: percentage(1/2); }
-	
+
 	%one-third      { width: percentage(1/3); }
 	%two-thirds     { width: percentage(2/3); }
-	
+
 	%one-quarter    { width: percentage(1/4); }
 	%two-quarters   { width: percentage(2/4); }
 	%three-quarters { width: percentage(3/4); }
-	
-	
-	
+
+
+
 	// For each of our column groups...
 	@each $group in $toast-col-groups {
-	
+
 	  // For each column width from 1 to the column group...
 	  @for $i from 1 through $group {
 	    .#{$toast-column-namespace}--#{$i}-of-#{$group} {
@@ -54,14 +54,14 @@ $toast-pulls: true !default;
 	      } @else if percentage($i/$group) == percentage(3/4) {
 	        @extend %three-quarters;
 	      } @else {
-			@include flex(none);	        
+			@include flex(none);
 			width: percentage($i/$group);
-	
+
 	      }
 	    }
-	
+
 	  } // end @for
-	
+
 	} // end @each
 
 
@@ -69,27 +69,27 @@ $toast-pulls: true !default;
 // All direct descendents of .grid get treated the same way.
 // This might be overkill for some, but it's a time-saver for me.
 .#{$toast-column-namespace} {
-  
-	
+
+
 	@include mq($until:tablet) {
 		width: 100%;
 	}
-	
+
  @include mq($from: desktop, $until: wide) {
-   
-   
-   
-   
+
+
+
+
     &.#{$toast-column-namespace}--large-4-of-4,
     &.#{$toast-column-namespace}--large-3-of-3,
     &.#{$toast-column-namespace}--large-2-of-2 {
       width: percentage(1);
-      
+
       &.column.grid-small-full .side-bar-pull_inside{
       	margin-left: 0;
       }
     }
-    
+
     &.#{$toast-column-namespace}--large-1-of-2 {
       width: percentage(1/2);
     }
@@ -113,25 +113,25 @@ $toast-pulls: true !default;
     &.#{$toast-column-namespace}--large-3-of-4 {
       width: percentage(3/4);
     }
-  }	
-	
-	
-	
-	
+  }
+
+
+
+
   @include mq($from: tablet, $until: desktop) {
-   
+
     &.#{$toast-column-namespace}--medium-4-of-4,
     &.#{$toast-column-namespace}--medium-3-of-3,
     &.#{$toast-column-namespace}--medium-2-of-2,
     &.#{$toast-column-namespace}--medium-1-of-1 {
       width: percentage(1);
-	  
-      
+
+
       &.column.grid-small-full .side-bar-pull_inside{
       	margin-left: 0;
       }
     }
-    
+
     &.#{$toast-column-namespace}--medium-1-of-2 {
       width: percentage(1/2);
     }
@@ -163,19 +163,19 @@ $toast-pulls: true !default;
       display: inline-block;
       margin-right: -.24em;
     }
-    
+
     &.#{$toast-column-namespace}--small-4-of-4,
     &.#{$toast-column-namespace}--small-3-of-3,
     &.#{$toast-column-namespace}--small-2-of-2,
     &.#{$toast-column-namespace}--small-1-of-1 {
       width: percentage(1);
-      
+
       &.column.grid-small-full .side-bar-pull_inside{
       	margin-left: 0;
       }
     }
-    
-    
+
+
     &.#{$toast-column-namespace}--small-1-of-2 {
       width: percentage(1/2);
     }
@@ -200,57 +200,57 @@ $toast-pulls: true !default;
       width: percentage(3/4);
     }
   }
-  
-  
-  
-  
-  
+
+
+
+
+
 }
 
 
 
 .columns-wrap {
-		
-		
+
+
 		@include mq(tablet) {
-		
+
 			margin-left: -$desktop-side-pad;
 			margin-right: -$desktop-side-pad;
 			/*margin-bottom: -$desktop-side-pad;*/
 		}
-		
+
 
 }
 
 
 
 .columns-wrap.flex-controlled.left-side {
-	
+
 	@include mq(tablet) {
-	
+
 
 		@include justify-content(flex-start);
-		
+
 	}
-	
+
 }
 
 
 
 .columns-wrap.xl-h-inside {
-	
+
 	@include mq(tablet) {
-	
+
 		margin-left: -$desktop-side-pad ;
 		margin-right: -$desktop-side-pad ;
 		margin-bottom: 0;
 	}
-	
+
 }
 
 
 .columns-row {
-	
+
 	@include mq(tablet) {
 		padding-bottom: $desktop-side-pad;
 	}
@@ -258,50 +258,50 @@ $toast-pulls: true !default;
 
 .page-relationship .column-spacings,
 .column-spacings {
-		
+
 		padding-bottom: $desktop-side-pad;
 	/*	padding-left: $desktop-side-pad;
 		padding-right: $desktop-side-pad;*/
-		
+
 	@include mq(tablet) {
 		padding-bottom: $desktop-side-pad *2;
 		padding-left: $desktop-side-pad;
 		padding-right: $desktop-side-pad;
-		
-		
+
+
 	}
-	
+
 
 }
 
 
 .page-relationship .column-spacings {
-		
+
 		padding-bottom: $desktop-side-pad*2;
 
-	
+
 
 }
 
 
 .column-spacings.xl-h {
-	
+
 	@include mq(tablet) {
-		
+
 		padding-left: $desktop-side-pad;
 		padding-right: $desktop-side-pad;
-		
-		
+
+
 	}
-	
-	
+
+
 }
 .column-spacings.xl-b {
-		
+
 		@include mq(tablet) {
-		
+
 		padding-bottom: $desktop-side-pad *2;
-		
+
 
 		}
 
@@ -327,14 +327,14 @@ $toast-pulls: true !default;
 }
 
 /*.column-spacings:not(:last-child) {
-	
+
 	@include mq($until:tablet) {
-	
+
 		padding-bottom: $desktop-side-pad /2;
-	
+
 	}
 
-	
+
 }*/
 
 
@@ -354,7 +354,7 @@ $toast-pulls: true !default;
 	@include flex-basis(auto);
 	@include flex-grow(0);
 	@include flex-shrink(0);
-	
+
 }
 
 .level-row {
@@ -365,7 +365,7 @@ $toast-pulls: true !default;
 
 .level-column {
 	@include flex-direction(column);
-	
+
 }
 
 .level-elements,
@@ -377,53 +377,53 @@ $toast-pulls: true !default;
 .level-left {
   @include align-items(flex-start);
   @include justify-content(flex-start);
-  
+
 }
 
 .level-right {
 	@include align-items(flex-end);
 	@include justify-content(flex-end);
 	 margin-left: auto;
-          
+
 }
 
 
 @include mq(tablet) {
-	
-	
+
+
 	/*.level-elements,
 	.level-left,
 	.level-right {
 		@include flexbox;
 	}*/
-	
+
 	.level-left {
 	  @include align-items(flex-start);
 	  @include justify-content(flex-start);
-	  
+
 	}
-	
+
 	.level-right {
 		@include align-items(flex-end);
 		@include justify-content(flex-end);
 		 margin-left: auto;
-	          
+
 	}
-	
+
 	.page-nav__single-prev .level-right {
 		margin-left: 0;
 	}
-	
+
 
 }
 
 
 .page-nav .has-text-centered {
-	
+
 	@include mq ($until:tablet) {
 	  display: none;
 	}
-	
+
 }
 
 
@@ -446,26 +446,26 @@ $toast-pulls: true !default;
 
 /*.site-branding.flex-controlled,
 .columns-wrap.flex-controlled {
-	
+
 	@include mq($until:tablet) {
 		@include flex-direction(column);
 	}
-	
+
 }*/
 
 
 
 .single-column.flex-controlled,
 .columns-wrap.flex-controlled {
-	
+
 	@include mq($until:tablet) {
 		@include flex-direction(column);
 	}
 
 	@include flex-wrap(wrap);
-	@include justify-content(center);
+	@include justify-content(space-between);
 
-	
+
 }
 
 
@@ -478,5 +478,5 @@ $toast-pulls: true !default;
 	@include flexbox;
 	@include justify-content(flex-end);
 	@include flex-direction(column);
-	
+
 }
