@@ -17,9 +17,8 @@
 <h3>Here are your next posts</h3>
 
 		<?php
-		  $prevPost = get_previous_post(true);
+		  $prevPost = get_previous_post();
 		  if($prevPost):
-
 
 		 ?>
 		  <div class="side-box previous-box">
@@ -40,7 +39,7 @@
 		<?php endif; ?>
 
 		<?php
-		  $nextPost = get_next_post(true);
+		  $nextPost = get_next_post();
 		  if($nextPost):
 
 
