@@ -206,16 +206,23 @@ function list_categories($altID = null, $limit = null) {
   $cats = get_the_category($altID);
   }
   $catsSize = count($cats);
+  $allowed = 0;
   for($i = 0; $i < $catsSize; $i++) {
-    echo '<a href="' . get_category_link($cats[$i]->term_id) . '">' . strtoupper($cats[$i]->name) . '</a>';
-    if($limit != null) {
-      if($i == $limit-1) { break; }
+    if(($cats[$i]->slug != "video")) {
+      if (($cats[$i]->slug != "article")) {
+        echo '<a href="' . get_category_link($cats[$i]->term_id) . '">' . strtoupper($cats[$i]->name) . '</a>';
+        $allowed++;
+      }
     }
-    if($i != $catsSize-1) {
+    if($limit != null) {
+      if($allowed == $limit-1) { break; }
+    }
+    if(($allowed != $catsSize-1) && ($allowed != 0)) {
      echo ", ";
     }
   }
 }
+
 
 function download_thumbnail() {
 
