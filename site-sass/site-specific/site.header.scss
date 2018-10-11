@@ -46,8 +46,8 @@
 }
 
 .site-header.site-module {
-	padding-top: $mobile-side-pad;
-	padding-bottom: $mobile-side-pad;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 /*.site-branding {
@@ -144,8 +144,9 @@
    	line-height: 27px;
 	 margin: 0;
 
-	 @include mq(tablet) {
-		  @include font-size(25px);
+	 @include mq(desktop) {
+		  font-size: 22px !important;
+			width: 230px;
 	 }
 
   }
@@ -197,13 +198,12 @@
 
 	@include mq(mobileLandscape) {
 		margin-bottom: $mobile-side-pad;
-	 width: 50vw;
 
 	}
 
-	@include mq(tablet) {
+	@include mq(desktop) {
 		margin-bottom: 0;
-	 width: 18vw;
+	 width: 240px;
 
 	}
 

@@ -23,7 +23,7 @@
  				<?php while ( have_posts() ) : the_post(); ?>
 
 
-          <div class="site-module">
+          <div class="site-module removed-padding">
 
 
 		  			<div class="module-inner-wrap single-module">
@@ -32,11 +32,11 @@
 		  					<div class="columns-wrap flex-controlled">
 
 
-		  						<div class="column-spacings column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
+		  						<div class="column-spacings column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear extra-padding">
 
-					
-								
-								
+
+
+
 		  						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
                   <div class="social-buttons-container_single">

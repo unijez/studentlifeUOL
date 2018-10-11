@@ -178,21 +178,11 @@
 
 }
 
-.fs-sidebar .side-box a {
+.fs-sidebar .side-box:not(.video-box) a {
   display: block;
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
-}
-
-.fs-sidebar .side-box:last-child {
-
-	@include mq(tablet) {
-		margin-top: $desktop-side-pad;
-		padding-top: $desktop-side-pad;
-	}
-
-
 }
 
 .tags {
