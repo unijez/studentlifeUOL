@@ -60,7 +60,7 @@ padding-bottom: $desktop-side-pad;
   @include mq($until:tablet) {
       line-height: normal !important;
   }
-  
+
   @include mq(desktop) {
     	line-height: 35px;
   }
@@ -271,12 +271,11 @@ text-decoration: none;
 
 
 .post-img {
-	margin-left: -$mobile-side-pad;
-	margin-right: - $mobile-side-pad;
 
-	@include mq(tablet) {
-	  margin-left: 0;
-	  margin-right: 0;
+
+	@include mq(desktop) {
+    margin-left: -$mobile-side-pad;
+  	margin-right: - $mobile-side-pad;
 	}
 }
 

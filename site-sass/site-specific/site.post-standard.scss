@@ -1,6 +1,8 @@
 
 .single-module {
-  padding: 0 30px;
+  @include mq(desktop) { 
+    padding: 0 30px;
+  }
 }
 
 .format-standard {
