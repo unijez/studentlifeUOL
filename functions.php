@@ -156,6 +156,18 @@ add_action( 'widgets_init', 'studentlifeUOL_widgets_init' );
    echo $excerpt;
  }
 
+ function custom_biography($biography, $limit) {
+   $b_bio = explode(' ', $biography, $limit);
+   if (count($b_bio)>=$limit) {
+     array_pop($b_bio);
+     $b_bio = implode(" ",$b_bio).'...';
+   } else {
+     $b_bio = implode(" ",$b_bio);
+   }
+   $b_bio = preg_replace('`[[^]]*]`','',$b_bio);
+   echo $b_bio;
+ }
+
  function prefix_category_title( $title ) {
      if ( is_category() ) {
          $title = single_cat_title( '', false );
