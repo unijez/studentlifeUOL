@@ -14,19 +14,16 @@
 
 
 .site-module.xl-t {
-	padding-top: $mobile-side-pad * 2;
+
 
 	@include mq(tablet) {
-		padding-top: $desktop-side-pad  * 2;
 	}
 }
 
 
 .site-module.xl-b {
-	padding-bottom: $mobile-side-pad * 2;
 
 	@include mq(tablet) {
-		padding-bottom: $desktop-side-pad  * 2;
 	}
 }
 
