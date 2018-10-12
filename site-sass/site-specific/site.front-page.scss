@@ -57,7 +57,13 @@ padding-bottom: $desktop-side-pad;
     }
 
 .post-title {
-	line-height: 35px;
+  @include mq($until:tablet) {
+      line-height: normal !important;
+  }
+  
+  @include mq(desktop) {
+    	line-height: 35px;
+  }
 }
 
     .item-text {
@@ -276,16 +282,21 @@ text-decoration: none;
 
 .thumbnail-aligner {
   a {
-    width: 366.667px;
-    height: 206.25px;
     overflow: hidden;
     position: relative;
     display: block;
+
+    @include mq(desktop) {
+      width: 366.667px;
+      height: 206.25px;
+    }
     img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      @include mq(desktop) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
     }
     span {
       position: absolute;
