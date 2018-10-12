@@ -178,11 +178,21 @@
 
 }
 
-.fs-sidebar .side-box:not(.video-box) a {
+.fs-sidebar .side-box a {
   display: block;
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
+}
+
+.fs-sidebar .side-box:last-child {
+
+	@include mq(tablet) {
+		margin-top: $desktop-side-pad;
+		padding-top: $desktop-side-pad;
+	}
+
+
 }
 
 .tags {
@@ -257,13 +267,6 @@
 
 }
 
-.author-title-link {
-  width: 100%;
-}
-
-.author-avatar-container {
-  width: 96px!important;
-}
 
 .author-title {
 	color: $uni-blue;
