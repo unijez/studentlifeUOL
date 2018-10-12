@@ -62,6 +62,7 @@ $('ul.comment-tabs li').click(function(){
 		globalNav.click(function(e) {
 			if(e.target == this) {
 				body.removeClass("stop-scroll");
+				html.removeClass("stop-scroll");
 				itemNav.addClass("items-off");
 				globalNav.addClass("overlay-fade");
 				setTimeout(function() { globalNav.addClass("overlay-off") }, 750);
