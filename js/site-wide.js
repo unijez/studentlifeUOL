@@ -56,6 +56,7 @@ $('ul.comment-tabs li').click(function(){
 	 	var globalNav = $('.overlay-navigation');
 		var itemNav = $('.nav-items');
 		var body = $('body');
+		var html = $('html');
 
 
 		globalNav.click(function(e) {
@@ -69,6 +70,7 @@ $('ul.comment-tabs li').click(function(){
 
 		openButton.on("click", function(){
 			body.addClass("stop-scroll");
+			html.addClass("stop-scroll");
 			itemNav.removeClass("items-off");
 			globalNav.removeClass("overlay-off");
 			globalNav.removeClass("overlay-fade");
@@ -76,6 +78,7 @@ $('ul.comment-tabs li').click(function(){
 
 		closeButton.on("click", function(){
 			body.removeClass("stop-scroll");
+			html.removeClass("stop-scroll");
 			itemNav.addClass("items-off");
 			globalNav.addClass("overlay-fade");
 			setTimeout(function() { globalNav.addClass("overlay-off") }, 750);

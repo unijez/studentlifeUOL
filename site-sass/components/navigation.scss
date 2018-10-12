@@ -446,14 +446,13 @@
 
 
   .stop-scroll {
-    height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
   }
 
 
 
   .overlay-navigation-header {
-  	position: absolute;
+  	position: fixed;
   	top: 0;
   	left: 0;
   	width: 100%;
