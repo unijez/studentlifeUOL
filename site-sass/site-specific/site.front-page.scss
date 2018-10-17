@@ -275,34 +275,12 @@ text-decoration: none;
 	}
 }
 
-
-.post-img {
-
-
-	@include mq(desktop) {
-    margin-left: -$mobile-side-pad;
-  	margin-right: - $mobile-side-pad;
-	}
-}
-
 .thumbnail-aligner {
   a {
     overflow: hidden;
     position: relative;
     display: block;
 
-    @include mq(desktop) {
-      width: 366.667px;
-      height: 206.25px;
-    }
-    img {
-      @include mq(desktop) {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-      }
-    }
     span {
       position: absolute;
       background-color: $uni-blue;
