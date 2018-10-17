@@ -1,6 +1,6 @@
 
 .single-module {
-  @include mq(desktop) { 
+  @include mq(desktop) {
     padding: 0 30px;
   }
 }
@@ -177,6 +177,10 @@
   height: 25px;
   width: 100%;
   //padding: 0 30px;
+
+  @include mq($until:desktop) {
+    height: auto;
+  }
 
 }
 
