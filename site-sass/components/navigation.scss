@@ -13,7 +13,9 @@
 .primary-menu {
   align-self: center;
   margin: 0;
-  display: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 
   @include mq(wide) {
     display: block;
@@ -22,7 +24,6 @@
 
 .primary-menu li {
 	float: left;
-	margin: 0 20px 0 0;
 	position: relative;
 }
 
@@ -41,7 +42,6 @@
 
   @include mq($until:tablet) {
     display: inline-block;
-    padding: 11px 0 !important;
   }
 }
 
@@ -204,8 +204,10 @@
   }
 
   .main-navigation {
-    @include mq($until:tablet) {
-			display: none;
+    @include mq($until:desktop) {
+      display: flex;
+      flex-direction: column;
+      margin: 0px;
 		}
   }
 
@@ -226,7 +228,9 @@
     top: 154px;
   }
 
-
+  .larger-title {
+    font-size: 30px !important;
+  }
 
 	.mobile-navigation .primary-menu a {
 		padding-left: $mobile-side-pad;
