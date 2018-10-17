@@ -4,6 +4,13 @@
   z-index: 2;
 }
 
+.bottomStuck {
+  position: absolute;
+  bottom: 0px;
+  top: auto;
+  z-index: -2;
+}
+
 .sticky-box {
   padding-top: 60px;
 }

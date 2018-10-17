@@ -87,15 +87,29 @@ $('ul.comment-tabs li').click(function(){
 
 
 		var top = $('.sticky-box').offset().top;
+		var trackOffset = $('.column-spacings').offset().top;
+		var trackHeight = $('.column-spacings').outerHeight();
+		var stickyBoxHeight = $('.sticky-box').height();
+		var boxBottom = top + stickyBoxHeight;
+		var trackBottom = trackOffset + trackHeight;
 			$(window).scroll(function (event) {
+				var y = $(this).scrollTop() + 92;
 				if( $(window).width() > 960 ) {
-					console.log("This is Desktop");
-					var y = $(this).scrollTop() + 92;
-					if (y >= top)
+
+					if (y >= top && (y+stickyBoxHeight) <= (trackBottom)) {
 						$('.sticky-box').addClass('stuck');
-					else
+					} else {
 						$('.sticky-box').removeClass('stuck');
+						$('.sticky-box').removeClass('bottomStuck');
 					$('.sticky-box').width($('.sticky-box').parent().width());
+					}
+					console.log("y+stickyBoxHeight: "+y+stickyBoxHeight);
+					console.log(trackHeight);
+					if((y) >= (trackHeight+70)) {
+						$('.sticky-box').addClass('bottomStuck');
+					} else {
+						$('.sticky-box').removeClass('bottomStuck');
+					}
 				}
 			});
 });
