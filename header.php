@@ -46,7 +46,7 @@
 
 		<div class="module-inner-wrap">
 
-		<div class="level-elements">
+		<div class="level-elements header-level-elements">
 
 		<div class="site-branding flex-controlled">
 

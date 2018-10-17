@@ -349,6 +349,12 @@ $toast-pulls: true !default;
   }
 }
 
+.header-level-elements {
+  @include mq($until:desktop) {
+    flex-direction: column;
+  }
+}
+
 
 
 
