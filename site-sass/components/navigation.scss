@@ -20,11 +20,20 @@
   @include mq(wide) {
     display: block;
   }
+
+  @include mq($until:desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .primary-menu li {
 	float: left;
 	position: relative;
+
+  @include mq($until:desktop) {
+    max-width: 100px;
+  }
 }
 
 .primary-menu > li:last-child {
