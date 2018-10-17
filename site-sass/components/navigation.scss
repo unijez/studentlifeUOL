@@ -339,6 +339,10 @@
       padding: 18px 20px;
       margin-bottom: 27px;
       width: 330px;
+
+      @include mq($until:desktop) {
+        width: 100%;
+      }
     }
 
     input::placeholder {
@@ -375,7 +379,7 @@
 	  @include font-size(25px);
 
     @include mq($until:desktop) {
-      margin-top: 40px;
+      margin-top: 30px;
     }
   }
 
@@ -428,6 +432,10 @@
         border-bottom: 2px solid $grey-dark;
       }
     }
+
+    @include mq($until:tablet) {
+      height: 240px;
+    }
   }
 
   .overlay-first-menu {
@@ -443,6 +451,17 @@
       a:hover {
         border-bottom: 2px solid $grey-dark;
       }
+    }
+    @include mq($until:tablet) {
+      height: 35px;
+    }
+  }
+
+  .overlay-first-menu, .overlay-second-menu {
+    @include mq($until:tablet) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
     }
   }
 
