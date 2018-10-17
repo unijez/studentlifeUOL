@@ -344,7 +344,8 @@ $toast-pulls: true !default;
 .level-elements {
 	/*@include align-items(center);*/
   @include mq($until:desktop) {
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
 
