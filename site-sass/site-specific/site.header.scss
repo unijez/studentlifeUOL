@@ -168,6 +168,9 @@
 
 	@include flex-direction(row);
 
+	@include mq($until:tablet) {
+		justify-content: space-between;
+	}
 
 
 
