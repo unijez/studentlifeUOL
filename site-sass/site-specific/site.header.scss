@@ -168,7 +168,7 @@
 
 	@include flex-direction(row);
 
-	@include mq($until:tablet) {
+	@include mq($until:desktop) {
 		justify-content: space-between;
 	}
 
@@ -180,9 +180,10 @@
 		 margin-top: 0;
 		 padding-left: $mobile-side-pad;
 		 margin-left: $desktop-side-pad;
-		 max-width: 340px;
+		 //max-width: 340px;
+		 width: 100%;
 		 @include align-items(center);
-		 @include justify-content(center);
+		 @include justify-content(space-between);
 		 /*@include justify-content(flex-start);*/
 	}
 
