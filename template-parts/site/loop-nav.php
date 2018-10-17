@@ -105,7 +105,7 @@ $next = get_next_post();
 
 					<a class="more-button main-btn block-button block-button-icon" href="<?php echo($next_link_url); ?>">
 
-						<span class=" icon-left light-blue"><i class="fasr fa-arrow-left"></i></span>
+						<span class=" icon-left light-blue"><i class="far fa-arrow-left"></i></span>
 
 
 						Older Posts
