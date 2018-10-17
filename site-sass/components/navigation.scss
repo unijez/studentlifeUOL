@@ -27,7 +27,14 @@
 	position: relative;
 }
 
-.primary-menu > li:last-child { margin-right: 20px; }
+.primary-menu > li:last-child {
+
+  margin-right: 20px;
+
+  @include mq($until:desktop) {
+    margin-right: 0;
+  }
+}
 
 .primary-menu a {
 	display: inline-block;
