@@ -252,6 +252,12 @@ text-decoration: none;
 	}
 }
 
+.icon-right, .icon-left {
+  @include mq($until:tablet) {
+    display: none;
+  }
+}
+
 // Media Queries
 
 .content-container {
