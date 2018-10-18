@@ -103,8 +103,6 @@ $('ul.comment-tabs li').click(function(){
 						$('.sticky-box').removeClass('bottomStuck');
 					$('.sticky-box').width($('.sticky-box').parent().width());
 					}
-					console.log("y+stickyBoxHeight: "+y+stickyBoxHeight);
-					console.log(trackHeight);
 					if((y) >= (trackHeight+70)) {
 						$('.sticky-box').addClass('bottomStuck');
 					} else {
