@@ -57,8 +57,8 @@ get_header(); ?>
 							<div class="author-bio-card">
 
 
-
-									<span class="author-prof-pic"><?php echo get_avatar( $contributor_id ); ?></span>
+									<?php $profile_pic = get_field( 'profile_picture', 'user_'. $contributor_id ); ?>
+									<span class="author-prof-pic"><img src="<?php echo $profile_pic['url']?>" alt="profile picture"></span>
 
 
 									<div>
