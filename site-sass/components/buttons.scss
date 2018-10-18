@@ -16,7 +16,6 @@
   text-align: center;
   margin: 0;
   cursor: pointer;
-  @include vendor(transition, $global-transition);
 
 
   	@include hocus() {

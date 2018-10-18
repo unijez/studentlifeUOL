@@ -350,6 +350,7 @@ $toast-pulls: true !default;
 }
 
 .header-level-elements {
+  flex-wrap: wrap;
   @include mq($until:desktop) {
     flex-direction: column;
   }

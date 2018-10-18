@@ -32,7 +32,7 @@
 	position: relative;
 
   @include mq($until:desktop) {
-    max-width: 100px;
+    max-width: 33%;
   }
 }
 
@@ -220,6 +220,9 @@
   }
 
   .main-navigation {
+    max-width: 100%;
+    margin-left: 0;
+    flex-grow: 1;
     @include mq($until:desktop) {
       display: flex;
       flex-direction: column;
