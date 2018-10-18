@@ -67,8 +67,9 @@
                           <i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
                         </h5>
 
-				  						<?php the_content(); ?>
-
+                      <div class="video-content-container">
+				  						            <?php the_content(); ?>
+                      </div>
 
 				  						</div> <!--entry-content-->
 
