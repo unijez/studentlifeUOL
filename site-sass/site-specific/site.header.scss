@@ -199,19 +199,13 @@
 .site-branding__hero-logo {
 	color: $grey-dark;
 	display: block;
-	margin-bottom: $mobile-side-pad;
+	margin: auto auto;
+
+ 	width: 240px;
 	@include flexbox;
 	@include align-items(center);
 
-	@include mq(mobileLandscape) {
-		margin-bottom: $mobile-side-pad;
-
+	@include mq($until:tablet) {
+		margin-bottom: 20px;
 	}
-
-	@include mq(desktop) {
-		margin-bottom: 0;
-	 width: 240px;
-
-	}
-
 }
