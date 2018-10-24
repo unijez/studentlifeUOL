@@ -1,17 +1,37 @@
 .author-archive-card {
   display: flex;
   flex-direction: row;
-  max-height: 600px;
-  width: 100%;
+  height: 600px;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-bottom: 20px;
 
+  @include mq($until:desktop) {
+    max-height: auto;
+    flex-direction: column;
+    height: auto;
+  }
+
   div {
-    max-width: 40%;
-    flex-grow: 1;
+    padding: 0;
+    width: 33.3333%;
+    padding: 0 30px;
+    @include mq($until:desktop) {
+      margin-top: 20px;
+      padding: 0 30px;
+      width: 100% !important;
+      order: 2;
+    }
   }
 
   img {
-    max-width: 60%;
-    flex-grow: 2;
+    margin-left: 30px;
+    width: 66.6666%;
+    margin-bottom: 20px;
+    @include mq($until:desktop) {
+      width: 100% !important;
+      margin: 0;
+      order: 1;
+    }
   }
 }
