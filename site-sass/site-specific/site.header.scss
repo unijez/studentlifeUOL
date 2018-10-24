@@ -37,11 +37,11 @@
 
 	background: white;
 
-	@include mq(desktop) {
-		position: fixed;
-		z-index: 2;
-		width: 100%;
-	}
+@include mq(desktop) {
+	position: fixed;
+}
+	z-index: 2;
+	width: 100%;
 
 }
 

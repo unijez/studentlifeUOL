@@ -144,6 +144,10 @@ $slick-opacity-not-active: 0.25 !default;
     margin: 0;
     height: 52%;
 	left: 30px;
+
+  @include mq($until:desktop) {
+    left: 0;
+  }
     li {
         position: relative;
         height: 20px;

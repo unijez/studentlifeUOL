@@ -1,15 +1,32 @@
 .hide-extra {
-overflow: hidden;
-video {
-  width: 100%;
+  height: 322px;
   position: absolute;
-}
+  width: 100%;
+
+  video {
+    width: 100%;
+    position: absolute;
+
+    @include mq($until:desktop) {
+      display: none;
+    }
+  }
+
+  div {
+    @include mq(desktop) {
+      display: none;
+    }
+  }
 }
 
 .main-slider, .slick-slider, .slick-list, .slick-slide {
-  height: 542px !important;
+  height: 500px;
   position: relative;
   overflow: hidden;
+
+  @include mq($until:desktop) {
+    height: 322px !important;
+  }
 }
 
 .heading-image {
@@ -80,14 +97,23 @@ background-position: center center;
 	right: 0;
 	width: 100%;
 	height: 100%;
+  padding: 0 10px
 }
 
+.flex-controlled {
+  padding: 0 20px;
+}
 
   .overlay-slide {
     z-index: 1;
     height: auto;
     background-color: rgba(#ffffff, 0.8);
-	padding: $desktop-side-pad;
+	  padding: $desktop-side-pad;
+
+    @include mq($until:desktop) {
+      padding: 10px 20px;
+      margin: auto;
+    }
 
     * > a {
         text-decoration: none;
