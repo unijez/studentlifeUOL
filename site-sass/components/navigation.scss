@@ -391,7 +391,7 @@
 	  @include font-size(25px);
 
     @include mq($until:desktop) {
-      margin-top: 30px;
+      margin-top: 35px;
     }
   }
 
@@ -415,12 +415,24 @@
 
   }
 
+  .holder-small {
+    height: 120px;
+    @include mq(desktop) {
+      display: none;
+    }
+  }
+
+  .holder-large {
+    height: 260px;
+    @include mq(desktop) {
+      height: 180px;
+    }
+  }
+
+
   .overlay-second-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
     margin-bottom: 0;
+    height: 100%;
 
     @include mq($until:tablet) {
       flex-direction: column;
@@ -428,11 +440,10 @@
 
     li {
       padding-bottom: 15px;
-      padding-right: 30px;
-      width: 33.3333%;
-
-      @include mq($until:tablet) {
-        width: auto;
+      width: 50%;
+      @include mq(desktop) {
+          width: 33%;
+          padding-right: 15px;
       }
 
       a {
@@ -444,17 +455,15 @@
         border-bottom: 2px solid $grey-dark;
       }
     }
-
-    @include mq($until:tablet) {
-      height: 240px;
-    }
   }
 
   .overlay-first-menu {
     margin-bottom: 0;
+    height: 100%;
 
     li {
       padding-bottom: 15px;
+      width: 50%;
       a {
         text-decoration: none;
         color: $grey-dark;
@@ -464,17 +473,12 @@
         border-bottom: 2px solid $grey-dark;
       }
     }
-    @include mq($until:tablet) {
-      height: 35px;
-    }
   }
 
   .overlay-first-menu, .overlay-second-menu {
-    @include mq($until:tablet) {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-    }
   }
 
   .overlay-fade {
@@ -498,7 +502,7 @@
   	top: 0;
   	left: 0;
   	width: 100%;
-    padding: 45px 115px;
+    padding: 35px 115px 0 115px;
   	@include flexbox;
   	@include justify-content(flex-end);
 

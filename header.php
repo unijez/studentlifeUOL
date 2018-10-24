@@ -119,6 +119,23 @@
 
 
 				<h3 class="larger-title">Student Life</h3>
+
+				<div class="holder-small">
+				<ul class="overlay-first-menu">
+				<?php
+						$nav_args = array(
+							'container' 		=> '',
+							'theme_location' => 'primary-menu',
+							'items_wrap' 		=> '%3$s'
+						);
+
+						wp_nav_menu( $nav_args );
+
+				?>
+
+				</ul>
+				</div>
+<!--
 				<ul class="overlay-first-menu">
 					<?php
 
@@ -131,7 +148,9 @@
 						wp_nav_menu( $nav_args );
 					?>
 				</ul>
+-->
 				<h3>Topics</h3>
+				<div class="holder-large">
 				<ul class="overlay-second-menu">
 					<?php
 
@@ -144,6 +163,7 @@
 						wp_nav_menu( $nav_args );
 					?>
 				</ul>
+				</div>
 				<h3>Search</h3>
 				<div class="ov-nav-search">
 					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
