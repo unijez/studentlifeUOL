@@ -224,7 +224,7 @@
     margin-left: 0;
     flex-grow: 1;
     @include mq($until:desktop) {
-      display: flex;
+      display: none;
       flex-direction: column;
       margin: 0px;
 		}
