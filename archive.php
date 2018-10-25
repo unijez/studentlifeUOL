@@ -27,8 +27,10 @@
  ?>
  <div class="author-archive-card">
    <div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
-     <h2 class="home-section-title content-heading"><?php echo $user_nicename?></h2>
-     <p><?php echo $user_description; ?></p>
+     <div class="align-author-card">
+       <h2 class="home-section-title content-heading"><?php echo $user_nicename?></h2>
+       <p><?php echo $user_description; ?></p>
+    </div>
    </div>
    <?php $profile_pic = get_field( 'profile_picture', 'user_'. $author_id ); ?>
    <img class="column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear" src="<?php echo $profile_pic['url']?>" alt="profile picture">
