@@ -239,7 +239,11 @@
 }
 
 .author-bio__name {
-	@include flexbox;
+  display: inline-block;
+  @include mq(desktop) {
+    @include flexbox;
+  }
+
 
 	@include flex-direction(column);
 

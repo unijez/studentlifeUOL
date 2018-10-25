@@ -11,11 +11,15 @@
 }
 
 .site-module-bypass {
-	padding: 0 30px;
+	@include mq($until:tablet) {
+		padding: 0 30px;
+	}
 }
 
 .site-module-nopad {
-	padding: 60px 0;
+	@include mq($until:tablet) {
+		padding: 60px 0;
+	}
 }
 
 .video-module {
