@@ -106,19 +106,19 @@
   padding: 20px 30px;
 
  }
- 
+
  .footer-bottom > .module-inner-wrap {
 
  	@include flex-direction(column);
- 	
- 	
+
+
  	@include mq(tablet) {
  	@include flex-direction(row);
- 	
+
  	}
- 	
+
  }
- 
+
 
 .logo_container {
   @include mq ($until:tablet) {
@@ -136,26 +136,28 @@
 
 .site-footer__logo {
 	@include align-items(flex-start);
-	
-	
+
+
 	@include mq ($until:tablet) {
 	 width: 100%;
 	}
-	
+
+  margin: 0;
+
 }
 
 .footer-meta {
 	@include font-size(12px);
-	
+
 /*	@include flexbox;
 	@include align-items(flex-end);*/
 	@include mq(tablet) {
 	/*@include flex-direction(row);*/
-	
+
 	padding-left: $desktop-side-pad;
-	
+
 	}
-	
+
 }
 .credit {
 	line-height: 20px;
@@ -192,14 +194,14 @@
 	@include flexbox;
 	@include flex-direction(row);
 	@include flex-wrap(wrap);
-	
+
 	@include mq(tablet) {
 	/*@include flex-direction(row);*/
-	
-	
-	
+
+
+
 	}
-	
+
 }
 
 
@@ -211,17 +213,17 @@
 .university-links li a{
 	color: $grey2;
 	text-decoration: none;
-	
+
 	@include hocus() {
 		  text-decoration: underline;
 	}
-	
+
 }
 
 
 
 .university-links li:not(:last-child):after {
-	
+
 		content: "|";
 		margin: 0 5px;
 
