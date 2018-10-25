@@ -10,6 +10,28 @@
 
 }
 
+.site-module-bypass {
+	padding: 0 30px;
+}
+
+.site-module-nopad {
+	padding: 60px 0;
+}
+
+.video-module {
+	@include mq($until:tablet) {
+		width: 100vw;
+		height: auto;
+		margin: 0 -30px;
+	}
+
+	.posts-video_embed {
+		@include mq($until:tablet) {
+			padding-bottom: 50%;
+		}
+	}
+}
+
 .removed-padding {
 	padding: 0 30px 60px 30px;
 }

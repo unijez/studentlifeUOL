@@ -27,9 +27,9 @@
  				<?php while ( have_posts() ) : the_post(); ?>
 
 
-          <div class="site-module">
+          <div class="site-module site-module-bypass">
 
-		  				<div class="module-inner-wrap single-module">
+		  				<div class="module-inner-wrap single-module video-module">
 
 
 		  			<?php if( $youtube_link ): ?>
@@ -44,7 +44,7 @@
 
 		  				</div>
 
-		  			<div class="module-inner-wrap site-module">
+		  			<div class="module-inner-wrap site-module site-module-nopad">
 
 
 		  					<div class="columns-wrap flex-controlled">
