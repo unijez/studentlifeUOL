@@ -194,7 +194,7 @@ background-position: center center;
 
 .slide-date {
 	color: $base-black;
-	@include font-size(12px);
+	@include font-size(14px);
 
 	@include mq(tablet) {
 	  @include font-size(15px);
