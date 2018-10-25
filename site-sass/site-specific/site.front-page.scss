@@ -51,9 +51,18 @@ padding-bottom: $desktop-side-pad;
   .featured-post {
     display: inline-flex;
 
-    .post-img a img {
+    .post-img {
+
       width: 100%;
-      height: auto;
+      @include mq($until: tablet) {
+        width: 100vw;
+        margin: 0 -30px;
+      }
+
+      a img {
+       width: 100%;
+       height: auto;
+     }
     }
 
 .post-title {
@@ -280,7 +289,7 @@ text-decoration: none;
     overflow: hidden;
     position: relative;
     display: block;
-    @include mq(mobile) {
+    @include mq($until:tablet) {
       margin: 0 -30px;
     }
 
