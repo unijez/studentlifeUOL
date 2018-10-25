@@ -26,14 +26,13 @@
 
 
 
-					<h4 class="meet-author">Meet the author	</h4>
+					<h4 class="meet-author">Meet the author</h4>
 
 				<div class="author-bio__name">
-
+						<a href="<?php echo get_author_posts_url( $author_id, $user_nicename ); ?>">
 						<?php if( $avatar ): ?>
-							
-											<?php echo $avatar; ?>
 
+											<?php echo $avatar; ?>
 
 
 						<?php else: ?>
@@ -41,7 +40,7 @@
 
 
 						<?php endif; ?>
-
+						</a>
 
 
 
