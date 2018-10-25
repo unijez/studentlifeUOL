@@ -210,15 +210,15 @@ function list_categories($altID = null, $limit = null) {
   for($i = 0; $i < $catsSize; $i++) {
     if(($cats[$i]->slug != "video")) {
       if (($cats[$i]->slug != "article")) {
+        if($limit != null) {
+          if($allowed == $limit-1) { break; }
+        }
+        if(($allowed != $catsSize-1) && ($allowed != 0)) {
+         echo ", ";
+        }
         echo '<a href="' . get_category_link($cats[$i]->term_id) . '">' . strtoupper($cats[$i]->name) . '</a>';
         $allowed++;
       }
-    }
-    if($limit != null) {
-      if($allowed == $limit-1) { break; }
-    }
-    if(($allowed != $catsSize-1) && ($allowed != 0)) {
-     echo ", ";
     }
   }
 }
