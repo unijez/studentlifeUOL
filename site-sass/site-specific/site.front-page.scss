@@ -280,6 +280,9 @@ text-decoration: none;
     overflow: hidden;
     position: relative;
     display: block;
+    @include mq(mobile) {
+      margin: 0 -30px;
+    }
 
     span {
       position: absolute;
