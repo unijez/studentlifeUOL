@@ -15,6 +15,15 @@
   padding-top: 60px;
 }
 
+.active {
+  top: -72px;
+  position: fixed;
+}
+
+.activatedPadding {
+  margin-top: 120px
+}
+
 #masthead {
   transition: all 0.15s linear;
 }

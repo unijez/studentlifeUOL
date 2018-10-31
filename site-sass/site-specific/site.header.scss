@@ -131,7 +131,7 @@
 	 @include mq($until:desktop) {
 		 width: 100%;
 	 }
-  margin-bottom: $mobile-side-pad;
+  margin-bottom: 5px;
 
 
    @include mq(tablet) {
@@ -206,6 +206,6 @@
 	@include align-items(center);
 
 	@include mq($until:tablet) {
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 	}
 }

@@ -1,10 +1,17 @@
 (function ($) {
 	$(document).ready(function () {
 		$(window).scroll(function() {
-			if ($(document).scrollTop() > 50) {
+			if( $(window).width() > 960 ) {
+				var scrollDist = 50;
+			} else {
+				var scrollDist = 70;
+			}
+			if ($(document).scrollTop() > scrollDist) {
 				$('header').addClass('active');
+				$('.main-slider').addClass('activatedPadding');
 			} else {
 				$('header').removeClass('active');
+				$('.main-slider').removeClass('activatedPadding');
 			}
 		});
 	});
