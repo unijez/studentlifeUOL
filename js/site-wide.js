@@ -9,14 +9,14 @@
 			if ($(document).scrollTop() > scrollDist) {
 				if( $(window).width() < 481 ) {
 					$('header').addClass('activeMobile');
-					$('.main-slider').addClass('activatedPadding');
+					$('.sitebody-content').addClass('activatedPadding');
 				} else {
 					$('header').addClass('active');
 				}
 			} else {
 				if( $(window).width() < 481 ) {
 					$('header').removeClass('activeMobile');
-					$('.main-slider').removeClass('activatedPadding');
+					$('.sitebody-content').removeClass('activatedPadding');
 				} else {
 					$('header').removeClass('active');
 				}
