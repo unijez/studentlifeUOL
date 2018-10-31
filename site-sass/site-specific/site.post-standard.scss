@@ -236,6 +236,9 @@
 
 .author-bio {
 	margin: 80px 0;
+  @include mq($until:tablet) {
+    margin: 20px 0;
+  }
 }
 
 .author-bio__name {
@@ -377,6 +380,10 @@
 
 .video-content-container {
   margin-top: 60px;
+
+  @include mq($until:tablet) {
+    margin-top: 20px;
+  }
 
   h1 {
     margin: 0 0 30px 0;
