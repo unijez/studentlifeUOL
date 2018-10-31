@@ -30,10 +30,13 @@
 .primary-menu li {
 	float: left;
 	position: relative;
-
   @include mq($until:desktop) {
     max-width: 33%;
   }
+}
+
+.primary-menu li:not(:last-child) {
+  margin-right: 10px;
 }
 
 .primary-menu > li:last-child {
