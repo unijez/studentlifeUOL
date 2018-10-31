@@ -40,6 +40,7 @@
 						<p><b>Student Life</b></p>
 			  		<p class="credit">Designed by Thomas Moore (2nd year Interactive Design). </p>
 						<p class="credit">Developed by Brennan Ceballos Peña (1st year Games Computing).</p>
+						<br />
 						<b>
 			  		<?php university_links(); ?>
 						</b>
