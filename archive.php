@@ -37,6 +37,8 @@
  </div>
 
  <?php
+ else:
+  $author_archive = false;
  endif;
  ?>
 
