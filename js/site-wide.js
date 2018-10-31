@@ -7,11 +7,19 @@
 				var scrollDist = 70;
 			}
 			if ($(document).scrollTop() > scrollDist) {
-				$('header').addClass('active');
-				$('.main-slider').addClass('activatedPadding');
+				if( $(window).width() < 481 ) {
+					$('header').addClass('activeMobile');
+					$('.main-slider').addClass('activatedPadding');
+				} else {
+					$('header').addClass('active');
+				}
 			} else {
-				$('header').removeClass('active');
-				$('.main-slider').removeClass('activatedPadding');
+				if( $(window).width() < 481 ) {
+					$('header').removeClass('activeMobile');
+					$('.main-slider').removeClass('activatedPadding');
+				} else {
+					$('header').removeClass('active');
+				}
 			}
 		});
 	});

@@ -37,7 +37,7 @@
 
 	background: white;
 
-@include mq(desktop) {
+@include mq(tablet) {
 	position: fixed;
 }
 	z-index: 2;
