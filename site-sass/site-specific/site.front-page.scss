@@ -59,10 +59,17 @@ padding-bottom: $desktop-side-pad;
         margin: 0 -30px;
       }
 
-      a img {
-       width: 100%;
-       height: auto;
-     }
+      a {
+      @include mq($until:tablet) {
+        width: 100vw;
+        margin: 0 -30px;
+        display: block;
+      }
+          img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
 
 .post-title {
