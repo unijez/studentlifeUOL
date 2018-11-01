@@ -32,10 +32,8 @@
   box-shadow: 0px 0px 7px #c8c7c7;
 }
 
-.previous-box {
-  margin-bottom: 30px;
-}
-
-.next-box {
-  margin-bottom: 30px;
+.previous-box, .next-box {
+  @include mq($until:tablet) {
+    margin-bottom: 30px;
+  }
 }
