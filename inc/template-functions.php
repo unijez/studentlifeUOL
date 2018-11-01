@@ -56,6 +56,7 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 // Add Excerpts for Pages
 add_action( 'init', 'my_add_excerpts_to_pages' );
+
 function my_add_excerpts_to_pages() {
      add_post_type_support( 'page', 'excerpt' );
 }
@@ -197,8 +198,8 @@ function mytheme_comment($comment, $args, $depth) {
      <?php
 }
 
-
-function list_categories($altID = null, $limit = null) {
+/*
+function list_categories($altID = null) {
   if($altID == null) {
   global $post;
   $cats = get_the_category($post->ID);
@@ -206,19 +207,48 @@ function list_categories($altID = null, $limit = null) {
   $cats = get_the_category($altID);
   }
   $catsSize = count($cats);
+  var_dump($cats);
   $allowed = 0;
   for($i = 0; $i < $catsSize; $i++) {
     if(($cats[$i]->slug != "video")) {
       if (($cats[$i]->slug != "article")) {
-        if($limit != null) {
-          if($allowed == $limit-1) { break; }
+        if($allowed == 2) {
+          break;
+
+        } else {
+          if(($allowed != $catsSize-1) && ($allowed != 0)) {
+           echo ", ";
+          }
+          echo '<a href="' . get_category_link($cats[$i]->term_id) . '">' . strtoupper($cats[$i]->name) . '</a>';
+          $allowed++;
         }
-        if(($allowed != $catsSize-1) && ($allowed != 0)) {
-         echo ", ";
-        }
-        echo '<a href="' . get_category_link($cats[$i]->term_id) . '">' . strtoupper($cats[$i]->name) . '</a>';
-        $allowed++;
       }
+    }
+  }
+}
+*/
+
+function list_categories($altID = null) {
+  if($altID == null) {
+    global $post;
+    $cats = get_the_category($post->ID);
+  } else {
+    $cats = get_the_category($altID);
+  }
+
+  foreach ($cats as $key => $cat) {
+    if($cat->slug == "video" || $cat->slug == "article" || $cat->slug == "uncategorized") {
+      unset($cats[$key]);
+    }
+  }
+  $cats = array_values($cats);
+  foreach ($cats as $limit => $cat) {
+    echo '<a href="' . get_category_link($cat->term_id) . '">' . strtoupper($cat->name) . '</a>';
+    if($limit == 1) {
+      break;
+    }
+    if($limit != count($cats)-1) {
+      echo ", ";
     }
   }
 }
