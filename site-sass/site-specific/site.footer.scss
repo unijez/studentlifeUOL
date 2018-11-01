@@ -148,6 +148,11 @@
 .footer-meta {
 	@include font-size(12px);
 
+  > p:first-child {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
 /*	@include flexbox;
 	@include align-items(flex-end);*/
 
