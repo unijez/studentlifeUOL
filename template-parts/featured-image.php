@@ -1,6 +1,6 @@
 
 <?php if(has_post_thumbnail()): ?>
-  <div class="slick-slide heading-image" style="background-image: url(<?php echo header_post_image() ?>)">
+  <div class="slick-slide heading-image single-page" style="background-image: url(<?php echo header_post_image() ?>)">
 
   <?php
   global $post;
