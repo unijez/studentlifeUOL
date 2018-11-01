@@ -147,7 +147,12 @@
 
   h4 {
     margin-bottom: 10px;
-	line-height: 16px;
+  	line-height: 12px;
+    font-family: Helvetica;
+    color: $grey-dark;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 12px;
     a {
       font-family: Helvetica;
       color: $grey-dark;
