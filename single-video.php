@@ -150,7 +150,7 @@
 		  						    <h4 class="post-category"><?php list_categories($nextPost->ID); ?></h4>
 		  						    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-intro-image-video');?>
 
-		  							<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
+		  							<a href="<?php echo get_permalink( $nextPost->ID ); ?>">
 		  							<?php echo($nextthumbnail) ?>
 		  							</a>
 		  							<h3 class="post-title">
