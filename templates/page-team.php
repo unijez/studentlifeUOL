@@ -58,7 +58,7 @@ get_header(); ?>
 
 
 									<?php $profile_pic = get_field( 'profile_picture', 'user_'. $contributor_id ); ?>
-									<span class="author-prof-pic"><img src="<?php echo $profile_pic['url']?>" alt="profile picture"></span>
+									<span class="author-prof-pic"><img src="<?php if($profile_pic) { echo $profile_pic['url']; } else { echo esc_url(get_template_directory_uri()).'/images/default-image.jpg';}?>" alt="profile picture"></span>
 
 
 									<div>
