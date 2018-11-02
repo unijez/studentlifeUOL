@@ -117,7 +117,8 @@ function default_image($thumbnail) {
 
 
 	    } else {
-		?><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/default-image.jpg" alt="<?php the_title(); ?>" /><?php
+        $default_image = wp_get_attachment_image_src(get_scalled_default_image(), 'post-intro-image');
+		?><img src="<?php echo $default_image[0]; ?>" alt="<?php the_title(); ?>" /><?php
 	}
 }
 
@@ -528,3 +529,15 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
    <?php
    endif;
  }
+
+ function get_scalled_default_image() {
+  $args = array(
+    'post_type' => 'attachment',
+    'name' => sanitize_title('default-image'),
+    'posts_per_page' => 1,
+    'post_status' => 'inherit',
+  );
+  $_header = get_posts( $args );
+  $header = $_header ? array_pop($_header) : null;
+  return $header->ID;
+}
