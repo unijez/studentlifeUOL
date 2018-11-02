@@ -58,11 +58,11 @@ get_header(); ?>
 
 
 									<?php $profile_pic = get_field( 'profile_picture', 'user_'. $contributor_id ); ?>
-									<span class="author-prof-pic"><img src="<?php if($profile_pic) { echo $profile_pic['url']; } else { echo esc_url(get_template_directory_uri()).'/images/default-image.jpg';}?>" alt="profile picture"></span>
+									<span class="author-prof-pic"><a class="button contributor-posts-link" href="<?php echo esc_url( get_author_posts_url( $contributor_id ) ); ?>"><img src="<?php if($profile_pic) { echo $profile_pic['sizes']['mtt-author-card']; } else { echo esc_url(get_template_directory_uri()).'/images/default-image.jpg';}?>" alt="profile picture"></a></span>
 
 
 									<div>
-										<h3 class="author-page-title"><?php echo get_the_author_meta( 'display_name', $contributor_id ); ?></h3>
+										<a class="button contributor-posts-link" href="<?php echo esc_url( get_author_posts_url( $contributor_id ) ); ?>"><h3 class="author-page-title"><?php echo get_the_author_meta( 'display_name', $contributor_id ); ?></h3></a>
 										<p class="author-page-bio"><?php echo custom_biography(get_the_author_meta( 'description', $contributor_id ), 30); ?></p>
 										<a class="button contributor-posts-link" href="<?php echo esc_url( get_author_posts_url( $contributor_id ) ); ?>">
 											<?php printf( _n( '%d Article', '%d Articles', $post_count, 'dyad' ), $post_count ); ?>
