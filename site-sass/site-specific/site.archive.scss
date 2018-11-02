@@ -3,17 +3,12 @@
   flex-direction: row;
   height: 600px;
   max-width: 1220px;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  margin: 90px auto 20px auto;
 
   @include mq($until:desktop) {
     max-height: auto;
     flex-direction: column;
     height: auto;
-  }
-
-  .align-author-card {
-    margin: auto;
   }
 
   .column-spacings {
