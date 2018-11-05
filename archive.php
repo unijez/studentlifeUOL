@@ -33,7 +33,11 @@
     </div>
    </div>
    <?php $profile_pic = get_field( 'profile_picture', 'user_'. $author_id ); ?>
-   <img class="column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear" src="<?php if($profile_pic) { echo $profile_pic['url']; } else { echo esc_url(get_template_directory_uri()).'/images/default-image.jpg';}?>" alt="profile picture">
+   <?php if($profile_pic): ?>
+   <img class="column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear" src="<?php echo $profile_pic['url']; ?>" alt="profile picture">
+   <?php else: ?>
+     <?php empty_image_container('column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear');?>
+   <?php endif; ?>
  </div>
 
  <?php

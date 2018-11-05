@@ -1,0 +1,13 @@
+.empty-image-container {
+	@include uni-gradient;
+	@include flex-center;
+	min-height: 200px;
+  display: flex !important;
+  @include mq(desktop) {
+      height: 100%;
+  }
+  svg {
+  	color: white;
+  	width: 25%;
+  }
+}

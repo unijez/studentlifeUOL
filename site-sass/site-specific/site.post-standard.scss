@@ -394,3 +394,14 @@
     margin: 0 0 30px 0;
   }
 }
+
+.no-profile-pic-auth {
+  color: #047E8B;
+  text-decoration: none;
+  margin-top: 20px;
+  display: block;
+
+  @include mq(desktop) {
+    height: 229.167px;
+  }
+}
