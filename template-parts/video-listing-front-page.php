@@ -16,6 +16,7 @@
 		<div class="post-img">
 			<a href="<?php the_permalink(); ?>">
 				<?php default_image('post-intro-image-video'); ?>
+				<?php if((get_post_format(get_the_ID()) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
 			</a>
 		</div>
 		<h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
