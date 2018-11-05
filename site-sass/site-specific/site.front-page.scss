@@ -144,10 +144,24 @@ padding-bottom: $desktop-side-pad;
         font-size: 12px;
       }
     }
+
+    .stick-bottom {
+      position: absolute;
+      background-color: #002147;
+      padding: 10px 20px;
+      left: 0;
+      bottom: 0;
+    }
+
     .post-auth {
       margin-top: 15px;
     }
     p { margin-top: 10px; }
+
+    .post-img > a {
+      display: block;
+      position: relative;
+    }
   }
 
   .latest-post:first-child {
