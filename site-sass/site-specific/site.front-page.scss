@@ -28,6 +28,41 @@ div.no-pad {
   }
 }
 
+
+
+.home-video-container {
+background-image: url('../images/student-life-mobile-banner.jpg');
+position: relative;
+height: 500px;
+min-height: 500px;
+width: 100%;
+background-size: cover !important;
+-webkit-background-size: cover !important;
+text-align: center;
+overflow: hidden;
+background-position: 70% 0;
+}
+
+video.video-background {
+display: none;
+position: absolute;
+top: 50%;
+left: 50%;
+z-index: 0;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+@include mq(tablet) {
+	display: block;
+}
+
+}
+
+
 // Headings
 
 .content-heading {

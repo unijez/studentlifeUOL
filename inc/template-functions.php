@@ -492,8 +492,8 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
  function background_video() {
    $video = get_field('background_video', 'option');
    ?>
-   <div class="hide-extra" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'hero-header'); ?>)">
-   <video autoplay muted loop class="background_video">
+   <div class="home-video-container">
+   <video autoplay muted loop class="video-background">
      <source src="<?php echo $video['url']; ?>" type="video/mp4">
    </video>
   </div>
