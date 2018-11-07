@@ -1,16 +1,16 @@
 
-<?php if(has_post_thumbnail()):
-      global $post;
-      $imgdata = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'hero-header', false);
-      if($imgdata[1] >= 1910 && $imgdata[2] >= 625) {
-        $sized = true;
-      } else {
-        $sized = false;
-      }
- ?>
-  <div class="slick-slide heading-image single-page <?php if(!$sized) { echo " empty-image-container "; } ?>" <?php if ($sized): ?> style="background-image: url(<?php echo header_post_image(); ?>) <?php endif; ?>">
+<?php if(has_post_thumbnail()): ?>
+  <div class="slick-slide heading-image single-page" style="background-image: url(<?php echo header_post_image() ?>)">
 
-    <?php if(!$sized) { get_template_part( 'template-parts/site/uol-logo', 'portrait' ); } ?>
+  <?php
+  global $post;
+  if(has_post_thumbnail()) {
+    $imgdata = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'hero-header', false);
+    $imgwidth = $imgdata[1];
+//    $wanted_width = 1600;
+  }
+  ?>
+
 
   <div class="slide-overlay site-module no-upper no-lower">
 
