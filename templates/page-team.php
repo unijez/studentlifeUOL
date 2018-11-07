@@ -58,11 +58,11 @@ get_header(); ?>
 
 
 									<?php $profile_pic = get_field( 'profile_picture', 'user_'. $contributor_id ); ?>
+									<?php $default_image = wp_get_attachment_image_src(get_scalled_default_image(), 'mtt-author-card'); ?>
 									<?php if($profile_pic): ?>
 									<span class="author-prof-pic"><a class="button contributor-posts-link" href="<?php echo esc_url( get_author_posts_url( $contributor_id ) ); ?>"><img src="<?php echo $profile_pic['sizes']['mtt-author-card'];?>" alt="profile picture"></a></span>
 									<?php else: ?>
-									<a class="button no-profile-pic-auth" href="<?php echo esc_url( get_author_posts_url( $contributor_id ) ); ?>">
-									<?php empty_image_container('author-prof-pic'); ?>
+									<span class="author-prof-pic"><a class="button contributor-posts-link" href="<?php echo esc_url( get_author_posts_url( $contributor_id ) ); ?>"><img src="<?php echo $default_image[0]?>" alt="default fallback profile picture"></a></span>
 									</a>
 									<?php endif; ?>
 

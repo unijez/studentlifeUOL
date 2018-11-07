@@ -115,21 +115,18 @@ function default_image($thumbnail) {
 	 		   $page_title
 	 		);
 
-
     } else {
-        echo('<div class="empty-image-container">');
-      	get_template_part( 'template-parts/site/uol-logo', 'portrait' );
-      	echo('</div>');
-	}
+      $page_title = get_the_title();
+      $default_image = wp_get_attachment_image_src(get_scalled_default_image(), $thumbnail);
+      printf(
+	 				'<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
+	 		    esc_url( $default_image[0] ),
+	 		    $default_image[1],
+	 		    $default_image[2],
+	 		   $page_title
+	 		);
+	  }
 }
-
-function empty_image_container($classes) {
-  echo('<div class="'.$classes.' empty-image-container">');
-  get_template_part( 'template-parts/site/uol-logo', 'portrait' );
-  echo('</div>');
-}
-
-
 
 function get_image_result($output) {
 	if ($output == false) {
