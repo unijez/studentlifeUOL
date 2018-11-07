@@ -1,7 +1,7 @@
 .empty-image-container {
 	@include uni-gradient;
 	@include flex-center;
-	min-height: 200px;
+	min-height: 194.6px;
   display: flex !important;
   @include mq(desktop) {
       height: 100%;
