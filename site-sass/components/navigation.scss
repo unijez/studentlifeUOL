@@ -521,7 +521,7 @@
   	@include justify-content(flex-end);
 
     @include mq($until:tablet) {
-      padding: 10px 0 !important;
+      padding: 15px 15px !important;
     }
 
     @include mq($until:desktop) {
