@@ -2,6 +2,13 @@
 	@include uni-gradient;
 	@include flex-center;
 	min-height: 194.6px;
+	@include mq($until:desktop) {
+		min-height: 140.333px;
+	}
+
+	@include mq($until:tablet) {
+		min-height: 180.817px;
+	}
   display: flex !important;
   @include mq(desktop) {
       height: 100%;
