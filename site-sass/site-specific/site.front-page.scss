@@ -81,6 +81,26 @@ padding-bottom: $desktop-side-pad;
     margin-bottom: 60px;
 }
 
+.video-wrapper .latest-video-post .post-img {
+  width: 100%;
+  @include mq($until: tablet) {
+    width: 100vw;
+    margin: 0 -30px;
+  }
+
+  a {
+  @include mq($until:tablet) {
+    width: 100vw;
+    //margin: 0 -30px;
+    display: block;
+  }
+  img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 .large-row {
 
   .featured-post {
@@ -97,7 +117,7 @@ padding-bottom: $desktop-side-pad;
       a {
       @include mq($until:tablet) {
         width: 100vw;
-        margin: 0 -30px;
+        //margin: 0 -30px;
         display: block;
       }
           img {
@@ -154,7 +174,7 @@ padding-bottom: $desktop-side-pad;
   justify-content: space-between;
   width: 100%;
 
-  .latest-post, 
+  .latest-post,
   .latest-video-post {
     width: 345px;
     height: 345px;
@@ -181,7 +201,7 @@ padding-bottom: $desktop-side-pad;
       }
     }
 
- 
+
 
     .post-auth {
       margin-top: 15px;
