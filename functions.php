@@ -43,8 +43,8 @@ if ( ! function_exists( 'studentlifeUOL_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		/* image resizing */
-		add_image_size( 'post-intro-image', 722, 408, array( 'left', 'top' )  ); // Hard Crop Mode
-		add_image_size( 'post-intro-image-video', 640, 430, array( 'left', 'top' )  ); // Hard Crop Mode
+		add_image_size( 'post-intro-image', 725, 407, array( 'center', 'center' )  ); // Hard Crop Mode
+		add_image_size( 'post-intro-image-video', 900, 506, array( 'center', 'center' )  ); // Hard Crop Mode
 		add_image_size( 'mtt-author-card', 400, 250, array( 'center', 'center')); //Hard Crop Mode
 		add_image_size( 'mtt-archive-img', 815, 580, array( 'center', 'center')); //Hard Crop Mmode
 
