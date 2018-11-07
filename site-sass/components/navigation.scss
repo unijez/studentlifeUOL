@@ -251,7 +251,8 @@
   }
 
   .larger-title {
-    font-size: 30px !important;
+    margin-top: 0 !important;
+    font-size: 25px !important;
   }
 
 	.mobile-navigation .primary-menu a {
@@ -510,16 +511,17 @@
 
 
   .overlay-navigation-header {
-  	position: fixed;
+  	position: sticky;
   	top: 0;
   	left: 0;
   	width: 100%;
     padding: 35px 115px 0 115px;
+    background-color: white;
   	@include flexbox;
   	@include justify-content(flex-end);
 
     @include mq($until:tablet) {
-      padding: 40px 20px !important;
+      padding: 10px 0 !important;
     }
 
     @include mq($until:desktop) {
