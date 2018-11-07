@@ -96,7 +96,7 @@ function title_trim($title, $limit, $isset) {
 }
 
 // Default Image Function: adds default image when no preset thumbnail is found
-function default_image($thumbnail) {
+function default_image($thumbnail, $width = NULL, $height = NULL) {
 	if ( has_post_thumbnail() ) {
 
 	        global $post;
@@ -107,15 +107,29 @@ function default_image($thumbnail) {
 	      	$article_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $thumbnail );
 
 
-	 		printf(
-	 				'<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
-	 		    esc_url( $article_image_url[0] ),
-	 		    $article_image_url[1],
-	 		    $article_image_url[2],
-	 		   $page_title
-	 		);
-
-
+      if ($width != null) {
+        if ($article_image_url[1] >= $width && $article_image_url[2] >= $height) {
+          printf(
+    	 				'<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
+    	 		    esc_url( $article_image_url[0] ),
+    	 		    $article_image_url[1],
+    	 		    $article_image_url[2],
+    	 		   $page_title
+    	 		);
+        } else {
+          echo('<div class="empty-image-container">');
+        	get_template_part( 'template-parts/site/uol-logo', 'portrait' );
+        	echo('</div>');
+        }
+      } else {
+  	 		printf(
+  	 				'<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
+  	 		    esc_url( $article_image_url[0] ),
+  	 		    $article_image_url[1],
+  	 		    $article_image_url[2],
+  	 		   $page_title
+  	 		);
+      }
     } else {
         echo('<div class="empty-image-container">');
       	get_template_part( 'template-parts/site/uol-logo', 'portrait' );
