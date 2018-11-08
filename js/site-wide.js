@@ -7,14 +7,14 @@
 				var scrollDist = 70;
 			}
 			if ($(document).scrollTop() > scrollDist) {
-				if( $(window).width() < 481 ) {
+				if( $(window).width() < 740 ) {
 					$('header').addClass('activeMobile');
 					$('.sitebody-content').addClass('activatedPadding');
 				} else {
 					$('header').addClass('active');
 				}
 			} else {
-				if( $(window).width() < 481 ) {
+				if( $(window).width() < 740 ) {
 					$('header').removeClass('activeMobile');
 					$('.sitebody-content').removeClass('activatedPadding');
 				} else {

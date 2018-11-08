@@ -1,4 +1,4 @@
-!function(o){o(document).ready(function(){o(window).scroll(function(){if(960<o(window).width())var s=50;else var s=70;o(document).scrollTop()>s?o(window).width()<481?(o("header").addClass("activeMobile"),o(".sitebody-content").addClass("activatedPadding")):o("header").addClass("active"):o(window).width()<481?(o("header").removeClass("activeMobile"),o(".sitebody-content").removeClass("activatedPadding")):o("header").removeClass("active")})})}(jQuery),jQuery(document).ready(function(e){
+!function(o){o(document).ready(function(){o(window).scroll(function(){if(960<o(window).width())var s=50;else var s=70;o(document).scrollTop()>s?o(window).width()<740?(o("header").addClass("activeMobile"),o(".sitebody-content").addClass("activatedPadding")):o("header").addClass("active"):o(window).width()<740?(o("header").removeClass("activeMobile"),o(".sitebody-content").removeClass("activatedPadding")):o("header").removeClass("active")})})}(jQuery),jQuery(document).ready(function(e){
 // Toggle search form
 e(".search-toggle").on("click",function(){return e(this).toggleClass("active"),e(".header-search").slideToggle(),e(".header-search #s").focus(),!1}),
 //	Slider Plugin
