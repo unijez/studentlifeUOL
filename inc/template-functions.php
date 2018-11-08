@@ -96,17 +96,16 @@ function title_trim($title, $limit, $isset) {
 }
 
 // Default Image Function: adds default image when no preset thumbnail is found
-function default_image($thumbnail) {
+function default_image($thumbnail, $width, $height) {
 	if ( has_post_thumbnail() ) {
 
-	        global $post;
-	      	$post_url = get_permalink($post->ID);
-	      	$page_title = get_the_title();
+      global $post;
+    	$post_url = get_permalink($post->ID);
+    	$page_title = get_the_title();
 
+    	$article_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $thumbnail );
 
-	      	$article_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $thumbnail );
-
-
+      if($article_image_url[1] >= $width && $article_image_url[2] >= $height) {
 	 		printf(
 	 				'<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
 	 		    esc_url( $article_image_url[0] ),
@@ -114,6 +113,16 @@ function default_image($thumbnail) {
 	 		    $article_image_url[2],
 	 		   $page_title
 	 		);
+      } else {
+        $default_image = wp_get_attachment_image_src(get_scalled_default_image(), $thumbnail);
+        printf(
+            '<img class="lazyload post-intro__content--image" data-srcset="%1$s" data-src="%1$s" src="%1$s"  data-width="%2$s" data-height="%3$s" alt="%4$s" >',
+            esc_url( $default_image[0] ),
+            $default_image[1],
+            $default_image[2],
+           $page_title
+        );
+      }
 
     } else {
       $page_title = get_the_title();

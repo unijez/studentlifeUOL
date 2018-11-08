@@ -29,7 +29,7 @@
 
 		  <div class="post-img">
 		    <a href="<?php the_permalink(); ?>">
-		      <?php default_image('post-intro-image-video'); ?>
+		      <?php default_image('post-intro-image-video', 895, 500); ?>
 		    </a>
 		  </div>
 

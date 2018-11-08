@@ -1,15 +1,15 @@
 
-<?php if(has_post_thumbnail()): ?>
-  <div class="slick-slide heading-image single-page" style="background-image: url(<?php echo header_post_image() ?>)">
-
-  <?php
-  global $post;
-  if(has_post_thumbnail()) {
+<?php if(has_post_thumbnail()):
+    global $post;
     $imgdata = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'hero-header', false);
-    $imgwidth = $imgdata[1];
-//    $wanted_width = 1600;
-  }
+    $default_image = wp_get_attachment_image_src(get_scalled_default_image(), 'hero-header');
+    if($imgdata[1] >= 1915 && $imgdata[2] >= 630) {
+      $scalled = true;
+    } else {
+      $scalled = false;
+    }
   ?>
+  <div class="slick-slide heading-image single-page" style="background-image: url(<?php if($scalled) { echo header_post_image(); } else {echo $default_image[0]; } ?>)">
 
 
   <div class="slide-overlay site-module no-upper no-lower">
