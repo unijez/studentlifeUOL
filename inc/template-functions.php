@@ -241,7 +241,7 @@ function list_categories($altID = null) {
   }
 
   foreach ($cats as $key => $cat) {
-    if($cat->slug == "video" || $cat->slug == "article" || $cat->slug == "uncategorized") {
+    if($cat->slug == "videos" || $cat->slug == "article" || $cat->slug == "uncategorized" || $cat->slug == "video" || $cat->slug == "articles") {
       unset($cats[$key]);
     }
   }
