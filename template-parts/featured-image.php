@@ -3,7 +3,7 @@
     global $post;
     $imgdata = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'hero-header', false);
     $default_image = wp_get_attachment_image_src(get_scalled_default_image(), 'hero-header');
-    if($imgdata[1] >= 1915 && $imgdata[2] >= 630) {
+    if($imgdata[1] >= 1280 && $imgdata[2] >= 630) {
       $scalled = true;
     } else {
       $scalled = false;
