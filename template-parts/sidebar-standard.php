@@ -48,7 +48,7 @@
 
 		    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-sidebar');?>
 
-			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
+			<a href="<?php echo get_permalink( $nextPost->ID ); ?>">
 			<?php echo($nextthumbnail) ?>
 			</a>
 			<h3 class="post-title">
