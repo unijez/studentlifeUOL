@@ -3,7 +3,7 @@
   flex-direction: row;
   height: 600px;
   max-width: 1220px;
-  margin: 90px auto 20px auto;
+  margin-bottom: 20px;
 
   @include mq($until:desktop) {
     max-height: auto;
