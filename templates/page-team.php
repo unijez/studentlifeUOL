@@ -52,7 +52,7 @@ get_header(); ?>
 						}
 					?>
 
-						<div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
+						<div class="column-spacings column column--1-of-3 column--large-1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
 							<div class="author-bio-card">
 
