@@ -24,10 +24,12 @@
 		  <div class="side-box previous-box">
 
 		    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-sidebar');?>
-
+			<div class="thumbnail-aligner">
 			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
 			<?php echo($prevthumbnail) ?>
+			<?php if((get_post_format($prevPost->ID) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
 			</a>
+			</div>
 			<h3 class="post-title">
 		   <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
 		           <?php echo apply_filters( 'the_title', $prevPost->post_title ); ?>
@@ -47,10 +49,12 @@
 		  <div class="side-box next-box">
 
 		    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-sidebar');?>
-
+			<div class="thumbnail-aligner">
 			<a href="<?php echo get_permalink( $nextPost->ID ); ?>">
 			<?php echo($nextthumbnail) ?>
+			<?php if((get_post_format($nextPost->ID) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
 			</a>
+			</div>
 			<h3 class="post-title">
 		   <a href="<?php echo get_permalink( $nextPost->ID ); ?>">
 		           <?php echo apply_filters( 'the_title', $nextPost->post_title ); ?>
