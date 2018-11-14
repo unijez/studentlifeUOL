@@ -230,7 +230,7 @@
     @include mq(wide) {
       @include flexbox;
       @include flex-direction(row);
-      
+
       margin: 0px;
 		}
   }
@@ -253,8 +253,16 @@
   }
 
   .larger-title {
-    margin-top: 0 !important;
     font-size: 25px !important;
+  }
+
+  .top-spacer {
+    @include mq($until:wide) {
+      margin-top: 150px !important;
+    }
+    @include mq($until:desktop) {
+      margin-top: 97px !important;
+    }
   }
 
 	.mobile-navigation .primary-menu a {
@@ -378,7 +386,7 @@
     display: inline-block;
     background-color: #fff;
     height: 100%;
-    width: 95vw;
+    width: 80%;
     padding: $mobile-side-pad;
     transform: translateX(0%);
     transition: transform 0.75s ease;
@@ -408,7 +416,6 @@
 
 	@include mq(desktop){
    padding: 0 12%;
-   width: 60%;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -424,7 +431,8 @@
 
   .holder-small {
     height: 120px;
-    @include mq(desktop) {
+    max-width: 378px;
+    @include mq(wide) {
       display: none;
     }
   }
@@ -522,13 +530,8 @@
   	@include flexbox;
   	@include justify-content(flex-end);
 
-    @include mq($until:tablet) {
-      padding: 15px 15px !important;
-    	position: sticky;
-    }
-
-    @include mq($until:desktop) {
-      padding: 40px 100px;
+    @include mq($until:wide) {
+      padding: 35px 35px;
     }
   }
 

@@ -117,7 +117,7 @@
 
 
 
-				<h3 class="larger-title">Student Life</h3>
+				<h3 class="larger-title top-spacer">Student Life</h3>
 
 				<div class="holder-small">
 				<ul class="overlay-first-menu">
