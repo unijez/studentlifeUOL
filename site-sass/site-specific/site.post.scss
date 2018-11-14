@@ -1,3 +1,11 @@
+.post {
+	h1, h2 {
+		u {
+			text-decoration: none;
+		}
+	}
+}
+
 .post-title {
 	@include font-size(19px);
 	 margin: 10px 0;
