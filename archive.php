@@ -26,7 +26,7 @@
    $user_description = $curauth->user_description;
  ?>
  <div class="author-archive-card">
-   <div class="column-spacings column column--1-of-3 column--large-1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
+   <div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
      <div class="align-author-card">
        <h2 class="home-section-title content-heading"><?php echo $display_name?></h2>
        <p><?php echo $user_description; ?></p>
@@ -60,7 +60,7 @@
 										<div class="columns-wrap flex-controlled featured-boxes">
 													<?php while ( have_posts() ) : the_post(); ?>
 
-												<div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
+												<div class="column-spacings column column--1-of-3 column--large-1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
 
 															<?php get_template_part( 'template-parts/post-listing-front-page' ); ?>
