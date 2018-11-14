@@ -11,12 +11,16 @@
 }
 
 .site-module-bypass {
+	padding: 0 30px;
+	padding-bottom: 60px;
+
 	@include mq($until:tablet) {
 		padding: 0 30px;
 	}
 }
 
 .site-module-nopad {
+
 	@include mq($until:tablet) {
 		padding: 60px 0;
 	}
