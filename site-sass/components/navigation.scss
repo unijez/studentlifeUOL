@@ -258,9 +258,6 @@
 
   .top-spacer {
     @include mq($until:wide) {
-      margin-top: 150px !important;
-    }
-    @include mq($until:desktop) {
       margin-top: 97px !important;
     }
   }
@@ -385,7 +382,6 @@
     float: right;
     display: inline-block;
     background-color: #fff;
-    height: 100%;
     width: 80%;
     padding: $mobile-side-pad;
     transform: translateX(0%);
