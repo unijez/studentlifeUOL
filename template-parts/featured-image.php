@@ -1,10 +1,14 @@
 
-<?php if(has_post_thumbnail()):
+<?php
     global $post;
-    $imgdata = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'hero-header', false);
     $default_image = wp_get_attachment_image_src(get_scalled_default_image(), 'hero-header');
-    if($imgdata[1] >= 1280 && $imgdata[2] >= 630) {
-      $scalled = true;
+    if(has_post_thumbnail()) {
+      $imgdata = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'hero-header', false);
+      if($imgdata[1] >= 1280 && $imgdata[2] >= 630) {
+        $scalled = true;
+      } else {
+        $scalled = false;
+      }
     } else {
       $scalled = false;
     }
@@ -44,11 +48,3 @@
   </div> <!--slide-overlay-->
 
 </div>
-<?php else: ?>
-
-  <div class="title-container maximum-width-title">
-    <i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('jS F, Y') ?></time>
-    <?php the_title( '<h1 class="page-title__inner posted">', '</h1>' ); ?>
-  </div>
-
-<?php endif; ?>
