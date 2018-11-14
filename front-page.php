@@ -46,7 +46,7 @@ get_header(); ?>
 	 					<div class="columns-wrap flex-controlled featured-boxes">
 	 							<?php while ( $home_featured_posts->have_posts() ) : $home_featured_posts->the_post() ?>
 
-								<div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
+								<div class="column-spacings column column--1-of-3 column--large-1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
 
 											<?php get_template_part( 'template-parts/post-listing-front-page' ); ?>

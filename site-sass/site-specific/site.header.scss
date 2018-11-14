@@ -128,7 +128,7 @@
 
    @include flex-direction(column);
    width: auto;
-	 @include mq($until:desktop) {
+	 @include mq($until:wide) {
 		 width: 100%;
 	 }
   margin-bottom: 5px;

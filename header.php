@@ -59,7 +59,7 @@
 			<div class="site-branding__hero-wording">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-				<button type="button" class="main-btn open-button d-hide"><i class="fal fa-bars fa-lg"></i></button>
+				<button type="button" class="main-btn open-button w-hide"><i class="fal fa-bars fa-lg"></i></button>
 
 			</div>
 

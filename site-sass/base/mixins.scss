@@ -177,6 +177,18 @@
 	}
 }
 
+.w-hide {
+		
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	
+	@include mq(wide){
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
 
 
 
