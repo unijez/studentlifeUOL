@@ -32,10 +32,11 @@
        <p><?php echo $user_description; ?></p>
     </div>
    </div>
-   <?php $profile_pic = get_field( 'profile_picture', 'user_'. $author_id ); ?>
+   <?php $profile_pic = get_field( 'profile_picture', 'user_'. $author_id );
+   ?>
    <?php $default_image = wp_get_attachment_image_src(get_scalled_default_image(), 'mtt-archive-img'); ?>
    <?php if($profile_pic): ?>
-   <img class="column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear" src="<?php echo $profile_pic['url']; ?>" alt="profile picture">
+   <img class="column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear" src="<?php echo $profile_pic['sizes']['mtt-archive-img']; ?>" alt="profile picture">
    <?php else: ?>
      <img class="column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear" src="<?php echo $default_image[0]; ?>" alt="default fallback profile picture">
    <?php endif; ?>
