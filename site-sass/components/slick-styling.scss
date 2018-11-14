@@ -167,6 +167,10 @@ background-position: center center;
 .slide-category,
 .slide-date  {
 	font-weight: normal;
+
+  .fa-calendar-alt {
+    color: $uni-blue;
+  }
 }
 
 .news-wrapper, .video-wrapper {
@@ -208,7 +212,7 @@ background-position: center center;
 
 
 .slide-date {
-	color: $base-black;
+	color: $uni-blue;
 	@include font-size(14px);
 
 	@include mq(tablet) {

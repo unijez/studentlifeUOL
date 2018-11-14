@@ -369,6 +369,10 @@
   .slide-category, .slide-date {
     font-size: 15px;
     margin: 0;
+
+    .fa-calendar-alt {
+      color: $uni-blue;
+    }
   }
 
   .slide-category {
