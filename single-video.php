@@ -120,15 +120,18 @@
 		  									  <div class="side-box previous-box video-box">
 		  									    <h4 class="post-category"><?php list_categories($prevPost->ID); ?></h4>
 		  									    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-intro-image-video');?>
+                            <div class="thumbnail-aligner">
+                              <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
+    		  										<?php echo($prevthumbnail) ?>
+                              <?php if((get_post_format($prevPost->ID) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
+    		  										</a>
+                            </div>
 
-		  										<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
-		  										<?php echo($prevthumbnail) ?>
-		  										</a>
-		  										<h3 class="post-title">
-		  									   <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
-		  									           <?php echo apply_filters( 'the_title', $prevPost->post_title ); ?>
-		  									       </a>
-		  										</h3>
+  		  										<h3 class="post-title">
+  		  									   <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
+  		  									           <?php echo apply_filters( 'the_title', $prevPost->post_title ); ?>
+  		  									       </a>
+  		  										</h3>
 
 		  											<p><i class="post-auth"><?php echo get_the_author_meta('display_name', $prevPost->post_author) ?></i></p>
 		  									  </div>
@@ -150,9 +153,12 @@
 		  						    <h4 class="post-category"><?php list_categories($nextPost->ID); ?></h4>
 		  						    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-intro-image-video');?>
 
-		  							<a href="<?php echo get_permalink( $nextPost->ID ); ?>">
-		  							<?php echo($nextthumbnail) ?>
-		  							</a>
+                      <div class="thumbnail-aligner">
+                        <a href="<?php echo get_permalink( $nextPost->ID ); ?>">
+                        <?php echo($nextthumbnail) ?>
+                        <?php if((get_post_format($nextPost->ID) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
+                        </a>
+                      </div>
 		  							<h3 class="post-title">
 		  						   <a href="<?php echo get_permalink( $nextPost->ID ); ?>">
 		  						           <?php echo apply_filters( 'the_title', $nextPost->post_title ); ?>
