@@ -197,7 +197,7 @@
   display: block;
   max-height: 100%;
   overflow: hidden;
-  @include mq(tablet) { 
+  @include mq(tablet) {
     max-width: 100%;
   }
 }
@@ -385,6 +385,11 @@
     font-size: 40px;
     margin: 0 0 20px 0;
     line-height: 40px;
+
+    @include mq($until:tablet) {
+      font-size: 25px;
+      line-height: 1.15;
+    }
   }
 
 }
