@@ -20,7 +20,9 @@
 	    ?></h4>
 			<h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
 			<p><?php custom_excerpt(300); ?></p>
-	    <p class="post-auth"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><?php the_author(); ?></a>	</p>
+	    <p class="post-auth">
+				<?php get_authors(); ?>
+			</p>
 		</div>
 
 	</div> <!--column-->

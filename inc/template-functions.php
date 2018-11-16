@@ -553,3 +553,17 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
   $header = $_header ? array_pop($_header) : null;
   return $header->ID;
 }
+
+function get_authors() {
+  $coauthors = get_coauthors();
+
+  foreach ($coauthors as $key => $author):
+    if($key > 1) {
+      break;
+    }
+    if($key < 2): ?>
+      <a href="<?php echo get_author_posts_url( $author->ID ); ?>"><?php echo $author->display_name ?></a>
+    <?php if(count($coauthors) > 1 && $key != 1) { echo ","; }
+    endif;
+  endforeach;
+}
