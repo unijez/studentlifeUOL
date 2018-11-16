@@ -33,12 +33,12 @@ $coauthors = get_coauthors();
 					<h4 class="meet-author">Meet the author</h4>
 					<?php foreach ($coauthors as $key => $author):
 					 			if($key > 1) { break; }
-								$avatar = get_avatar( get_the_author_meta('ID', $author->ID) );
+								$avatar = get_avatar( $author->ID );
 								$curauth = get_user_by('ID', $author->ID);
 								$user_description = $curauth->user_description;
 					 ?>
 					<div class="author-bio__name">
-							<a href="<?php echo get_author_posts_url( $author->ID, $author->display_name ); ?>">
+							<a href="<?php echo get_author_posts_url( $author->ID ); ?>">
 							<?php if( $avatar ): ?>
 												<?php echo $avatar; ?>
 							<?php endif; ?>
