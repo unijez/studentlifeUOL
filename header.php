@@ -59,7 +59,7 @@
 			<div class="site-branding__hero-wording">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-				<button type="button" class="main-btn open-button w-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i></button>
+				<button type="button" class="main-btn open-button w-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i><span class="accessibility-text">Button to open the sidebar menu</span></button>
 
 			</div>
 
@@ -85,7 +85,7 @@
 			</ul>
 
 
-			<button type="button" class="main-btn open-button m-t-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i></button>
+			<button type="button" class="main-btn open-button m-t-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i><span class="accessibility-text">Button to open the sidebar menu</span></button>
 
 
 		</nav><!-- #site-navigation -->
@@ -111,7 +111,7 @@
 
 				<div class="overlay-navigation-header">
 
-					<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i></button>
+					<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i><<span class="accessibility-text">Button to close the sidebar menu</span>/button>
 
 				</div> <!--overlay-navigation-header-->
 
