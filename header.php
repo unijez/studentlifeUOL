@@ -28,7 +28,7 @@
 
 <?php studentlifeUOL_body_top(); ?>
 
-<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'studentlifeUOL' ); ?></a>
+<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'studentlifeUOL' ); ?></a>
 
 	<div class="header-search site-module hide">
 
@@ -49,7 +49,7 @@
 
 		<div class="site-branding flex-controlled">
 
-			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" title="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer">
+			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" title="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer" aria-label="Link to lincoln.ac.uk homepage">
 
 
 				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
@@ -59,7 +59,7 @@
 			<div class="site-branding__hero-wording">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-				<button type="button" class="main-btn open-button w-hide"><i class="fal fa-bars fa-lg"></i></button>
+				<button type="button" class="main-btn open-button w-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i></button>
 
 			</div>
 
@@ -85,7 +85,7 @@
 			</ul>
 
 
-			<button type="button" class="main-btn open-button m-t-hide"><i class="fal fa-bars fa-lg"></i></button>
+			<button type="button" class="main-btn open-button m-t-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i></button>
 
 
 		</nav><!-- #site-navigation -->
@@ -111,7 +111,7 @@
 
 				<div class="overlay-navigation-header">
 
-					<button type="button" class="main-btn close-button"><i class="fal fa-times fa-lg"></i></button>
+					<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i></button>
 
 				</div> <!--overlay-navigation-header-->
 
@@ -166,7 +166,7 @@
 				<h3>Search</h3>
 				<div class="ov-nav-search">
 					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="s" id="s" />
+						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="s" id="s" aria-label="Webpage search bar"/>
 					</form>
 				</div>
 

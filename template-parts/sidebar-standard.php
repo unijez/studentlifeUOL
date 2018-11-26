@@ -26,7 +26,9 @@
 		    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-sidebar');?>
 			<div class="thumbnail-aligner">
 			<a href="<?php echo get_permalink( $prevPost->ID ); ?>">
-			<?php echo($prevthumbnail) ?>
+			<?php
+			$prevthumbnail = str_replace('alt=""', 'alt="Previous post featured image"', $prevthumbnail);
+			echo($prevthumbnail); ?>
 			<?php if((get_post_format($prevPost->ID) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
 			</a>
 			</div>
@@ -51,7 +53,9 @@
 		    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-sidebar');?>
 			<div class="thumbnail-aligner">
 			<a href="<?php echo get_permalink( $nextPost->ID ); ?>">
-			<?php echo($nextthumbnail) ?>
+			<?php $nextthumbnail = str_replace('alt=""', 'alt="Next post featured image"', $nextthumbnail);
+
+			echo($nextthumbnail); ?>
 			<?php if((get_post_format($nextPost->ID) == "video")): ?><span><div class="play-icon"></div>  <?php //echo video_length(get_field('yt_video_id')); ?></span> <?php endif; ?>
 			</a>
 			</div>

@@ -159,17 +159,17 @@ function custom_comment_fields( $fields ) {
 
   $fields['author'] =
   	'<p class="comment-form-author">
-  		<input id="author" name="author" type="text" placeholder="Your name*" size="30" ' . $aria_req . ' />
+  		<input id="author" name="author" type="text" placeholder="Your name*" size="30" aria-label="Comment form, name input" ' . $aria_req . ' />
   	</p>';
 
   $fields['email'] =
   	'<p class="comment-form-email">
-  		<input id="email" name="email" type="email" placeholder="Your e-mail address*" size="30" ' . $aria_req . ' />
+  		<input id="email" name="email" type="email" placeholder="Your e-mail address*" size="30" aria-label="Comment form, email input" ' . $aria_req . ' />
   	</p>';
 
   $fields['comment_field'] =
     '<p class="comment-form-comment">
-      <textarea id="comment" name="comment" placeholder="Enter your comment here*" cols="45" rows="8" '.$aria_req.'></textarea>
+      <textarea id="comment" name="comment" placeholder="Enter your comment here*" cols="45" rows="8" aria-label="Comment form, comment input" '.$aria_req.'></textarea>
     </p>';
 
   return $fields;

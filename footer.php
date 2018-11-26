@@ -49,7 +49,7 @@
 			  </div> <!--footer-meta-->
 
 
-				<a class="site-footer__logo" href="http://www.lincoln.ac.uk/home/" rel="<?php bloginfo( 'name' ); ?>">
+				<a class="site-footer__logo" href="http://www.lincoln.ac.uk/home/" rel="<?php bloginfo( 'name' ); ?>" aria-label="Link tothe lincoln.ac.uk homepage">
 					<?php get_template_part( 'template-parts/site/uol-logo', 'notext' ); ?>
 				</a>
 
