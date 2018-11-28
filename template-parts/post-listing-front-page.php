@@ -10,12 +10,12 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('latest-post'); ?>>
+<div <?php post_class('latest-post'); ?>>
 
 	<div class="item-text">
-		<h4 class="slide-category"><?php
+		<span class="slide-category"><?php
 		list_categories(null, 2);
-		?></h4>
+		?></span>
 		<div class="post-img thumbnail-aligner">
 	    <a href="<?php the_permalink();?>">
 	    		<?php default_image('post-intro-image', 720, 400); ?>

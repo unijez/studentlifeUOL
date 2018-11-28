@@ -17,7 +17,7 @@
  */
 get_header(); ?>
 <?php get_template_part( 'template-parts/featured-image' ); ?>
-<main id="main" class="site-main">
+<main id="site-content" class="site-main">
  			<?php if ( have_posts() ) : ?>
 
  				<?php while ( have_posts() ) : the_post(); ?>

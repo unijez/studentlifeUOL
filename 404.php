@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
+	<main id="site-content" class="site-main">
 				
 				<div class="container-404">
 					

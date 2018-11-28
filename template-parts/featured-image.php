@@ -25,16 +25,16 @@
 
 
   				<div class="overlay-slide full-colour column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
-  				    <h5 class="slide-category">
+  				    <span class="slide-category">
   				      <?php list_categories();?>
-  				    </h5>
+  				    </span>
   				      <h2 class="slide-title">
   					  	 <?php the_title(); ?>
   					  </h2>
 
-  				    <h5 class="slide-date">
-  				      <i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
-  				    </h5>
+  				    <span class="slide-date">
+  				      <span title="calendar" class="calendar-icon fal fa-calendar-alt"></span><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
+  				    </span>
   				</div> <!--overlay-slide-->
 
 

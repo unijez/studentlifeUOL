@@ -21,7 +21,7 @@ Template Name: Meet The Team Page
 
 get_header(); ?>
 <?php get_template_part( 'template-parts/featured-acf' ); ?>
-	<main id="main" class="site-main site-module teams-page">
+	<main id="site-content" class="site-main site-module teams-page">
 
 		<div class="module-inner-wrap">
 

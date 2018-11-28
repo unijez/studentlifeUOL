@@ -10,14 +10,14 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('columns-wrap flex-controlled featured-boxes featured-post'); ?>>
+<div <?php post_class('columns-wrap flex-controlled featured-boxes featured-post'); ?>>
 
 
 	<div class="column-spacings column column--1-of-3 column--medium-1-of-3 column--small-1-of-1 clear ">
 		<div class="item-text">
-	    <h4 class="post-category"><?php
+	    <span class="post-category"><?php
 	    list_categories(null, 2);
-	    ?></h4>
+	    ?></span>
 			<h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
 			<p><?php custom_excerpt(300); ?></p>
 	    <p class="post-auth">

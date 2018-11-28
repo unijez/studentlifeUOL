@@ -20,7 +20,7 @@
 
 
 
- 		<main id="main" class="site-main">
+ 		<main id="site-content" class="site-main">
  			<?php if ( have_posts() ) : ?>
 
 
@@ -56,16 +56,16 @@
 
 				  						<div class="entry-content video-post">
 
-                        <h5 class="slide-category">
+                        <span class="slide-category">
                           <?php list_categories();?>
-                        </h5>
+                        </span>
                           <h2 class="slide-title">
                            <?php the_title(); ?>
                         </h2>
 
-                        <h5 class="slide-date">
-                          <i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
-                        </h5>
+                        <span class="slide-date">
+                          <span title="calendar"  class="calendar-icon fal fa-calendar-alt"></span><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
+                        </span>
 
                       <div class="video-content-container">
 				  						            <?php the_content(); ?>
@@ -118,7 +118,7 @@
 
 		  									 ?>
 		  									  <div class="side-box previous-box video-box">
-		  									    <h4 class="post-category"><?php list_categories($prevPost->ID); ?></h4>
+		  									    <span class="post-category"><?php list_categories($prevPost->ID); ?></span>
 		  									    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-intro-image-video');?>
                             <div class="thumbnail-aligner">
                               <a href="<?php echo get_permalink( $prevPost->ID ); ?>">
@@ -133,7 +133,7 @@
   		  									       </a>
   		  										</h3>
 
-		  											<p><i class="post-auth"><?php echo get_the_author_meta('display_name', $prevPost->post_author) ?></i></p>
+		  											<p><span class="post-auth"><?php echo get_the_author_meta('display_name', $prevPost->post_author) ?></span</p>
 		  									  </div>
 		  									<?php endif; ?>
 
@@ -165,7 +165,7 @@
 		  						       </a>
 		  							</h3>
 
-		  								<p><i class="post-auth"><?php get_the_author_meta('display_name', $nextPost->post_author) ?></i></p>
+		  								<p><span class="post-auth"><?php get_the_author_meta('display_name', $nextPost->post_author) ?></span</p>
 		  						  </div>
 		  						<?php endif; ?>
 		  							</div> <!--column-->

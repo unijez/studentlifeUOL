@@ -42,18 +42,18 @@
 
 
 						<div class="overlay-slide column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
-						    <h5 class="slide-category">
+						    <span class="slide-category">
 						      <?php list_categories(null, 2);?>
-						    </h5>
+						    </span>
 						      <h2 class="slide-title">
 							  	 <a href="<?php the_permalink() ?>">
 							  <?php the_title(); ?>
 							  	 </a>
 							  </h2>
 
-						    <h5 class="slide-date">
-								<i class="calendar-icon fal fa-calendar-alt"></i><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php echo get_the_date(); ?></time>
-						    </h5>
+						    <span class="slide-date">
+								<span title="calendar"  class="calendar-icon fal fa-calendar-alt"></span><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php echo get_the_date(); ?></time>
+						    </span>
 						</div> <!--overlay-slide-->
 
 

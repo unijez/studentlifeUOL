@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<main id="main" class="site-main site-module">
+<main id="site-content" class="site-main site-module">
 
 	<div class="module-inner-wrap">
 		

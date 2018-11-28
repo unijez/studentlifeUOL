@@ -28,7 +28,7 @@
 
 <?php studentlifeUOL_body_top(); ?>
 
-<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'studentlifeUOL' ); ?></a>
+<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'studentlifeUOL' ); ?></a>
 
 	<div class="header-search site-module hide">
 
@@ -45,7 +45,7 @@
 
 		<div class="module-inner-wrap">
 
-		<div class="level-elements header-level-elements">
+		<div class="level-elements header-level-elements equal-space">
 
 		<div class="site-branding flex-controlled">
 
@@ -59,7 +59,7 @@
 			<div class="site-branding__hero-wording">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-				<button type="button" class="main-btn open-button w-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i><span class="accessibility-text">Button to open the sidebar menu</span></button>
+				<button type="button" class="main-btn open-button w-hide" aria-label="Button to open the sidebar menu"><span title="bars" class="fal fa-bars fa-lg"></span><span class="accessibility-text">Button to open the sidebar menu</span></button>
 
 			</div>
 
@@ -85,7 +85,7 @@
 			</ul>
 
 
-			<button type="button" class="main-btn open-button m-t-hide" aria-label="Button to open the sidebar menu"><i class="fal fa-bars fa-lg"></i><span class="accessibility-text">Button to open the sidebar menu</span></button>
+			<button type="button" class="main-btn open-button m-t-hide" aria-label="Button to open the sidebar menu"><span title="bars" class="fal fa-bars fa-lg"></span><span class="accessibility-text">Button to open the sidebar menu</span></button>
 
 
 		</nav><!-- #site-navigation -->
@@ -104,11 +104,25 @@
 
 
 	<nav class="overlay-navigation overlay-off">
+
 		<div class="navigation-items">
 				<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i><span class="accessibility-text">Button to close the sidebar menu</span></button>
 
 
-				<h3 class="larger-title top-spacer">Student Life</h3>
+
+
+			<div class="nav-items items-off">
+
+				<div class="overlay-navigation-header">
+
+					<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><span title="times" class="fal fa-times fa-lg"></span><span class="accessibility-text">Button to close the sidebar menu</span></button>
+
+				</div> <!--overlay-navigation-header-->
+
+
+
+
+				<h2 class="larger-title top-spacer">Student Life</h2>
 
 				<div class="holder-small">
 				<ul class="overlay-first-menu">
@@ -139,7 +153,7 @@
 					?>
 				</ul>
 -->
-				<h3>Topics</h3>
+				<h2>Topics</h2>
 				<div class="holder-large">
 				<ul class="overlay-second-menu">
 					<?php
@@ -155,15 +169,15 @@
 				</ul>
 				</div>
 
-				<h3>Search</h3>
 				<div class="ov-nav-search">
 					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="s" id="s" aria-label="Webpage search bar"/>
+						<label for="search"><h2>Search</h2></label>
+						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="ssearch" id="search" aria-label="Webpage search bar"/>
 					</form>
 				</div>
 
 				<?php if( function_exists('acf_add_local_field_group') )	:?>
-						<h3>Social</h3>
+						<h2>Social</h2>
 						<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
 
 		<?php endif; ?>

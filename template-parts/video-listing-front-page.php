@@ -10,7 +10,7 @@
 
 ?>
 
-<div class="latest-video-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="latest-video-post" <?php post_class(); ?>>
 
 	<div class="item-text">
 		<div class="post-img">

@@ -498,7 +498,7 @@
   	left: 0;
   	width: 100%;
     padding: 35px 115px 0 115px;
-    background-color: white;
+    background-color: transparent;
   	@include flexbox;
   	@include justify-content(flex-end);
 

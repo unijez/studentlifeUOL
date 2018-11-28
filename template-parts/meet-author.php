@@ -40,8 +40,7 @@ $coauthors = get_coauthors();
 					<div class="author-bio__name">
 							<a href="<?php echo get_author_posts_url( $author->ID ); ?>">
 							<?php if( $avatar ): ?>
-												<?php $avatar = str_replace("alt=''", "alt='Author profile picture'", $avatar);
-                        echo $avatar; ?>
+								<?php $avatar = str_replace("alt=''", "alt='Author profile picture'", $avatar); echo $avatar; ?>
 							<?php endif; ?>
 							</a>
 

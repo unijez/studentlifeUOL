@@ -37,42 +37,44 @@
 		<?php endif; ?>
 
 				<span class="icon_wrap">
-
-						<?php if (stripos($select_value, "facebook") !== false) : ?>
-							<span class="accessibility-text">Link to the Uni Facebook page</span>
-							<i class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-f"></i>
-
-						<?php elseif (strpos($select_value, 'linkedin') !== false) :  ?>
-							<span class="accessibility-text">Link to the Uni LinkedIn page</span>
-							<i class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-in"></i>
-
-						<?php elseif (strpos($select_value, 'pinterest') !== false) :  ?>
-							<span class="accessibility-text">Link to the Uni Pinterest page</span>
-							<i class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-p"></i>
-
-						<?php elseif (strpos($select_value, 'vimeo') !== false) :  ?>
-							<span class="accessibility-text">Link to the Uni Vimeo page</span>
-							<i class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-v"></i>
-
-						<?php elseif (strpos($select_value, 'rss') !== false) :  ?>
-							<span class="accessibility-text">Link to the Uni RSS Feed</span>
-							<i class="far fa-<?php the_sub_field( 'social_media_type' ); ?>"></i>
-
-						<?php elseif (strpos($select_value, 'google-plus') !== false) :  ?>
-							<span class="accessibility-text">Link to the Uni Google Plus page</span>
-							<i class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-g"></i>
-
-						<?php elseif (strpos($select_value, 'envelope') !== false) :  ?>
-							<span class="accessibility-text">Link tothe Uni Envelope page</span>
-							<i class="far fa-<?php the_sub_field( 'social_media_type' ); ?>"></i>
-
-						<?php else :  ?>
-							<i class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>"></i>
-
-						<?php endif; ?>
-
-
-				</span> <!--icon_wrap-->
+						
+									<?php if (stripos($select_value, "facebook") !== false) : ?>
+									<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-f"></span>
+									
+									<?php elseif (strpos($select_value, 'linkedin') !== false) :  ?>
+									<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-in"></span>
+									
+									<?php elseif (strpos($select_value, 'pinterest') !== false) :  ?>
+									<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-p"></span>
+										
+									<?php elseif (strpos($select_value, 'vimeo') !== false) :  ?>
+										<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-v"></span>
+									
+									<?php elseif (strpos($select_value, 'rss') !== false) :  ?>
+										<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="far fa-<?php the_sub_field( 'social_media_type' ); ?>"></span>
+						
+									<?php elseif (strpos($select_value, 'google-plus') !== false) :  ?>
+									<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>-g"></span>
+				
+									<?php elseif (strpos($select_value, 'envelope') !== false) :  ?>
+										<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="far fa-<?php the_sub_field( 'social_media_type' ); ?>"></span>
+									
+									<?php else :  ?>
+										<span class="screen-reader-text"> Link to the <?php the_sub_field( 'social_media_type' ); ?> account</span>
+										<span title="<?php the_sub_field( 'social_media_type' ); ?>" class="fab fa-<?php the_sub_field( 'social_media_type' ); ?>"></span>
+										
+									<?php endif; ?>	
+									
+									
+							</span> <!--icon_wrap-->
+				
 
 			</a>
 		</li>

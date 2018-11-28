@@ -190,12 +190,20 @@ background-position: center center;
 	}
 }
 
-
+.post-category a,
 .post-title a,
 .slide-category a,.slide-title a {
 	color: $uni-blue;
 	text-decoration: none;
-  font-weight: 300;
+  @include font-weight(light);
+  
+  @include hocus() {
+  	  color: $grey-mid;
+  	}
+}
+
+.slide-category a {
+	@include font-weight(black);
 }
 
 .slide-title {

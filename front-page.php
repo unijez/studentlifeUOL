@@ -18,7 +18,7 @@
 
 get_header(); ?>
 	<?php get_template_part( 'template-parts/slider' ); ?>
-	<main id="main" class="site-main site-module">
+	<main id="site-content" class="site-main site-module">
 
 				<div class="module-inner-wrap single-module">
 
@@ -185,7 +185,7 @@ get_header(); ?>
 
 			 					if ( $home_featured_select->have_posts() ) :?>
 
-							 	<h1 class="content-heading">Featured Posts</h1>
+							 	<h2 class="content-heading">Featured Posts</h2>
 							 	<div class="featured-wrapper">
 
 

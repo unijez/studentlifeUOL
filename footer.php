@@ -37,14 +37,14 @@
 
 			  	<div class="footer-meta">
 
-						<p><b>Student Life</b></p>
+						<p><strong>Student Life</strong></p>
 			  		<p class="credit">Designed by Thomas Moore (2nd year Interactive Design). </p>
 						<p class="credit">Developed by Brennan Ceballos Peña (1st year Games Computing).</p>
 						<br />
-						<b>
+						<strong>
 			  		<?php university_links(); ?>
-						</b>
-		  			<p class="copyright">	&#169; <b>University of Lincoln.</b> All rights reserved</p>
+						</strong>
+		  			<p class="copyright">	&#169; <strong>University of Lincoln.</strong> All rights reserved</p>
 
 			  </div> <!--footer-meta-->
 

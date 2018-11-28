@@ -16,7 +16,7 @@
 
     <?php get_template_part( 'template-parts/featured-image' ); ?>
 
- 		<main id="main" class="site-main">
+ 		<main id="site-content" class="site-main">
  			<?php if ( have_posts() ) : ?>
 
 
@@ -70,7 +70,7 @@
 
 		  									                      <?php if ($prev_link) : ?>
 
-		  												                   <a class="main-btn block-button dark" href="<?php echo $previous->guid ?>"><i class="far fa-angle-left"></i>  Previous Post</a>
+		  												                   <a class="main-btn block-button dark" href="<?php echo $previous->guid ?>"><span class="far fa-angle-left"></span>  Previous Post</a>
 
 		  									                      <?php endif; ?>
 
@@ -80,7 +80,7 @@
 
 		  								                         <?php if ($next_link) : ?>
 
-		  											                     <a class="main-btn block-button dark" href="<?php echo $next->guid ?>">Next Post <i class="far fa-angle-right"></i></a>
+		  											                     <a class="main-btn block-button dark" href="<?php echo $next->guid ?>">Next Post <span class="far fa-angle-right"></span></a>
 
 		  								                         <?php endif; ?>
 		  								                    </li>
