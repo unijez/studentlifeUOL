@@ -106,7 +106,7 @@
 	<nav class="overlay-navigation overlay-off">
 
 		<div class="navigation-items">
-				<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i><span class="accessibility-text">Button to close the sidebar menu</span></button>
+				<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><span title="times" class="fal fa-times fa-lg"></span><span class="accessibility-text">Button to close the sidebar menu</span></button>
 
 
 
