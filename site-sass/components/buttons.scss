@@ -5,16 +5,9 @@
   align-self: center;
 }
 
-
 //Main button for the toggle search area
 .main-btn {
-  display: inline-block;
-  vertical-align: middle;
   border: none;
-  align-self: center;
-  font: inherit;
-  text-align: center;
-  margin: 0;
   cursor: pointer;
 
 
@@ -23,6 +16,26 @@
   	}
 
 
+}
+
+.close-button {
+  background-color: white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 15px 41px 15px 41px;
+  width: 100%;
+  text-align: right;
+
+  @include mq(tablet) {
+    width: auto;
+    padding: 34px 42px 34px 42px;
+  }
+
+  @include mq(wide) {
+    width: auto;
+    padding: 35px 121px 35px 121px;
+  }
 }
 
 .mobile-button{

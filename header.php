@@ -104,17 +104,8 @@
 
 
 	<nav class="overlay-navigation overlay-off">
-
-
-
-			<div class="nav-items items-off">
-
-				<div class="overlay-navigation-header">
-
-					<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i><<span class="accessibility-text">Button to close the sidebar menu</span>/button>
-
-				</div> <!--overlay-navigation-header-->
-
+		<div class="navigation-items">
+				<button type="button" class="main-btn close-button" aria-label="Button to close the sidebar menu"><i class="fal fa-times fa-lg"></i><span class="accessibility-text">Button to close the sidebar menu</span></button>
 
 
 				<h3 class="larger-title top-spacer">Student Life</h3>
@@ -163,6 +154,7 @@
 					?>
 				</ul>
 				</div>
+
 				<h3>Search</h3>
 				<div class="ov-nav-search">
 					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -174,9 +166,8 @@
 						<h3>Social</h3>
 						<?php get_template_part( 'template-parts/site/social-media', 'icons' ); ?>
 
-				</div>	 <!--column-->
 		<?php endif; ?>
-
+		<div>
 	</nav>
 
 <?php studentlifeUOL_head_after(); ?>
