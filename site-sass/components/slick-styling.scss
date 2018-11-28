@@ -163,6 +163,12 @@ background-position: center center;
 
 }
 
+.slick-dots button {
+	@include hocus() {
+		   background-color: $uni-blue;
+		}
+}
+
 
 .slide-category,
 .slide-date  {
