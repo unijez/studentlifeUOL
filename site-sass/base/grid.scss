@@ -265,8 +265,8 @@ $toast-pulls: true !default;
 
 	@include mq(tablet) {
 		padding-bottom: $desktop-side-pad *2;
-		padding-left: $desktop-side-pad;
-		padding-right: $desktop-side-pad;
+		padding-left: 20px;
+		padding-right: 20px;
 
 
 	}
