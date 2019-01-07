@@ -30,7 +30,7 @@
 	<div class="column-spacings column column--2-of-3 column--medium-2-of-3 column--small-1-of-1 clear ">
 
 		  <div class="post-img">
-		    <a href="<?php the_permalink(); ?>">
+		    <a class="article-link" aria-label="Link through to <?php the_permalink();?>" href="<?php the_permalink();?>">
 		      <?php default_image('post-intro-image-video', 895, 500); ?>
 		    </a>
 		  </div>

@@ -46,9 +46,13 @@
 }
 
 .site-header.site-module {
+	padding: 20px;
+}
+
+/*.site-header.site-module {
 	padding-top: 10px;
 	padding-bottom: 10px;
-}
+}*/
 
 /*.site-branding {
 	max-width: 500px;
@@ -124,34 +128,50 @@
 
 
 
+//
+// Site Branding
+//
+
+
+
+.site-branding {
+	flex-grow: 1;
+	@include mq($until:tablet) {
+		width: 100%;
+
+		@include flex-direction(column);
+		
+	}
+}
+
+
 .site-branding {
 
-   @include flex-direction(column);
-   width: auto;
-	 @include mq($until:wide) {
-		 width: 100%;
-	 }
-  margin-bottom: 5px;
+   margin-bottom: $mobile-side-pad;
 
 
    @include mq(tablet) {
    margin-bottom: 0;
    	float: left;
-    margin-bottom: 0;
-   	 @include flex-direction(row);
 
    }
 
    	.site-title {
+/*     @include font-family(helvetica);
+     @include font-weight(black);*/
      @include font-size(20px);
-   	line-height: 27px;
-	 margin: 0;
+     text-transform: uppercase;
+     /*max-width: 200px;*/
 
-	 @include mq(desktop) {
-		  font-size: 22px !important;
-			width: 180px;
+
+	 @include mq(tablet) {
+		  @include font-size(30px);
 	 }
 
+	 	/*@include mq($until:tablet) {
+			width: 100%;
+			max-width: 100%;
+		}*/
   }
 
 
@@ -167,27 +187,21 @@
 
 
 .site-branding__hero-wording {
+
 	@include flexbox;
-
 	@include flex-direction(row);
+	@include align-items(center);
+	@include justify-content(space-between);
 
-	@include mq($until:desktop) {
-		justify-content: space-between;
-	}
-
-
-
-
+	margin-top: $mobile-side-pad;
 
 	@include mq(tablet) {
-		 margin-top: 0;
-		 padding-left: $mobile-side-pad;
-		 margin-left: $desktop-side-pad;
-		 //max-width: 340px;
 		 width: 100%;
+		/* @include flex-direction(row);
 		 @include align-items(center);
-		 @include justify-content(space-between);
-		 /*@include justify-content(flex-start);*/
+		 @include justify-content(space-between);*/
+		 margin-top: 0;
+		 margin-left: $desktop-side-pad;
 	}
 
 
@@ -195,17 +209,22 @@
 }
 
 
-.site-footer__logo,
+
 .site-branding__hero-logo {
-	color: $grey-dark;
-	display: block;
-	margin: auto auto;
+	color: $uni-blue;
+	max-width: 300px;
+	display: inline-flex;
+	align-items: center;
 
- 	width: 240px;
-	@include flexbox;
-	@include align-items(center);
+	@include mq(tablet) {
 
-	@include mq($until:tablet) {
-		margin-bottom: 5px;
+	max-width: 150px;
+
 	}
+
+	@include hocus() {
+		color: $uni-grey;
+	}
+
+
 }

@@ -111,7 +111,7 @@ function default_image($thumbnail, $width, $height) {
 	 		    esc_url( $article_image_url[0] ),
 	 		    $article_image_url[1],
 	 		    $article_image_url[2],
-	 		   $page_title
+	 		    $page_title
 	 		);
       } else {
         $default_image = wp_get_attachment_image_src(get_scalled_default_image(), $thumbnail);
@@ -120,7 +120,7 @@ function default_image($thumbnail, $width, $height) {
             esc_url( $default_image[0] ),
             $default_image[1],
             $default_image[2],
-           $page_title
+            $page_title
         );
       }
 
@@ -534,10 +534,10 @@ add_action( 'pre_get_posts', 'blog_home_offest' );
    $page_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
    //echo $page_link;
    if($button == "twitter"): ?>
-   <a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title())?>&url=<?php echo urlencode($page_link)?>"><div class="social-button twitter-colour"><h5>Tweet</h5><span class="fab fa-twitter"></span></div></a>
+   <a class="twitter-share-button" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title())?>&url=<?php echo urlencode($page_link)?>"><div class="social-button twitter-colour"><h5>Tweet</h5><span class="fab fa-twitter"></span></div></a>
    <?php
    elseif ($button == "facebook"):?>
-   <a class="facebook-share-button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($page_link); ?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><div class="social-button facebook-colour" data-href="<?php echo urlencode($page_link); ?>" data-size="small" data-mobile-iframe="true"><h5>Share</h5><span class="fab fa-facebook-f"></span></div></a>
+   <a class="facebook-share-button" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($page_link); ?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><div class="social-button facebook-colour" data-href="<?php echo urlencode($page_link); ?>" data-size="small" data-mobile-iframe="true"><h5>Share</h5><span class="fab fa-facebook-f"></span></div></a>
    <?php
    endif;
  }

@@ -1,12 +1,17 @@
 .site-main {
+	overflow-x: hidden;
 	@include mq($until:tablet) {
 		display: block !important;
 	}
 }
 
 .site-module {
-
-	padding: 60px 30px;
+	
+	padding: $desktop-side-pad $mobile-side-pad;
+	
+	@include mq(tablet) {
+		/*padding: $desktop-side-pad ;*/
+	}
 
 }
 
@@ -19,15 +24,17 @@
 	}
 }
 
-.site-module-nopad {
+.site-module.site-module-nopad {
 
-	@include mq($until:tablet) {
+	/*@include mq($until:tablet) {
 		padding: 60px 0;
-	}
-
-	@include mq(mobile) {
+	}*/
+	padding-top: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+	/*@include mq(mobile) {
 		padding: 20px 0;
-	}
+	}*/
 }
 
 .video-module {

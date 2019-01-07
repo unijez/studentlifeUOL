@@ -98,7 +98,7 @@
 
 @mixin hocus() {
   &:hover,
-  &:focus {
+  &:focus{
     @content;
   }
 }

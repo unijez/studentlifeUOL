@@ -62,6 +62,12 @@
   @include mq($until:tablet) {
     display: inline-block;
   }
+  
+  @include hocus() {
+  	color: white;
+  	background-color: $uni-blue;
+  	}
+  
 }
 
 .primary-menu > a {
@@ -88,10 +94,10 @@
   }
 }
 
-.primary-menu > li:hover{
+/*.primary-menu > li:hover{
   a { color: #fff; }
   background: $uni-blue;
-}
+}*/
 
 .primary-menu > .has-children:hover > a::after,
 .primary-menu > .menu-item-has-children:hover > a::after { border-top-color: #fff; }

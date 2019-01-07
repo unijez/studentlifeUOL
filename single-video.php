@@ -67,6 +67,7 @@
                           <span title="calendar"  class="calendar-icon fal fa-calendar-alt"></span><time class="news-post-date date-published" datetime="<?php the_time('d/m/Y') ?>"><?php the_time('F jS, Y') ?></time>
                         </span>
 
+
                       <div class="video-content-container">
 				  						            <?php the_content(); ?>
                       </div>
@@ -112,11 +113,9 @@
 
 
 		  							           <?php
-		  									  $prevPost = get_previous_post(true);
+		  									  $prevPost = get_previous_post();
 		  									  if($prevPost):
-
-
-		  									 ?>
+	  									  ?>
 		  									  <div class="side-box previous-box video-box">
 		  									    <span class="post-category"><?php list_categories($prevPost->ID); ?></span>
 		  									    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, 'post-intro-image-video');?>
@@ -144,13 +143,13 @@
 		  							<div class="column-spacings column column--1-of-2 column--medium-1-of-2 column--small-1-of-1 clear ">
 
 		  						<?php
-		  						  $nextPost = get_next_post(true);
+		  						  $nextPost = get_next_post();
 		  						  if($nextPost):
 
 
 		  						 ?>
 		  						  <div class="side-box next-box video-box">
-		  						    <h4 class="post-category"><?php list_categories($nextPost->ID); ?></h4>
+		  						    <span class="post-category"><?php list_categories($nextPost->ID); ?></span>
 		  						    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, 'post-intro-image-video');?>
 
                       <div class="thumbnail-aligner">

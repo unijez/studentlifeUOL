@@ -49,7 +49,7 @@
 
 		<div class="site-branding flex-controlled">
 
-			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" title="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer" aria-label="Link to lincoln.ac.uk homepage">
+			<a class="site-branding__hero-logo"  href="<?php echo esc_url('lincoln.ac.uk/home' ); ?>" title="University Of Lincoln Logo" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" aria-label="Link to lincoln.ac.uk homepage">
 
 
 				<?php get_template_part( 'template-parts/site/uol-logo', 'landscape' ); ?>
@@ -168,8 +168,14 @@
 				<div class="ov-nav-search">
 					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<label for="search"><h2>Search</h2></label>
-						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="ssearch" id="search" aria-label="Webpage search bar"/>
+						<input type="search" placeholder="<?php _e( 'Type and press enter', 'ServicesUOL' ); ?>" name="s" id="search" aria-label="Webpage search bar"/>
+						
+						<button type="submit" class="screen-reader-text search-submit"><?php echo _x( 'Search', 'submit button', 'ServicesUOL' ); ?></button>
 					</form>
+					
+					
+					
+					
 				</div>
 
 				<?php if( function_exists('acf_add_local_field_group') )	:?>

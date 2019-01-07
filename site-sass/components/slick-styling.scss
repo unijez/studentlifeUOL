@@ -196,6 +196,11 @@ background-position: center center;
 	}
 }
 
+.article-link {
+	text-decoration: none;
+}
+
+.article-link .post-title,
 .post-category a,
 .post-title a,
 .slide-category a,.slide-title a {
@@ -203,13 +208,18 @@ background-position: center center;
 	text-decoration: none;
   @include font-weight(light);
   
+  
   @include hocus() {
   	  color: $grey-mid;
   	}
 }
 
+.post-category a,
 .slide-category a {
-	@include font-weight(black);
+	@include font-weight(normal);
+	padding-bottom: 10px;
+	display: inline-block;
+	@include font-size(16px);
 }
 
 .slide-title {

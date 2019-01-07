@@ -32,7 +32,7 @@
 
 		<?php else :  ?>
 
-			<a href="<?php echo($socialurl) ?>" target="_blank" aria-label="">
+			<a href="<?php echo($socialurl) ?>" target="_blank" rel="noopener noreferrer" aria-label="">
 
 		<?php endif; ?>
 

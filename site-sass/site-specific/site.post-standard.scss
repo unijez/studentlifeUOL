@@ -19,7 +19,10 @@
   }
 }
 
-
+.single-module.video-module {
+	padding-left: 0;
+	padding-right: 0;
+}
 
 .entry-content:not(.video-post) p:first-child,
 .entry-content:not(.video-post) p:first-child strong {
@@ -201,11 +204,11 @@
 }
 
 .fs-sidebar .side-box a {
-  display: block;
+ /* display: block;
   max-height: 100%;
-  overflow: hidden;
+  overflow: hidden;*/
   @include mq(tablet) {
-    max-width: 100%;
+    /*max-width: 100%;*/
   }
 }
 
@@ -301,7 +304,8 @@
 }
 
 .teams-page .author-bio__name  .avatar{
-
+	height: auto;
+	
 	@include mq(tablet) {
 		margin-top: 0;
 		/*padding-top: $desktop-side-pad;*/

@@ -19,6 +19,7 @@
 		<?php
 		  $prevPost = get_previous_post();
 		  if($prevPost):
+	 
 
 		 ?>
 		  <div class="side-box previous-box">

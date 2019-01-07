@@ -129,7 +129,7 @@
 .site-footer {
   background-color: $almost-white;
 }
-
+/*
 .site-footer__logo {
   width: auto;
   margin: auto;
@@ -144,6 +144,35 @@
     max-width: 120px;
   }
 }
+*/
+
+//
+// Footer Logo
+//
+
+
+
+.site-footer__logo {
+	width: 110px;
+	margin-left: auto;
+	color: $grey1;
+}
+
+
+@include mq($until:tablet) {
+
+
+
+	.site-footer__logo {
+		width: 33.3333%;
+		margin: 20px 0 0;
+	}
+
+
+
+
+}
+
 
 .footer-meta {
 	@include font-size(12px);
@@ -237,3 +266,7 @@
 		margin: 0 5px;
 
 }
+
+
+
+
